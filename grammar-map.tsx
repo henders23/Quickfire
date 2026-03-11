@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { ArrowLeft, Zap, Play } from "lucide-react";
 
 const W = 900, H = 760;
