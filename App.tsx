@@ -1,18 +1,19 @@
 import { useState } from "react";
 import StartScreen from "./StartScreen";
 import GrammarMap from "./grammar-map";
+import IntroScreen from "./IntroScreen";
 import GameSession from "./GameSession";
 
-type Screen = "start" | "map" | "game";
+type Screen = "start" | "map" | "intro" | "game";
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>("start");
-  const [streak, setStreak] = useState(14);
+  const [streak, setStreak] = useState(0);
   const [selectedConceptId, setSelectedConceptId] = useState<string | null>(null);
 
   const handlePractice = (conceptId: string) => {
     setSelectedConceptId(conceptId);
-    setScreen("game");
+    setScreen("intro");
   };
 
   const handleSessionComplete = (passed: boolean) => {
@@ -30,6 +31,14 @@ export default function App() {
           streak={streak}
           onPractice={handlePractice}
           onBack={() => setScreen("start")}
+        />
+      )}
+      {screen === "intro" && selectedConceptId && (
+        <IntroScreen
+          conceptId={selectedConceptId}
+          streak={streak}
+          onStart={() => setScreen("game")}
+          onBack={() => setScreen("map")}
         />
       )}
       {screen === "game" && selectedConceptId && (
