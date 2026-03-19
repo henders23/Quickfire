@@ -4244,4 +4244,250 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+
+  fronting: [
+    // ── Adjective/Complement Fronting with Inversion ─────────────
+    {
+      prompt: "Which sentence correctly fronts an adjective phrase with subject-verb inversion?",
+      options: [
+        "Particularly noteworthy is the consistency of results across all three sites.",
+        "Particularly noteworthy the consistency of results across all three sites is.",
+      ],
+      correct: 0,
+      explanation: "Fronting an adjective phrase requires inversion: adjective phrase + auxiliary/copula + subject. Option A correctly places 'is' before the subject noun phrase. Option B produces an ungrammatical SOV order.",
+    },
+    {
+      prompt: "Which sentence fronts a prepositional phrase to foreground an evaluative comment?",
+      options: [
+        "Of equal importance is the need to consider socioeconomic variables.",
+        "The need to consider socioeconomic variables is of equal importance.",
+      ],
+      correct: 0,
+      explanation: "Fronting 'Of equal importance' with inversion ('is the need...') brings the evaluation to the front of the sentence, signalling its rhetorical weight immediately. The non-fronted version (B) places the evaluation at the end, which is less emphatic.",
+    },
+    {
+      prompt: "Which sentence uses fronting to create a cohesive link with a preceding discussion of research gaps?",
+      options: [
+        "Less well understood is the mechanism by which this effect occurs.",
+        "The mechanism by which this effect occurs is less well understood.",
+      ],
+      correct: 0,
+      explanation: "Fronting 'Less well understood' connects directly to a preceding discussion of what is and is not known, orienting the reader before naming the topic. Option B, though grammatical, delivers the evaluative comment less prominently.",
+    },
+    {
+      prompt: "Which sentence correctly fronts a complement phrase?",
+      options: [
+        "Central to this argument is the assumption that language shapes thought.",
+        "Central to this argument the assumption that language shapes thought is.",
+      ],
+      correct: 0,
+      explanation: "Fronted complement phrases require inversion: complement + copula + subject. Option A is grammatically correct. Option B places the copula ('is') at the end, producing an ungrammatical structure in English.",
+    },
+    {
+      prompt: "Which sentence uses fronting of a negative adverbial to create subject-auxiliary inversion?",
+      options: [
+        "Rarely has such a comprehensive dataset been assembled in this field.",
+        "Such a comprehensive dataset has rarely been assembled in this field.",
+      ],
+      correct: 0,
+      explanation: "Fronting a negative or restrictive adverb like 'rarely' triggers subject-auxiliary inversion (has + subject + past participle). This structure adds strong emphasis and is a hallmark of advanced formal prose. Option B, with 'rarely' in mid-position, is grammatical but far less emphatic.",
+    },
+  ],
+
+  impersonal: [
+    // ── It-constructions & There-constructions ────────────────────
+    {
+      prompt: "Which sentence uses an impersonal construction to distance the writer from a claim?",
+      options: [
+        "It could be argued that the current framework is insufficient.",
+        "I would argue that the current framework is insufficient.",
+      ],
+      correct: 0,
+      explanation: "Impersonal constructions like 'It could be argued that...' present a claim without a named agent, maintaining formal academic distance. The first-person 'I would argue' (option B) is less common in formal writing and directly attributes the view to the author.",
+    },
+    {
+      prompt: "Which sentence correctly uses a 'there' existential construction to introduce evidence impersonally?",
+      options: [
+        "There is growing evidence that diet affects cognitive function in older adults.",
+        "It is growing evidence that diet affects cognitive function in older adults.",
+      ],
+      correct: 0,
+      explanation: "'There is/are' is the correct existential construction for introducing the existence of something (evidence, reasons, factors). 'It is' cannot be used in this way — option B is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence uses an impersonal passive to report an established finding?",
+      options: [
+        "It has been demonstrated that regular exercise improves working memory.",
+        "It was demonstrated regular exercise improves working memory.",
+      ],
+      correct: 0,
+      explanation: "The impersonal passive 'It has been demonstrated that...' requires the complementiser 'that' before the embedded clause. Omitting 'that' (option B) is ungrammatical in this construction.",
+    },
+    {
+      prompt: "Which sentence uses a dummy-subject 'it' construction (impersonal) appropriately?",
+      options: [
+        "It is important to acknowledge the limitations of this approach.",
+        "It was the most significant finding of the study.",
+      ],
+      correct: 0,
+      explanation: "Option A uses a dummy-subject 'it' with an adjective + infinitive clause: 'It is + adj + to-infinitive'. This is a true impersonal construction. Option B uses 'it' as an identificatory pronoun referring to a specific referent — a different (non-impersonal) use.",
+    },
+    {
+      prompt: "Which is the more appropriate register for a formal academic claim about a theoretical position?",
+      options: [
+        "It is reasonable to suggest that the intervention produced a measurable effect.",
+        "I think it's reasonable to suggest the intervention worked.",
+      ],
+      correct: 0,
+      explanation: "The impersonal construction 'It is reasonable to suggest that...' maintains formal register and appropriate hedging. Option B uses the first-person contraction 'it's' and the informal verb 'worked', making it unsuitable for academic prose.",
+    },
+  ],
+
+  definite: [
+    // ── Second-mention & Specific Reference ──────────────────────
+    {
+      prompt: "Which sentence correctly uses 'the' for second-mention reference?",
+      options: [
+        "A qualitative study was conducted. The study involved twenty participants.",
+        "A qualitative study was conducted. A study involved twenty participants.",
+      ],
+      correct: 0,
+      explanation: "'The' is used on second mention because both writer and reader now share knowledge of which study is meant. Using 'a' on second mention (option B) treats the noun as if it were being introduced for the first time, which confuses the reader.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'the' before a noun modified by a specifying post-modifier?",
+      options: [
+        "The role of culture in language acquisition has been widely debated.",
+        "A role of culture in language acquisition has been widely debated.",
+      ],
+      correct: 0,
+      explanation: "When a noun is followed by a phrase that uniquely specifies it ('of culture in language acquisition'), 'the' is required because the post-modifier makes the referent identifiable. 'A role of culture...' implies a non-specific or first-mention context, which clashes with the specificity of the modifier.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'the' with a backward-referencing noun phrase?",
+      options: [
+        "Following the procedure outlined in Section 2, samples were analysed.",
+        "Following a procedure outlined in Section 2, samples were analysed.",
+      ],
+      correct: 0,
+      explanation: "'The procedure outlined in Section 2' uses 'the' correctly because the reader can identify precisely which procedure is meant — it has been specified in a named section. 'A procedure outlined in Section 2' (option B) implies the reader may not know which procedure, despite the clear reference.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'the' with the results of a specific experiment?",
+      options: [
+        "The data collected in phase two revealed an unexpected pattern.",
+        "The data collected in phase two revealed the unexpected pattern.",
+      ],
+      correct: 0,
+      explanation: "'An unexpected pattern' is correct because the pattern is being introduced for the first time — the reader does not yet know which pattern is meant. 'The unexpected pattern' (option B) would imply shared prior knowledge of a specific pattern, which is not established here.",
+    },
+    {
+      prompt: "Which sentence correctly omits 'the' before a general abstract noun?",
+      options: [
+        "Academic writing requires precision, clarity, and appropriate hedging.",
+        "The academic writing requires the precision, the clarity, and the appropriate hedging.",
+      ],
+      correct: 0,
+      explanation: "General abstract nouns used in statements about categories take zero article (no 'the'). 'Academic writing', 'precision', 'clarity', and 'hedging' refer to general concepts here, not to specific instances. Option B incorrectly uses 'the' as if these were identifiable specific entities.",
+    },
+  ],
+
+  comparative: [
+    // ── Form & Usage of Comparatives ─────────────────────────────
+    {
+      prompt: "Which sentence uses the correct comparative form for a multi-syllable adjective?",
+      options: [
+        "The second methodology proved more reliable than the first.",
+        "The second methodology proved more reliable that the first.",
+      ],
+      correct: 0,
+      explanation: "Comparative constructions require 'than', not 'that', to introduce the second element of the comparison. Option A is correct. This is a common error in academic writing.",
+    },
+    {
+      prompt: "Which sentence maintains grammatical parallelism in a comparative structure?",
+      options: [
+        "Smith's (2019) findings were considerably more robust than those of Jones (2020).",
+        "Smith's (2019) findings were considerably more robust than Jones (2020).",
+      ],
+      correct: 0,
+      explanation: "When comparing findings to findings, the pronoun 'those' is needed to stand in for 'findings' — otherwise the sentence compares 'Smith's findings' to 'Jones (2020)' (a person or publication, not findings). Option A maintains parallel comparison of equivalent entities.",
+    },
+    {
+      prompt: "Which sentence correctly uses a one-syllable comparative form?",
+      options: [
+        "The new model produced clearer predictions than its predecessor.",
+        "The new model produced more clear predictions than its predecessor.",
+      ],
+      correct: 0,
+      explanation: "One-syllable adjectives form comparatives with the suffix '-er' (clear → clearer), not with 'more'. 'More clear' (option B) is non-standard, though occasionally seen. 'Clearer' (option A) is the standard academic form.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'as... as' to express equivalence?",
+      options: [
+        "The control group performed as well as the experimental group on the pre-test.",
+        "The control group performed as good as the experimental group on the pre-test.",
+      ],
+      correct: 0,
+      explanation: "'As well as' is correct when modifying a verb (performed). 'Good' is an adjective and cannot modify a verb — 'as good as' would be used with a linking verb + adjective (e.g., 'as good as expected'). Option A correctly uses the adverb 'well'.",
+    },
+    {
+      prompt: "Which sentence uses a comparative structure to frame an evaluative claim effectively?",
+      options: [
+        "The qualitative approach yielded richer contextual data than the survey alone could provide.",
+        "The qualitative approach yielded rich contextual data and the survey was not as useful.",
+      ],
+      correct: 0,
+      explanation: "Option A uses a well-formed comparative ('richer... than') with a parallel structure and a clear point of comparison. Option B is grammatically loose: it coordinates two clauses inconsistently and does not complete the 'as... as' structure ('not as useful as what?').",
+    },
+  ],
+
+  adverbial: [
+    // ── Concession, Cause, Condition, Contrast ────────────────────
+    {
+      prompt: "Which sentence correctly uses an adverbial clause of concession?",
+      options: [
+        "Although the sample was small, the results indicate a consistent trend.",
+        "Despite the sample was small, the results indicate a consistent trend.",
+      ],
+      correct: 0,
+      explanation: "'Although' is a subordinating conjunction and is correctly followed by a full clause (subject + verb). 'Despite' is a preposition and must be followed by a noun phrase or gerund ('Despite the small sample size...' or 'Despite being small...'). Option B is therefore ungrammatical.",
+    },
+    {
+      prompt: "Which sentence correctly uses an adverbial clause of cause?",
+      options: [
+        "Because the intervention was introduced late, its effects were limited.",
+        "However the intervention was introduced late, its effects were limited.",
+      ],
+      correct: 0,
+      explanation: "'Because' is a subordinating conjunction correctly used to introduce a causal adverbial clause. 'However' is a conjunctive adverb (discourse marker) and cannot introduce a subordinate clause — it connects independent clauses or sentences. Option B is therefore ungrammatical.",
+    },
+    {
+      prompt: "Which sentence uses an adverbial clause of condition to express an uncertain future outcome?",
+      options: [
+        "If the effect is replicated in subsequent studies, the theory will gain empirical support.",
+        "When the effect is replicated in subsequent studies, the theory will gain empirical support.",
+      ],
+      correct: 0,
+      explanation: "'If' introduces a conditional clause — it treats replication as uncertain (possible but not certain). 'When' treats replication as certain (a matter of time, not possibility). In academic contexts, 'if' is more epistemically honest when an outcome is not guaranteed.",
+    },
+    {
+      prompt: "Which sentence correctly uses an adverbial clause of concession to acknowledge a scope limitation?",
+      options: [
+        "While this study focuses on quantitative measures, qualitative insights remain equally valuable.",
+        "Although this study focuses on quantitative measures because qualitative insights remain equally valuable.",
+      ],
+      correct: 0,
+      explanation: "Option A correctly uses 'while' as a subordinating conjunction of concession, creating a balanced acknowledgement of a limitation. Option B conflates two clause types: 'although... because' creates a structural contradiction — a concession cannot simultaneously be explained by a cause within the same clause.",
+    },
+    {
+      prompt: "Which sentence uses an adverbial clause to express contrast rather than cause?",
+      options: [
+        "Whereas experimental studies control variables, observational studies capture real-world complexity.",
+        "Because experimental studies control variables, observational studies capture real-world complexity.",
+      ],
+      correct: 0,
+      explanation: "'Whereas' introduces a contrast adverbial clause — it highlights a difference between two approaches without implying that one causes the other. 'Because' (option B) would imply that controlling variables is the reason observational studies capture complexity, which is logically incorrect here.",
+    },
+  ],
+
 };
