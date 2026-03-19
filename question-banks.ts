@@ -2353,4 +2353,479 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  relative: [
+    // ── Defining vs non-defining ───────────────────────────────
+    {
+      prompt: "Which sentence contains a defining (restrictive) relative clause?",
+      options: [
+        "The study that used the largest sample produced the most reliable results.",
+        "The study, which used the largest sample, produced the most reliable results.",
+      ],
+      correct: 0,
+      explanation: "A defining relative clause (no commas) identifies which study is meant — it restricts the reference to a specific one. The non-defining version (commas) adds extra information about a study already uniquely identified.",
+    },
+    {
+      prompt: "Which sentence contains a non-defining (non-restrictive) relative clause?",
+      options: [
+        "Researchers who fail to declare conflicts of interest risk retraction.",
+        "Smith (2019), who has published extensively on this topic, questions the consensus.",
+      ],
+      correct: 1,
+      explanation: "Option B has a non-defining clause (set off by commas) — 'Smith (2019)' is already uniquely identified, so the clause adds information rather than defining which Smith is meant. Option A defines which researchers (those who fail to declare) are at risk.",
+    },
+    {
+      prompt: "Which sentence punctuates a non-defining relative clause correctly?",
+      options: [
+        "The framework, which was developed in the 1970s, remains widely cited.",
+        "The framework which was developed in the 1970s remains widely cited.",
+      ],
+      correct: 0,
+      explanation: "Non-defining relative clauses must be set off by commas on both sides (or by a comma and a full stop). Without commas, the clause reads as defining — implying there are multiple frameworks and this one is identified by its 1970s origin.",
+    },
+    {
+      prompt: "In which sentence would omitting the relative clause change the meaning of the main clause?",
+      options: [
+        "The variable that most strongly predicted the outcome was socioeconomic status.",
+        "Socioeconomic status, which is often overlooked, was the strongest predictor.",
+      ],
+      correct: 0,
+      explanation: "In option A, the defining relative clause ('that most strongly predicted') is essential — removing it leaves 'The variable was socioeconomic status', which loses the specific identification. In option B, the non-defining clause can be removed without changing the core claim.",
+    },
+    {
+      prompt: "Which sentence uses a non-defining relative clause appropriately?",
+      options: [
+        "The data, which were collected over three years, show a consistent upward trend.",
+        "The data which were collected over three years show a consistent upward trend.",
+      ],
+      correct: 0,
+      explanation: "If 'the data' refers to a unique, already-identified dataset, the clause simply adds information — making it non-defining (commas required). Without commas, it would imply there are multiple datasets and only the three-year one shows the trend.",
+    },
+
+    // ── Who, which, that ───────────────────────────────────────
+    {
+      prompt: "Which relative pronoun is correct for referring to a person?",
+      options: [
+        "The researcher who developed the model later retracted her findings.",
+        "The researcher which developed the model later retracted her findings.",
+      ],
+      correct: 0,
+      explanation: "'Who' (or 'whom') refers to people. 'Which' refers to things, concepts, or animals. Using 'which' for a person is a grammatical error in standard English.",
+    },
+    {
+      prompt: "Which relative pronoun is correct for referring to a non-defining clause about a thing?",
+      options: [
+        "The methodology, which had been validated in three prior studies, was adopted here.",
+        "The methodology, that had been validated in three prior studies, was adopted here.",
+      ],
+      correct: 0,
+      explanation: "'That' cannot be used in non-defining relative clauses in standard written English. Non-defining clauses (set off by commas) must use 'which' for things and 'who' for people.",
+    },
+    {
+      prompt: "Which relative pronoun is correct in a defining clause referring to a thing?",
+      options: [
+        "The approach that yielded the strongest results was replicated in Experiment 2.",
+        "The approach who yielded the strongest results was replicated in Experiment 2.",
+      ],
+      correct: 0,
+      explanation: "'That' (or 'which') is correct for a defining clause referring to a thing. 'Who' refers to people only — using it for an 'approach' is a grammatical error.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'whose' as a relative pronoun?",
+      options: [
+        "The authors whose work is cited most frequently tend to focus on methodology.",
+        "The authors which work is cited most frequently tend to focus on methodology.",
+      ],
+      correct: 0,
+      explanation: "'Whose' is the genitive relative pronoun for both people and things ('the theory whose assumptions are contested'). 'Which work' without a genitive marker is ungrammatical — 'which' cannot show possession this way.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'whom' as the object of a relative clause?",
+      options: [
+        "The participant whom the researcher interviewed last provided the most detailed responses.",
+        "The participant who the researcher interviewed last provided the most detailed responses.",
+      ],
+      correct: 0,
+      explanation: "When the relative pronoun is the object of the verb in the relative clause, 'whom' is the formal correct form. 'Who' is the subject form. In 'the researcher interviewed [the participant]', the participant is the object — hence 'whom'. 'Who' is widely accepted informally but 'whom' is preferred in formal academic writing.",
+    },
+
+    // ── Omission of relative pronoun ──────────────────────────
+    {
+      prompt: "In which sentence can the relative pronoun be correctly omitted?",
+      options: [
+        "The hypothesis [that] the authors proposed was later contradicted by replication studies.",
+        "The researcher [who] conducted the study has since revised her conclusions.",
+      ],
+      correct: 0,
+      explanation: "The relative pronoun can be omitted when it is the object of the verb in the relative clause. In option A, 'that' is the object of 'proposed' — omission is possible. In option B, 'who' is the subject of 'conducted' — subject relative pronouns cannot be omitted.",
+    },
+    {
+      prompt: "Which sentence correctly omits the relative pronoun?",
+      options: [
+        "The model the authors proposed has several advantages over existing frameworks.",
+        "The model was proposed has several advantages over existing frameworks.",
+      ],
+      correct: 0,
+      explanation: "Option A correctly omits the object relative pronoun 'that/which' (the authors proposed [the model]). Option B removes 'that' from a subject position ('the model that was proposed'), leaving an ungrammatical fragment.",
+    },
+    {
+      prompt: "Which sentence retains the relative pronoun when omission would be ambiguous?",
+      options: [
+        "The evidence that these methods are unreliable is compelling.",
+        "The evidence these methods are unreliable is compelling.",
+      ],
+      correct: 0,
+      explanation: "Here 'that' introduces a noun clause (content clause) rather than a relative clause — it cannot be omitted without creating ambiguity or apparent ungrammaticality. Retaining 'that' makes the sentence structure clear.",
+    },
+    {
+      prompt: "In which sentence is omitting the relative pronoun NOT acceptable?",
+      options: [
+        "The variable which most strongly predicted the outcome was SES.",
+        "The variable the researchers controlled for was age.",
+      ],
+      correct: 0,
+      explanation: "In option A, 'which' is the subject of 'predicted' — subject relative pronouns cannot be omitted. Option B has an object relative pronoun ('which') that can be dropped because the researchers controlled for [the variable].",
+    },
+
+    // ── Prepositions in relative clauses ──────────────────────
+    {
+      prompt: "Which sentence uses a fronted preposition in a formal relative clause?",
+      options: [
+        "This is the framework on which the entire argument depends.",
+        "This is the framework which the entire argument depends on.",
+      ],
+      correct: 0,
+      explanation: "In formal academic writing, prepositions are placed before 'which' or 'whom': 'on which... depends'. Stranding the preposition at the end ('depends on') is acceptable informally but 'on which' is the preferred form in academic prose.",
+    },
+    {
+      prompt: "Which sentence correctly places the preposition for formal academic writing?",
+      options: [
+        "The researcher to whom the data were sent later published the results.",
+        "The researcher whom the data were sent to later published the results.",
+      ],
+      correct: 0,
+      explanation: "'To whom' keeps the preposition before the relative pronoun — the formal academic pattern. Stranded 'sent to' at the end is grammatically acceptable but less formal. In academic writing 'to whom' is preferred.",
+    },
+    {
+      prompt: "Which sentence has an error in preposition use with a relative clause?",
+      options: [
+        "The field in which this research is situated has expanded rapidly.",
+        "The field in that this research is situated has expanded rapidly.",
+      ],
+      correct: 1,
+      explanation: "'That' cannot follow a preposition. After a preposition, only 'which' (for things) or 'whom' (for people) can be used: 'in which', never 'in that'. This is a fundamental rule of English relative clauses.",
+    },
+    {
+      prompt: "Which sentence correctly uses a relative clause after a preposition?",
+      options: [
+        "The context in which the data were collected affects their interpretation.",
+        "The context in where the data were collected affects their interpretation.",
+      ],
+      correct: 0,
+      explanation: "'In which' is correct for a noun referring to a non-place context. 'In where' is ungrammatical — 'where' is a relative adverb used for places without a preposition: 'the lab where data were collected' (not 'in where').",
+    },
+    {
+      prompt: "Which sentence uses 'where' correctly as a relative adverb?",
+      options: [
+        "The laboratory where the samples were processed has since been decommissioned.",
+        "The laboratory where the samples were processed in has since been decommissioned.",
+      ],
+      correct: 0,
+      explanation: "'Where' already incorporates the locative meaning, making 'in' redundant. 'The laboratory where... processed in' strands a preposition that is already encoded in 'where' — option B is ungrammatical.",
+    },
+
+    // ── Reduced relative clauses ───────────────────────────────
+    {
+      prompt: "Which sentence correctly uses a reduced (participial) relative clause?",
+      options: [
+        "The data collected in Phase 1 were analysed using regression.",
+        "The data which collecting in Phase 1 were analysed using regression.",
+      ],
+      correct: 0,
+      explanation: "'Data collected in Phase 1' is a reduced passive relative clause — 'which were collected' shortened to 'collected'. 'Which collecting' is ungrammatical — the present participle cannot be used here where a past participle is needed.",
+    },
+    {
+      prompt: "Which reduced relative clause correctly implies an active ongoing process?",
+      options: [
+        "Researchers studying this phenomenon have proposed several competing explanations.",
+        "Researchers studied this phenomenon have proposed several competing explanations.",
+      ],
+      correct: 0,
+      explanation: "'Researchers studying' is a reduced active relative clause ('researchers who are/were studying'). 'Researchers studied' incorrectly uses the past participle for an active meaning — past participle reductions are passive ('researchers observed by...').",
+    },
+    {
+      prompt: "Which sentence correctly reduces a passive relative clause?",
+      options: [
+        "The framework proposed by Crenshaw has influenced decades of scholarship.",
+        "The framework proposing by Crenshaw has influenced decades of scholarship.",
+      ],
+      correct: 0,
+      explanation: "'Proposed by Crenshaw' is a reduced passive relative clause (= 'which was proposed by'). The past participle is required for passive reduced relatives. 'Proposing by' incorrectly uses the present participle, which would imply the framework is doing the proposing.",
+    },
+    {
+      prompt: "Which sentence uses a reduced relative clause correctly to identify a specific subset?",
+      options: [
+        "Participants reporting high anxiety levels were assigned to the intervention group.",
+        "Participants reported high anxiety levels were assigned to the intervention group.",
+      ],
+      correct: 0,
+      explanation: "'Participants reporting high anxiety' is a reduced active relative clause (= 'who reported'). 'Participants reported high anxiety levels' could be misread as a complete clause — removing the relative meaning and creating ambiguity.",
+    },
+
+    // ── Subject–verb agreement in relative clauses ─────────────
+    {
+      prompt: "Which sentence has correct subject–verb agreement in the relative clause?",
+      options: [
+        "One of the factors that influence the outcome is sample size.",
+        "One of the factors that influences the outcome is sample size.",
+      ],
+      correct: 0,
+      explanation: "The relative clause modifies 'factors' (plural), so the verb must be plural: 'that influence'. The main clause verb 'is' agrees with 'one' (singular). This is a classic agreement trap.",
+    },
+    {
+      prompt: "Which sentence has correct subject–verb agreement in the relative clause?",
+      options: [
+        "The set of variables that were controlled for included age, gender, and education.",
+        "The set of variables that was controlled for included age, gender, and education.",
+      ],
+      correct: 0,
+      explanation: "The relative pronoun 'that' refers to 'variables' (plural), so the verb should be plural: 'that were controlled for'. The head of the relative clause is 'variables', not 'set'.",
+    },
+    {
+      prompt: "Which sentence has the correct verb form in the relative clause?",
+      options: [
+        "It is the researchers who are responsible for ensuring data integrity.",
+        "It is the researchers who is responsible for ensuring data integrity.",
+      ],
+      correct: 0,
+      explanation: "The relative pronoun 'who' refers to 'researchers' (plural), so the verb must be plural: 'who are'. 'Who is' would agree with a singular antecedent.",
+    },
+
+    // ── Relative clauses with quantifiers ─────────────────────
+    {
+      prompt: "Which sentence uses a non-defining relative clause with a quantifier correctly?",
+      options: [
+        "Three studies were identified, all of which used randomised controlled designs.",
+        "Three studies were identified, all of that used randomised controlled designs.",
+      ],
+      correct: 0,
+      explanation: "After a quantifier ('all of', 'some of', 'none of', 'both of'), 'which' must be used — never 'that'. 'All of which' is the correct form for a non-defining clause.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'none of whom' in a non-defining clause?",
+      options: [
+        "Twenty participants were recruited, none of whom had prior experience with the task.",
+        "Twenty participants were recruited, none of who had prior experience with the task.",
+      ],
+      correct: 0,
+      explanation: "After a preposition or in an object position following a quantifier, 'whom' (not 'who') is the correct formal form: 'none of whom'. 'None of who' is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence uses 'some of which' correctly?",
+      options: [
+        "The dataset contained 500 entries, some of which were incomplete.",
+        "The dataset contained 500 entries, some of that were incomplete.",
+      ],
+      correct: 0,
+      explanation: "'Some of which' is the correct form for a non-defining relative clause with a partitive quantifier. 'Some of that' is ungrammatical — 'that' cannot be used after prepositions or in non-defining clauses.",
+    },
+
+    // ── Relative clauses: formal vs informal ──────────────────
+    {
+      prompt: "Which sentence uses the more formal relative clause structure preferred in academic writing?",
+      options: [
+        "The theory on which this paper builds was first proposed in the 1960s.",
+        "The theory that this paper builds on was first proposed in the 1960s.",
+      ],
+      correct: 0,
+      explanation: "Both are grammatical, but fronted preposition + 'which' ('on which') is the formal academic preference. Stranded preposition + 'that' ('builds on') is more informal and colloquial.",
+    },
+    {
+      prompt: "Which version is more appropriate in formal academic prose?",
+      options: [
+        "The committee by whom the decision was made has since been dissolved.",
+        "The committee that the decision was made by has since been dissolved.",
+      ],
+      correct: 0,
+      explanation: "'By whom' (preposition + whom) is the formal academic pattern. 'That... by' strands the preposition and is less formal. Note also that 'whom' is correct here as the object of 'by'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'whereby' as a formal relative adverb?",
+      options: [
+        "A mechanism whereby social norms influence behaviour has been proposed.",
+        "A mechanism where social norms influence behaviour by has been proposed.",
+      ],
+      correct: 0,
+      explanation: "'Whereby' (= by which / through which) is a formal academic relative adverb used for mechanisms, processes, or means. Option B incorrectly separates 'where' from 'by', producing an ungrammatical structure.",
+    },
+
+    // ── Identifying and correcting errors ─────────────────────
+    {
+      prompt: "Which sentence contains an error in the relative clause?",
+      options: [
+        "The approach which the team adopted proved more efficient than anticipated.",
+        "The approach which the team adopted it proved more efficient than anticipated.",
+      ],
+      correct: 1,
+      explanation: "Option B contains a resumptive pronoun error — 'it' must not be inserted after the relative clause. The relative pronoun 'which' already represents the object; adding 'it' duplicates the object and is ungrammatical in standard English.",
+    },
+    {
+      prompt: "Which sentence incorrectly uses 'that' in a non-defining clause?",
+      options: [
+        "The sample, which was drawn from three regions, was broadly representative.",
+        "The sample, that was drawn from three regions, was broadly representative.",
+      ],
+      correct: 1,
+      explanation: "'That' cannot be used in non-defining (non-restrictive) relative clauses. Non-defining clauses must use 'which' for things and 'who' for people. Option B is a common error.",
+    },
+    {
+      prompt: "Which sentence contains a relative clause error?",
+      options: [
+        "The participants who scored highest were invited for a follow-up interview.",
+        "The participants which scored highest were invited for a follow-up interview.",
+      ],
+      correct: 1,
+      explanation: "'Which' refers to things, not people. For people, 'who' (subject) or 'whom' (object) must be used. 'The participants which' is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence is grammatically correct?",
+      options: [
+        "The framework whose assumptions are most contested is structural functionalism.",
+        "The framework which assumptions are most contested is structural functionalism.",
+      ],
+      correct: 0,
+      explanation: "To express possession with 'which', use 'whose': 'the framework whose assumptions'. 'Which assumptions' without 'whose' is ungrammatical — it leaves the possessive relationship unmarked.",
+    },
+    {
+      prompt: "Which sentence contains an error in preposition use with a relative clause?",
+      options: [
+        "The conditions under which the experiment was conducted were carefully controlled.",
+        "The conditions which the experiment was conducted under were carefully controlled.",
+      ],
+      correct: 1,
+      explanation: "Both versions are technically grammatical, but stranding the preposition at the end ('conducted under') is less formal. More importantly, in formal academic writing, the fronted preposition form ('under which') is strongly preferred. The key issue here: 'which... under' is the informal form rejected in formal academic style.",
+    },
+
+    // ── Relative clauses extending or summarising ──────────────
+    {
+      prompt: "Which sentence correctly uses a sentential (clause-referring) relative clause?",
+      options: [
+        "The intervention improved outcomes significantly, which contradicts earlier predictions.",
+        "The intervention improved outcomes significantly, that contradicts earlier predictions.",
+      ],
+      correct: 0,
+      explanation: "When a relative clause refers to an entire preceding clause (not just a noun), 'which' is used — not 'that'. 'Which' here has the whole preceding statement as its antecedent. 'That' cannot be used in this way.",
+    },
+    {
+      prompt: "Which sentence uses a relative clause to add a defining academic comment on an entire statement?",
+      options: [
+        "Replication rates remain low across many disciplines, which raises serious concerns about reproducibility.",
+        "Replication rates remain low across many disciplines, that raises serious concerns about reproducibility.",
+      ],
+      correct: 0,
+      explanation: "A sentential relative clause — one whose antecedent is the entire main clause — must use 'which'. 'That' cannot introduce a non-defining relative clause or a sentential one.",
+    },
+    {
+      prompt: "Which sentence uses 'which' correctly to refer back to a previous clause?",
+      options: [
+        "The results failed to reach significance, which was unexpected given the sample size.",
+        "The results failed to reach significance, which they were unexpected given the sample size.",
+      ],
+      correct: 0,
+      explanation: "In a sentential relative clause, 'which' stands alone as the subject — no additional pronoun ('they') should be inserted. Option B creates a resumptive pronoun error.",
+    },
+    // ── Where, when, why as relative adverbs ──────────────────
+    {
+      prompt: "Which sentence uses 'where' correctly as a relative adverb?",
+      options: [
+        "The region where the study was conducted has a predominantly rural population.",
+        "The region where the study was conducted in has a predominantly rural population.",
+      ],
+      correct: 0,
+      explanation: "'Where' already encodes the locative meaning, so no preposition is needed after it. Adding 'in' at the end is redundant and ungrammatical — compare 'the region in which the study was conducted' (preposition before 'which') vs 'the region where' (no preposition).",
+    },
+    {
+      prompt: "Which sentence uses 'when' correctly as a relative adverb?",
+      options: [
+        "There are moments when statistical significance can be misleading.",
+        "There are moments which statistical significance can be misleading.",
+      ],
+      correct: 0,
+      explanation: "'When' is the correct relative adverb for time nouns ('moments', 'periods', 'times'). 'Which' is a relative pronoun used for things — it does not carry the temporal meaning required here.",
+    },
+    {
+      prompt: "Which sentence uses 'why' correctly as a relative adverb?",
+      options: [
+        "One reason why the effect disappeared may be regression to the mean.",
+        "One reason which the effect disappeared may be regression to the mean.",
+      ],
+      correct: 0,
+      explanation: "'Why' is the relative adverb used after 'reason': 'the reason why'. 'Which' could be used with a preposition ('the reason for which'), but 'reason which' without a preposition is ungrammatical.",
+    },
+    // ── Cleft-like and it-relative constructions ──────────────
+    {
+      prompt: "Which sentence correctly uses a relative clause after a cleft structure?",
+      options: [
+        "It was the sample size that limited the study's generalisability.",
+        "It was the sample size which limited the study's generalisability.",
+      ],
+      correct: 0,
+      explanation: "In it-cleft constructions, 'that' is the standard relative pronoun regardless of whether the antecedent is a person or thing. While 'which' is sometimes used, 'that' is the strongly preferred form in this construction.",
+    },
+    // ── Mixed / tricky cases ───────────────────────────────────
+    {
+      prompt: "Which sentence uses a relative clause correctly after an indefinite pronoun?",
+      options: [
+        "Everything that was discussed in the meeting was later documented.",
+        "Everything which was discussed in the meeting was later documented.",
+      ],
+      correct: 0,
+      explanation: "After indefinite pronouns ('everything', 'something', 'anything', 'nothing'), 'that' is preferred over 'which' for defining relative clauses. 'Everything which' is not ungrammatical but is non-standard.",
+    },
+    {
+      prompt: "Which sentence correctly uses a relative clause after a superlative?",
+      options: [
+        "This is the most comprehensive review that has been conducted in this field.",
+        "This is the most comprehensive review which has been conducted in this field.",
+      ],
+      correct: 0,
+      explanation: "After superlatives ('the most...', 'the best...', 'the only...'), 'that' is strongly preferred over 'which' in defining relative clauses. 'The most comprehensive review that' is the standard academic form.",
+    },
+    {
+      prompt: "Which sentence correctly uses a defining relative clause after 'the only'?",
+      options: [
+        "This was the only study that controlled for all three variables simultaneously.",
+        "This was the only study, which controlled for all three variables simultaneously.",
+      ],
+      correct: 0,
+      explanation: "After 'the only', a defining (not non-defining) relative clause is required — 'that' without commas. Using 'which' with commas would make it non-defining, implying there are other studies, which contradicts 'the only'.",
+    },
+    {
+      prompt: "Which sentence uses a relative clause correctly after a negative antecedent?",
+      options: [
+        "There is no evidence that supports the claim that the drug is safe.",
+        "There is no evidence which supports the claim that the drug is safe.",
+      ],
+      correct: 0,
+      explanation: "After negative constructions ('no', 'not any'), 'that' is preferred in defining relative clauses. 'No evidence which' is not standard — 'that' is the expected form in this context.",
+    },
+    {
+      prompt: "Which sentence correctly uses a relative clause to post-modify a complex noun phrase?",
+      options: [
+        "The lack of longitudinal data, which is a notable limitation, reduces the study's impact.",
+        "The lack of longitudinal data, that is a notable limitation, reduces the study's impact.",
+      ],
+      correct: 0,
+      explanation: "The antecedent of the relative clause is the entire noun phrase 'the lack of longitudinal data' — a thing. Non-defining clauses for things use 'which'. 'That' cannot be used in non-defining relative clauses.",
+    },
+    {
+      prompt: "Which relative clause structure is more concise and preferred in formal academic writing?",
+      options: [
+        "Variables identified as significant were entered into the final model.",
+        "Variables that were identified as significant were entered into the final model.",
+      ],
+      correct: 0,
+      explanation: "The reduced relative clause ('variables identified') is more concise than the full form ('variables that were identified') and is preferred in academic prose where compression aids clarity. Both are grammatical, but reduction is a feature of formal written style.",
+    },
+  ],
+
 };
