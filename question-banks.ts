@@ -2828,4 +2828,474 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  nominal: [
+    // ── Identifying nominalisations ────────────────────────────
+    {
+      prompt: "Which word is a nominalisation of the verb 'analyse'?",
+      options: [
+        "analysis",
+        "analytical",
+      ],
+      correct: 0,
+      explanation: "'Analysis' is the noun form (nominalisation) of the verb 'analyse'. 'Analytical' is an adjective derived from the same root but is not a nominalisation — it modifies nouns rather than replacing a verbal action.",
+    },
+    {
+      prompt: "Which sentence contains a nominalisation?",
+      options: [
+        "The implementation of the policy was gradual.",
+        "The policy was implemented gradually.",
+      ],
+      correct: 0,
+      explanation: "'Implementation' is a nominalisation of the verb 'implement'. Option A encodes the action as a noun phrase ('the implementation of'), whereas option B uses the verb directly. Both are grammatical but differ in register.",
+    },
+    {
+      prompt: "Which underlined word is a nominalisation?",
+      options: [
+        "The **development** of new treatments requires substantial funding.",
+        "Researchers must **develop** new treatments with substantial funding.",
+      ],
+      correct: 0,
+      explanation: "'Development' is the noun form of the verb 'develop' — a nominalisation. In option B, 'develop' functions as a main verb. Nominalisations allow actions and processes to be expressed as noun phrases, which is characteristic of formal academic prose.",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation of the adjective 'significant'?",
+      options: [
+        "The significance of these findings cannot be overstated.",
+        "These findings are significant and cannot be overstated.",
+      ],
+      correct: 0,
+      explanation: "'Significance' is the nominalisation of the adjective 'significant' (via the suffix -ance/-ence). Option A uses it as the subject of the clause, creating a more abstract, formal sentence typical of academic writing.",
+    },
+    {
+      prompt: "Which word is a nominalisation of the verb 'argue'?",
+      options: [
+        "argumentation",
+        "argumentative",
+      ],
+      correct: 0,
+      explanation: "'Argumentation' (and also 'argument') are nominalisations of 'argue'. 'Argumentative' is an adjective — it describes a quality rather than nominalising the action of arguing.",
+    },
+
+    // ── Verb → noun conversion ─────────────────────────────────
+    {
+      prompt: "Which is the correct nominalisation of 'investigate'?",
+      options: [
+        "investigation",
+        "investigational",
+      ],
+      correct: 0,
+      explanation: "'Investigation' is the standard nominalisation of 'investigate' (suffix: -tion). 'Investigational' is an adjective meaning 'relating to investigation' — it cannot replace the verb as a noun.",
+    },
+    {
+      prompt: "Which sentence correctly converts the verb into a nominalisation?",
+      options: [
+        "The reduction in funding led to project delays.",
+        "The reduce in funding led to project delays.",
+      ],
+      correct: 0,
+      explanation: "'Reduction' is the correct nominalisation of 'reduce' (suffix: -tion). 'Reduce' is a verb and cannot be used directly as a noun preceded by 'the'.",
+    },
+    {
+      prompt: "Which is the correct nominalisation of 'contribute'?",
+      options: [
+        "contribution",
+        "contributive",
+      ],
+      correct: 0,
+      explanation: "'Contribution' is the noun form of 'contribute' (suffix: -tion). 'Contributive' is a rarely used adjective meaning 'tending to contribute' — it is not a standard nominalisation used in academic writing.",
+    },
+    {
+      prompt: "Which sentence correctly uses a nominalisation in place of a verb phrase?",
+      options: [
+        "The establishment of a control group was essential.",
+        "The establish of a control group was essential.",
+      ],
+      correct: 0,
+      explanation: "'Establishment' is the correct nominalisation of 'establish'. 'Establish' is a verb and cannot follow 'the' as a noun — 'the establish' is ungrammatical.",
+    },
+    {
+      prompt: "Which correctly nominalises 'assess'?",
+      options: [
+        "assessment",
+        "assessful",
+      ],
+      correct: 0,
+      explanation: "'Assessment' is the standard nominalisation of 'assess' (suffix: -ment). 'Assessful' is not a real English word — the suffix -ful forms adjectives from nouns, not nouns from verbs.",
+    },
+
+    // ── Adjective → noun conversion ────────────────────────────
+    {
+      prompt: "Which is the correct nominalisation of 'accurate'?",
+      options: [
+        "accuracy",
+        "accurately",
+      ],
+      correct: 0,
+      explanation: "'Accuracy' is the nominalisation of the adjective 'accurate' (suffix: -cy). 'Accurately' is an adverb — it modifies verbs, not functions as a noun.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'flexible'?",
+      options: [
+        "The flexibility of the model allows it to be applied across contexts.",
+        "The flexibleness of the model allows it to be applied across contexts.",
+      ],
+      correct: 0,
+      explanation: "'Flexibility' is the standard nominalisation of 'flexible' (suffix: -ity via the stem). 'Flexibleness' is technically formed by -ness but is not the conventional academic form — 'flexibility' is strongly preferred.",
+    },
+    {
+      prompt: "Which is the correct nominalisation of 'reliable'?",
+      options: [
+        "reliability",
+        "reliableness",
+      ],
+      correct: 0,
+      explanation: "'Reliability' is the standard nominalisation (suffix: -ity, with spelling change). 'Reliableness' uses -ness but is not the conventional academic form.",
+    },
+    {
+      prompt: "Which sentence uses the correct nominalisation of 'effective'?",
+      options: [
+        "The effectiveness of the intervention was evaluated across three trials.",
+        "The effectivity of the intervention was evaluated across three trials.",
+      ],
+      correct: 0,
+      explanation: "'Effectiveness' is the standard nominalisation of 'effective' (suffix: -ness). 'Effectivity' is occasionally used in technical fields but is not standard in academic English — 'effectiveness' or 'efficacy' are the accepted forms.",
+    },
+    {
+      prompt: "Which is the correct nominalisation of 'complex'?",
+      options: [
+        "complexity",
+        "complexness",
+      ],
+      correct: 0,
+      explanation: "'Complexity' is the standard academic nominalisation of the adjective 'complex' (suffix: -ity). 'Complexness' is a valid word by -ness formation but is almost never used in academic writing.",
+    },
+
+    // ── Nominalisation in academic register ────────────────────
+    {
+      prompt: "Which version is more typical of formal academic prose?",
+      options: [
+        "An examination of the data reveals several inconsistencies.",
+        "When we examine the data, we find several inconsistencies.",
+      ],
+      correct: 0,
+      explanation: "Option A uses nominalisation ('an examination of') to create an impersonal, abstract subject — characteristic of formal academic register. Option B uses first-person active verbs, which is less formal and less typical of written academic argument.",
+    },
+    {
+      prompt: "Which sentence achieves the higher level of abstraction through nominalisation?",
+      options: [
+        "The failure of the policy to achieve its targets prompted a review.",
+        "The policy failed to achieve its targets, so it was reviewed.",
+      ],
+      correct: 0,
+      explanation: "'The failure of the policy' nominalises the event, making it the subject. This compression into a noun phrase is a hallmark of academic prose — it allows complex relationships to be expressed densely and logically.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation to foreground the process rather than the agent?",
+      options: [
+        "The collection and analysis of data took six months.",
+        "We collected and analysed the data over six months.",
+      ],
+      correct: 0,
+      explanation: "Nominalisation ('collection and analysis') removes the agent ('we') and foregrounds the process itself — a key function of nominalisation in academic writing, where the research procedure matters more than who performed it.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation to create a more concise academic argument?",
+      options: [
+        "The assumption that markets self-regulate underlies neoliberal theory.",
+        "Neoliberal theory assumes that markets regulate themselves.",
+      ],
+      correct: 0,
+      explanation: "Option A nominalises 'assume' into 'the assumption that', which becomes the subject — allowing a complex idea to be compressed into a single noun phrase that can be evaluated, challenged, or built upon. This is characteristic of academic argumentation.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation appropriately to link ideas across sentences?",
+      options: [
+        "Biodiversity is declining rapidly. This decline threatens ecosystem stability.",
+        "Biodiversity is declining rapidly. This threatens ecosystem stability.",
+      ],
+      correct: 0,
+      explanation: "Option A uses 'this decline' — a nominalisation that creates a cohesive link by naming the preceding event as a topic. Option B uses 'this' alone, which is less precise and can create reference ambiguity in complex academic texts.",
+    },
+
+    // ── Over-nominalisation and clarity ───────────────────────
+    {
+      prompt: "Which sentence is clearer because it avoids unnecessary nominalisation?",
+      options: [
+        "The study failed to replicate the original findings.",
+        "There was a failure in the study's replication of the original findings.",
+      ],
+      correct: 0,
+      explanation: "Option A is clearer — the verb 'failed' directly expresses the event. Option B over-nominalises ('a failure in... replication of'), creating a cumbersome noun phrase. Nominalisation improves academic writing when used purposefully, not reflexively.",
+    },
+    {
+      prompt: "Which sentence avoids the 'noun pile-up' that can result from excessive nominalisation?",
+      options: [
+        "Differences in how students perform depend on the teaching methods used.",
+        "Variations in student performance are dependent on teaching methodology utilisation.",
+      ],
+      correct: 0,
+      explanation: "Option B strings together multiple nominalisations ('variations', 'performance', 'methodology utilisation') that make the sentence dense and hard to parse. Option A is clearer without sacrificing formality.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation purposefully rather than to inflate register?",
+      options: [
+        "The integration of qualitative and quantitative approaches strengthens the study.",
+        "The integrated qualitative and quantitative approach utilisation strengthening of the study.",
+      ],
+      correct: 0,
+      explanation: "Option A uses one well-placed nominalisation ('integration') as the subject of a clear clause. Option B chains multiple nominalisations ungrammatically, illustrating how over-nominalisation destroys clarity rather than enhancing formality.",
+    },
+    {
+      prompt: "In which sentence is the nominalisation most justified?",
+      options: [
+        "The introduction of the legislation led to immediate market reactions.",
+        "There was an introduction by legislators of legislation which caused reactions in markets.",
+      ],
+      correct: 0,
+      explanation: "Option A uses 'introduction' as a compact, precise noun phrase to link cause and effect — a purposeful nominalisation. Option B is verbose and uses nominalisation ('an introduction by legislators') where a direct verb would be cleaner.",
+    },
+
+    // ── Common nominalisation suffixes ─────────────────────────
+    {
+      prompt: "Which suffix most commonly forms nominalisations from verbs in academic English?",
+      options: [
+        "-tion / -sion (e.g. discussion, application, revision)",
+        "-ful / -less (e.g. meaningful, careless)",
+      ],
+      correct: 0,
+      explanation: "The suffixes -tion and -sion are the most productive for forming verb-derived nominalisations in academic English (investigation, analysis, implementation, discussion). The suffixes -ful and -less form adjectives, not nouns.",
+    },
+    {
+      prompt: "Which word uses the -ment suffix to form a nominalisation?",
+      options: [
+        "measurement",
+        "measurable",
+      ],
+      correct: 0,
+      explanation: "'Measurement' uses the -ment suffix to nominalise 'measure'. 'Measurable' uses the -able suffix to form an adjective from the same verb. Both derive from 'measure' but only 'measurement' is a nominalisation.",
+    },
+    {
+      prompt: "Which nominalisation correctly uses the -ance/-ence suffix?",
+      options: [
+        "dependence",
+        "dependful",
+      ],
+      correct: 0,
+      explanation: "'Dependence' is the standard nominalisation of 'depend' using the -ence suffix. 'Dependful' is not a real English word — the -ful suffix forms adjectives from nouns, not nouns from verbs.",
+    },
+    {
+      prompt: "Which pair correctly shows a verb and its nominalisation?",
+      options: [
+        "expand → expansion",
+        "expand → expandment",
+      ],
+      correct: 0,
+      explanation: "'Expansion' is the correct nominalisation of 'expand' (the -d changes to -s before -ion). 'Expandment' is not a standard English word — '-ment' is a productive suffix but does not apply to 'expand'.",
+    },
+    {
+      prompt: "Which pair correctly shows an adjective and its nominalisation?",
+      options: [
+        "diverse → diversity",
+        "diverse → diverseful",
+      ],
+      correct: 0,
+      explanation: "'Diversity' is the standard nominalisation of the adjective 'diverse' (suffix -ity with spelling adjustment). 'Diverseful' is not a real word — -ful forms adjectives, not nouns.",
+    },
+
+    // ── Nominalisation in noun phrases ─────────────────────────
+    {
+      prompt: "Which sentence correctly uses 'of' to complete a nominalisation phrase?",
+      options: [
+        "The evaluation of the programme took two years.",
+        "The evaluation the programme took two years.",
+      ],
+      correct: 0,
+      explanation: "When a nominalisation has an object (what was evaluated), it is introduced with 'of': 'the evaluation of the programme'. Omitting 'of' leaves the noun phrase without the required preposition, making it ungrammatical.",
+    },
+    {
+      prompt: "Which sentence correctly expands a nominalisation with both agent and object?",
+      options: [
+        "The government's implementation of the reforms was widely criticised.",
+        "The government implementation of the reforms was widely criticised.",
+      ],
+      correct: 0,
+      explanation: "When showing the agent of a nominalised action, use the possessive ('the government's implementation'). Without the apostrophe-s, 'government' reads as a noun modifier (a type of implementation for government), which changes the meaning.",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation as the object of a preposition correctly?",
+      options: [
+        "The paper focuses on the relationship between urbanisation and inequality.",
+        "The paper focuses on the urbanise and make unequal between cities.",
+      ],
+      correct: 0,
+      explanation: "Prepositions must be followed by noun phrases. 'On the relationship between urbanisation and inequality' correctly uses nominalisations as the objects of prepositions. Option B incorrectly places verbs after the preposition 'on'.",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation correctly as a sentence subject?",
+      options: [
+        "The proliferation of misinformation poses a significant challenge.",
+        "Proliferate of misinformation poses a significant challenge.",
+      ],
+      correct: 0,
+      explanation: "'Proliferation' is the noun form — used correctly as the sentence subject. 'Proliferate' is the verb and cannot function as the subject of a clause followed by 'of'.",
+    },
+
+    // ── Choosing between nominal and verbal style ──────────────
+    {
+      prompt: "Which sentence would be more appropriate in a discussion section of a journal article?",
+      options: [
+        "The persistence of this effect across contexts suggests a robust underlying mechanism.",
+        "This effect keeps appearing in lots of different contexts, which suggests something is really robust.",
+      ],
+      correct: 0,
+      explanation: "Option A uses nominalisation ('persistence') and formal vocabulary to create an abstract, precise claim. Option B is conversational and informal. Academic journal articles require the formal nominal style of option A.",
+    },
+    {
+      prompt: "Which sentence uses verbal style more appropriately (when nominalisation would be cumbersome)?",
+      options: [
+        "Participants responded faster when the stimulus was familiar.",
+        "The response speed of participants experienced increase in conditions of familiarity of stimulus.",
+      ],
+      correct: 0,
+      explanation: "For a clear, direct empirical statement about a behavioural result, verbal style is often cleaner than heavy nominalisation. Option B over-nominalises to the point of obscurity.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation to build a logical argument across sentences?",
+      options: [
+        "Inequality has risen sharply. This rise has been linked to declining social mobility.",
+        "Inequality has risen sharply. This has been linked to social mobility declining.",
+      ],
+      correct: 0,
+      explanation: "'This rise' nominalises the preceding event and makes it the subject, creating a clear logical chain. 'This has been linked to social mobility declining' is less precise — 'declining' hangs awkwardly and the reference of 'this' is less clear.",
+    },
+    {
+      prompt: "Which sentence correctly uses a nominalisation as the object of 'lead to'?",
+      options: [
+        "The funding cuts led to a reduction in research output.",
+        "The funding cuts led to research output reduce.",
+      ],
+      correct: 0,
+      explanation: "'Lead to' must be followed by a noun phrase. 'A reduction in research output' is the correct nominal form. 'Research output reduce' incorrectly uses a verb after 'to' — the infinitive marker 'to' here is a preposition, not an infinitive marker, so it requires a noun.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'aware'?",
+      options: [
+        "There is a growing awareness of the mental health challenges facing academics.",
+        "There is a growing awareness of the mental health challenges facing academics.",
+      ],
+      correct: 0,
+      explanation: "'Awareness' is the correct nominalisation of the adjective 'aware' (suffix: -ness). 'Awareness' is a misspelling — the correct form doubles the -e before -ness: 'aware' + '-ness' = 'awareness'.",
+    },
+
+    // ── Error identification ────────────────────────────────────
+    {
+      prompt: "Which sentence contains an error in nominalisation?",
+      options: [
+        "The occurrence of such events is rare.",
+        "The occurence of such events is rare.",
+      ],
+      correct: 1,
+      explanation: "'Occurrence' is spelled with double -r and double -c. 'Occurence' is a misspelling — a common error. The correct form: occur → occurrence.",
+    },
+    {
+      prompt: "Which sentence uses the wrong form of the nominalisation?",
+      options: [
+        "The improvement in test scores was statistically significant.",
+        "The improval in test scores was statistically significant.",
+      ],
+      correct: 1,
+      explanation: "'Improvement' is the standard nominalisation of 'improve' (suffix: -ment). 'Improval' is not a real English word — a common learner error by analogy with words like 'removal' or 'approval'.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'maintain'?",
+      options: [
+        "The maintenance of data integrity is the researcher's responsibility.",
+        "The maintainance of data integrity is the researcher's responsibility.",
+      ],
+      correct: 0,
+      explanation: "'Maintenance' is the correct spelling of the nominalisation of 'maintain'. 'Maintainance' is a misspelling — the vowel changes: maintain → maintenance (not maintainance).",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation where a verb would be clearer?",
+      options: [
+        "A discussion of the limitations is provided in Section 5.",
+        "Section 5 discusses the limitations.",
+      ],
+      correct: 0,
+      explanation: "Both are grammatical, but option A uses the nominalisation 'a discussion of... is provided', which is slightly more verbose than the direct 'Section 5 discusses'. Knowing when NOT to nominalise is as important as knowing when to use it.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'differ'?",
+      options: [
+        "The differences between the two groups were examined.",
+        "The differentiations between the two groups were examined.",
+      ],
+      correct: 0,
+      explanation: "'Differences' (plural of 'difference') is the standard nominalisation of 'differ'. 'Differentiation' exists but means 'the process of making or becoming different' — it does not simply mean 'differences' and would be incorrect here.",
+    },
+    {
+      prompt: "Which sentence contains an error in the nominalisation phrase?",
+      options: [
+        "The discovery of penicillin transformed modern medicine.",
+        "The discover of penicillin transformed modern medicine.",
+      ],
+      correct: 1,
+      explanation: "'Discover' is a verb and cannot follow 'the' as a noun. The correct nominalisation is 'discovery'. 'The discover of' is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation correctly to compress a causal relationship?",
+      options: [
+        "The erosion of public trust in institutions has accelerated political polarisation.",
+        "Public trust in institutions is eroding, and this has accelerated political polarisation.",
+      ],
+      correct: 0,
+      explanation: "'The erosion of public trust' compresses the process into a noun phrase that can then act as the cause in a single, compact clause. Option B, though grammatical, takes two sentences and keeps the causal chain less tightly integrated.",
+    },
+    {
+      prompt: "Which pair shows the correct nominalisation of 'perceive'?",
+      options: [
+        "perceive → perception",
+        "perceive → perceival",
+      ],
+      correct: 0,
+      explanation: "'Perception' is the standard nominalisation of 'perceive' (suffix: -tion with vowel/spelling change). 'Perceival' is not an English word — a common error by analogy with 'retrieval' or 'approval', which derive from different verb stems.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'assume' in an academic argument?",
+      options: [
+        "The assumption that growth is always beneficial has been widely challenged.",
+        "The assuming that growth is always beneficial has been widely challenged.",
+      ],
+      correct: 0,
+      explanation: "'Assumption' is the standard nominalisation of 'assume'. 'The assuming' is not used this way — 'assuming' is a gerund (verb-noun), but in academic writing the derived noun 'assumption' is the expected form for abstract argument.",
+    },
+    {
+      prompt: "Which sentence uses nominalisation to create a formal academic topic sentence?",
+      options: [
+        "The proliferation of digital platforms has transformed how political discourse operates.",
+        "Digital platforms have proliferated a lot and this changes how political discourse works.",
+      ],
+      correct: 0,
+      explanation: "Option A uses 'proliferation' as the grammatical subject, creating an abstract, formal topic sentence. Option B's verbal style ('proliferated', 'changes', 'works') with informal intensifier ('a lot') is conversational, not academic.",
+    },
+    {
+      prompt: "Which sentence correctly uses the nominalisation of 'globalise'?",
+      options: [
+        "Globalisation has reshaped patterns of trade and migration worldwide.",
+        "The globalising has reshaped patterns of trade and migration worldwide.",
+      ],
+      correct: 0,
+      explanation: "'Globalisation' is the standard nominalisation of 'globalise' (suffix: -ation). 'The globalising' uses the gerund with a definite article, which is ungrammatical in this context — the gerund would require a possessive or no article.",
+    },
+    {
+      prompt: "Which sentence uses a nominalisation most effectively to avoid weak sentence openings?",
+      options: [
+        "The recognition of cultural differences is central to effective communication.",
+        "We need to recognise cultural differences, which is central to communication being effective.",
+      ],
+      correct: 0,
+      explanation: "Opening with a nominalisation ('The recognition of') creates a strong, abstract subject that foregrounds the concept rather than the agent. Option B starts with 'We', which is informal, and ends with a clumsy gerund phrase ('communication being effective').",
+    },
+  ],
+
 };
