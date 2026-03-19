@@ -1883,4 +1883,474 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  discourse: [
+    // ── Contrast markers ───────────────────────────────────────
+    {
+      prompt: "Which sentence uses 'however' with correct punctuation?",
+      options: [
+        "The sample size was large; however, the dropout rate was significant.",
+        "The sample size was large however the dropout rate was significant.",
+      ],
+      correct: 0,
+      explanation: "When 'however' joins two independent clauses, it must be preceded by a semicolon (or a full stop) and followed by a comma. Without this punctuation, the sentence is a run-on.",
+    },
+    {
+      prompt: "Which sentence uses 'nevertheless' correctly?",
+      options: [
+        "The results were inconclusive. Nevertheless, they point to a promising direction for future research.",
+        "The results were inconclusive nevertheless they point to a promising direction.",
+      ],
+      correct: 0,
+      explanation: "'Nevertheless' is a conjunctive adverb. It must begin a new sentence or follow a semicolon. Without a full stop or semicolon before it, the second option creates a comma splice.",
+    },
+    {
+      prompt: "Which marker best signals a direct contrast between two parallel points?",
+      options: [
+        "Quantitative methods prioritise breadth, whereas qualitative methods prioritise depth.",
+        "Quantitative methods prioritise breadth, moreover qualitative methods prioritise depth.",
+      ],
+      correct: 0,
+      explanation: "'Whereas' signals a direct contrast within a single sentence. 'Moreover' signals addition, not contrast — it would imply qualitative methods also prioritise breadth, which is the opposite of the intended meaning.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'in contrast'?",
+      options: [
+        "Northern European countries have high social mobility. In contrast, many Southern European countries show lower rates.",
+        "Northern European countries have high social mobility. In contrast to many Southern European countries show lower rates.",
+      ],
+      correct: 0,
+      explanation: "'In contrast' used as a sentence connector stands alone, followed by a comma. 'In contrast to' is a preposition requiring a noun phrase, not a full clause: 'In contrast to Southern European countries, Northern European countries...'",
+    },
+    {
+      prompt: "Which marker is most appropriate for a concessive contrast (acknowledging before countering)?",
+      options: [
+        "While the methodology has limitations, the findings are broadly consistent with previous research.",
+        "Furthermore, the methodology has limitations, the findings are broadly consistent with previous research.",
+      ],
+      correct: 0,
+      explanation: "'While' introduces a concessive subordinate clause, acknowledging a point before countering it — the standard structure for balanced academic argument. 'Furthermore' signals addition, not concession.",
+    },
+    {
+      prompt: "Which sentence uses 'on the other hand' correctly?",
+      options: [
+        "Centralised systems allow for consistency. On the other hand, they may lack responsiveness to local needs.",
+        "On the other hand centralised systems allow for consistency and they may lack responsiveness.",
+      ],
+      correct: 0,
+      explanation: "'On the other hand' introduces the contrasting side of a two-part comparison. It should follow a comma and introduce a new main clause, not compress both sides into one sentence. Option B also omits the necessary comma after the marker.",
+    },
+    {
+      prompt: "Which contrast marker fits the logical relationship in this sentence? 'The intervention was costly; ___, it produced measurable long-term benefits.'",
+      options: [
+        "nevertheless",
+        "consequently",
+      ],
+      correct: 0,
+      explanation: "The relationship is concessive — a negative aspect is followed by a positive outcome that might not be expected. 'Nevertheless' signals this 'despite that' relationship. 'Consequently' signals a result, implying the cost caused the benefits, which is not the intended meaning.",
+    },
+
+    // ── Addition markers ───────────────────────────────────────
+    {
+      prompt: "Which sentence uses 'furthermore' correctly?",
+      options: [
+        "The drug reduced pain levels. Furthermore, it showed no significant side effects.",
+        "The drug reduced pain levels. Furthermore it showed no significant side effects.",
+      ],
+      correct: 0,
+      explanation: "Conjunctive adverbs like 'furthermore' must be followed by a comma when they open a sentence. Omitting the comma after 'furthermore' is a punctuation error in formal academic prose.",
+    },
+    {
+      prompt: "Which addition marker best signals that the second point is stronger or more significant than the first?",
+      options: [
+        "The policy failed to reduce unemployment. Moreover, it actively increased inequality.",
+        "The policy failed to reduce unemployment. Also, it actively increased inequality.",
+      ],
+      correct: 0,
+      explanation: "'Moreover' signals that the second point adds to the first and often intensifies or escalates it. 'Also' simply adds without implying escalation — 'moreover' is the stronger academic choice when the second point is more striking.",
+    },
+    {
+      prompt: "Which sentence uses 'in addition' with correct punctuation?",
+      options: [
+        "In addition to the quantitative data, qualitative interviews were conducted.",
+        "In addition to the quantitative data qualitative interviews were conducted.",
+      ],
+      correct: 0,
+      explanation: "When 'in addition to + NP' opens a sentence, it is followed by a comma before the main clause. Omitting the comma makes the sentence harder to parse.",
+    },
+    {
+      prompt: "Which marker is more appropriate in formal academic writing to add a further point?",
+      options: [
+        "Furthermore, the study controlled for potential confounding variables.",
+        "Plus, the study controlled for potential confounding variables.",
+      ],
+      correct: 0,
+      explanation: "'Furthermore' is a formal academic discourse marker. 'Plus' is informal and should be avoided in academic prose — it belongs to spoken or casual register.",
+    },
+    {
+      prompt: "Which sentence uses 'not only... but also' correctly?",
+      options: [
+        "The results not only confirmed the hypothesis but also revealed an unexpected interaction effect.",
+        "The results not only confirmed the hypothesis but also revealing an unexpected interaction effect.",
+      ],
+      correct: 0,
+      explanation: "'Not only... but also' is a correlative conjunction requiring parallel verb forms. Both verbs must be in the same form: 'confirmed... revealed'. 'Revealing' breaks the parallelism.",
+    },
+
+    // ── Cause and result markers ───────────────────────────────
+    {
+      prompt: "Which sentence uses 'therefore' with correct punctuation?",
+      options: [
+        "The data were insufficient; therefore, the analysis was inconclusive.",
+        "The data were insufficient therefore the analysis was inconclusive.",
+      ],
+      correct: 0,
+      explanation: "'Therefore' is a conjunctive adverb. Like 'however', it requires a semicolon (or full stop) before it and a comma after it when connecting two independent clauses.",
+    },
+    {
+      prompt: "Which result marker is most appropriate in formal academic writing?",
+      options: [
+        "The sample was unrepresentative; consequently, the findings cannot be generalised.",
+        "The sample was unrepresentative; so, the findings cannot be generalised.",
+      ],
+      correct: 0,
+      explanation: "'Consequently' is the formal academic choice for signalling a result. 'So' is informal and typically used in speech and casual writing — it should be replaced with 'therefore', 'consequently', or 'as a result' in academic prose.",
+    },
+    {
+      prompt: "Which sentence uses 'as a result' correctly?",
+      options: [
+        "Funding was cut. As a result, several research projects were abandoned.",
+        "Funding was cut. As a result of several research projects were abandoned.",
+      ],
+      correct: 0,
+      explanation: "'As a result' used as a sentence connector stands alone (no 'of'). 'As a result of' is a preposition requiring a noun phrase: 'As a result of the funding cuts, several projects were abandoned.'",
+    },
+    {
+      prompt: "Which marker correctly introduces a cause rather than a result?",
+      options: [
+        "Attendance declined because the venue was inaccessible.",
+        "Attendance declined; therefore, the venue was inaccessible.",
+      ],
+      correct: 0,
+      explanation: "Option A correctly uses 'because' to introduce the cause of the decline. Option B reverses the logic — 'therefore' would imply that declining attendance caused the venue to become inaccessible, which is not the intended meaning.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'hence' as a result marker?",
+      options: [
+        "The p-value exceeded .05; hence, the null hypothesis was retained.",
+        "The p-value exceeded .05; hence the null hypothesis was retained.",
+      ],
+      correct: 0,
+      explanation: "When 'hence' connects two clauses after a semicolon, it is followed by a comma in formal academic prose. Option B omits the comma, which is technically acceptable but less standard in formal writing.",
+    },
+    {
+      prompt: "Which is the correct formal academic alternative to 'so'?",
+      options: [
+        "thus",
+        "still",
+      ],
+      correct: 0,
+      explanation: "'Thus' is a formal academic result marker equivalent to 'so' or 'therefore'. 'Still' is a contrast/concession marker meaning 'nevertheless' — it does not signal a result.",
+    },
+
+    // ── Concession markers ─────────────────────────────────────
+    {
+      prompt: "Which sentence uses 'although' correctly?",
+      options: [
+        "Although the study had a small sample, its findings are consistent with larger reviews.",
+        "Although the study had a small sample. Its findings are consistent with larger reviews.",
+      ],
+      correct: 0,
+      explanation: "'Although' introduces a subordinate clause — it cannot stand alone as a sentence. Option B incorrectly separates the subordinate clause from the main clause with a full stop, creating a sentence fragment.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'despite'?",
+      options: [
+        "Despite the limitations, the study makes a valuable contribution.",
+        "Despite the study had limitations, it makes a valuable contribution.",
+      ],
+      correct: 0,
+      explanation: "'Despite' is a preposition and must be followed by a noun phrase or gerund, not a clause. 'Despite the study had limitations' incorrectly uses a full clause after 'despite'. Use 'although' or 'even though' for clauses.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'in spite of'?",
+      options: [
+        "In spite of significant methodological challenges, the study produced reliable data.",
+        "In spite of the study faced significant methodological challenges, it produced reliable data.",
+      ],
+      correct: 0,
+      explanation: "Like 'despite', 'in spite of' is a preposition and takes a noun phrase, not a full clause. 'In spite of the study faced...' is ungrammatical. The clause version requires 'although' or 'even though'.",
+    },
+    {
+      prompt: "Which marker is correct for acknowledging an opposing view before countering it?",
+      options: [
+        "Admittedly, some studies have found no significant effect; however, the majority of evidence points the other way.",
+        "Admittedly, some studies have found no significant effect; furthermore, the majority of evidence points the other way.",
+      ],
+      correct: 0,
+      explanation: "'Admittedly' + 'however' sets up a classic concede-counter structure: acknowledging the opposing evidence before pivoting to the majority view. 'Furthermore' would add to the concession rather than countering it.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'even though'?",
+      options: [
+        "Even though the intervention was brief, it produced lasting changes.",
+        "Even though the intervention was brief. It produced lasting changes.",
+      ],
+      correct: 0,
+      explanation: "'Even though' is a subordinating conjunction — it must connect a subordinate clause to a main clause in a single sentence. Option B creates a sentence fragment by separating them with a full stop.",
+    },
+
+    // ── Illustration and exemplification ──────────────────────
+    {
+      prompt: "Which sentence uses 'for example' with correct punctuation?",
+      options: [
+        "Several factors influence language acquisition — for example, age, motivation, and exposure.",
+        "Several factors influence language acquisition for example age motivation and exposure.",
+      ],
+      correct: 0,
+      explanation: "'For example' used parenthetically should be set off by commas or dashes. Option B omits all necessary punctuation, making the sentence difficult to parse.",
+    },
+    {
+      prompt: "Which is more appropriate in formal academic writing to introduce an example?",
+      options: [
+        "Several studies have examined this relationship, for instance, those conducted in Scandinavia.",
+        "Several studies have examined this relationship, like those conducted in Scandinavia.",
+      ],
+      correct: 0,
+      explanation: "'For instance' is the formal academic alternative. 'Like' used to introduce examples is informal and more common in speech — in academic writing, prefer 'such as' or 'for instance/example'.",
+    },
+    {
+      prompt: "Which sentence uses 'such as' correctly?",
+      options: [
+        "Cognitive biases, such as confirmation bias and anchoring, affect decision-making.",
+        "Cognitive biases, such as, confirmation bias and anchoring, affect decision-making.",
+      ],
+      correct: 0,
+      explanation: "'Such as' is a preposition introducing examples. No comma should follow 'such as' directly — the comma after the final example closes the parenthetical list. Option B inserts an incorrect comma after 'such as'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'namely' to introduce specific items?",
+      options: [
+        "Two factors were particularly influential, namely funding levels and institutional support.",
+        "Two factors were particularly influential, namely of funding levels and institutional support.",
+      ],
+      correct: 0,
+      explanation: "'Namely' directly precedes the items it introduces with no preposition. 'Namely of' is ungrammatical — 'of' must not be inserted between 'namely' and the listed items.",
+    },
+
+    // ── Sequence and structure markers ─────────────────────────
+    {
+      prompt: "Which is the correct academic sequence marker to introduce the final point in a list?",
+      options: [
+        "Finally, the study examines the long-term implications of the policy.",
+        "At last, the study examines the long-term implications of the policy.",
+      ],
+      correct: 0,
+      explanation: "'Finally' is the standard academic discourse marker for the last in a sequence. 'At last' implies something has been awaited impatiently — it carries an emotional tone that is inappropriate in academic writing.",
+    },
+    {
+      prompt: "Which marker correctly signals that an event came before another in time?",
+      options: [
+        "Ethical approval was obtained. Subsequently, data collection began.",
+        "Ethical approval was obtained. Previously, data collection began.",
+      ],
+      correct: 0,
+      explanation: "'Subsequently' means 'after this' — correct here as data collection followed approval. 'Previously' means 'before this', which would imply data collection began before approval was obtained — the opposite of the intended sequence.",
+    },
+    {
+      prompt: "Which sentence uses 'firstly' correctly in an academic list?",
+      options: [
+        "The study has three main strengths. Firstly, it uses a large representative sample.",
+        "The study has three main strengths. First of all things, it uses a large representative sample.",
+      ],
+      correct: 0,
+      explanation: "'Firstly' (or 'first') is the standard opening for enumerated points in academic writing. 'First of all things' is not a standard academic phrase — it is redundant and informal.",
+    },
+    {
+      prompt: "Which structure marker correctly signals a topic shift?",
+      options: [
+        "Turning now to the question of methodology, it is important to consider the sampling strategy.",
+        "Turning now the question of methodology, it is important to consider the sampling strategy.",
+      ],
+      correct: 0,
+      explanation: "'Turning to' is the correct preposition in this discourse marker for signalling a topic shift. 'Turning the question' omits 'to', making it ungrammatical.",
+    },
+
+    // ── Reformulation and clarification ───────────────────────
+    {
+      prompt: "Which sentence uses 'in other words' correctly?",
+      options: [
+        "The effect size was small (d = 0.12). In other words, the practical significance of the finding is limited.",
+        "The effect size was small (d = 0.12). In other words of the practical significance of the finding is limited.",
+      ],
+      correct: 0,
+      explanation: "'In other words' is a fixed phrase followed by a comma and a reformulation. Option B inserts 'of', which is ungrammatical.",
+    },
+    {
+      prompt: "Which marker correctly introduces a clarification or definition?",
+      options: [
+        "The study used a within-subjects design — that is, each participant completed all conditions.",
+        "The study used a within-subjects design — that is each participant completed all conditions.",
+      ],
+      correct: 0,
+      explanation: "'That is' (or 'i.e.,') used as a clarification marker must be followed by a comma. Omitting the comma makes the sentence harder to process.",
+    },
+    {
+      prompt: "What is the correct use of 'i.e.' in academic writing?",
+      options: [
+        "The study focused on a specific population, i.e., undergraduate students aged 18–22.",
+        "The study considered various groups, i.e., undergraduate students, postgraduate students, and staff.",
+      ],
+      correct: 0,
+      explanation: "'i.e.' (id est) means 'that is' and introduces a complete restatement or clarification. 'e.g.' should be used for examples. Option B lists examples and should use 'e.g.' instead.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'e.g.' to introduce examples?",
+      options: [
+        "Several cognitive tasks were administered, e.g., the Stroop test and the digit span task.",
+        "The cognitive task administered was the Stroop test, e.g., the test involves naming ink colours.",
+      ],
+      correct: 0,
+      explanation: "'e.g.' (exempli gratia) introduces examples from a broader category. Option B uses 'e.g.' to introduce a description or clarification of a specific test — 'i.e.' would be correct there.",
+    },
+
+    // ── Choosing the right marker ──────────────────────────────
+    {
+      prompt: "Which marker correctly fits the gap? 'The intervention was cost-effective; ___, it was well-received by participants.'",
+      options: [
+        "moreover",
+        "however",
+      ],
+      correct: 0,
+      explanation: "Both facts are positive additions — the second strengthens the first. 'Moreover' signals additive escalation. 'However' would imply contrast, suggesting being well-received was unexpected given the cost-effectiveness.",
+    },
+    {
+      prompt: "Which marker correctly fits the gap? 'The data were extensive; ___, drawing definitive conclusions was difficult.'",
+      options: [
+        "nevertheless",
+        "therefore",
+      ],
+      correct: 0,
+      explanation: "Despite the data being extensive, conclusions were hard to draw — a concessive relationship. 'Nevertheless' signals 'in spite of that'. 'Therefore' would imply the extensive data caused the difficulty, which contradicts the logic.",
+    },
+    {
+      prompt: "Which marker correctly fits the gap? 'Participants were briefed on the study's purpose. ___, they were asked to sign a consent form.'",
+      options: [
+        "Subsequently",
+        "Nevertheless",
+      ],
+      correct: 0,
+      explanation: "The consent form signing came after the briefing — a simple temporal sequence. 'Subsequently' signals what happened next. 'Nevertheless' would imply the signing was unexpected or contrary to the briefing, which misrepresents the relationship.",
+    },
+    {
+      prompt: "Which marker correctly fits the gap? 'Some researchers have questioned the validity of self-report measures. ___, they remain the most practical tool available in large-scale studies.'",
+      options: [
+        "Nevertheless",
+        "Furthermore",
+      ],
+      correct: 0,
+      explanation: "The concede-counter pattern requires a contrast marker. 'Nevertheless' concedes the criticism then pivots to the practical case. 'Furthermore' would add to the criticism rather than countering it.",
+    },
+    {
+      prompt: "Which marker correctly fits the gap? 'The model accounts for individual variation; ___, it cannot predict group-level outcomes.'",
+      options: [
+        "however",
+        "moreover",
+      ],
+      correct: 0,
+      explanation: "The second clause limits or qualifies the first — a contrast. 'However' signals this concessive contrast. 'Moreover' would imply the inability to predict group outcomes is an additional positive feature, which misrepresents the meaning.",
+    },
+
+    // ── Common errors ──────────────────────────────────────────
+    {
+      prompt: "Which sentence uses a discourse marker incorrectly?",
+      options: [
+        "The results were unexpected. However, they merit further investigation.",
+        "The results were unexpected. However they merit further investigation.",
+      ],
+      correct: 1,
+      explanation: "After a full stop, 'however' must be followed by a comma. 'However they merit...' without a comma is an error — the comma is required when 'however' opens a new sentence as a conjunctive adverb.",
+    },
+    {
+      prompt: "Which sentence uses 'despite' incorrectly?",
+      options: [
+        "Despite its limitations, the study offers valuable insights.",
+        "Despite the study has limitations, it offers valuable insights.",
+      ],
+      correct: 1,
+      explanation: "'Despite' must be followed by a noun phrase or gerund — not a full clause. 'Despite the study has limitations' is ungrammatical. Use 'although the study has limitations' if a clause is needed.",
+    },
+    {
+      prompt: "Which sentence uses a result marker where a contrast marker is needed?",
+      options: [
+        "The approach is widely used. Nevertheless, it has significant drawbacks.",
+        "The approach is widely used. Consequently, it has significant drawbacks.",
+      ],
+      correct: 1,
+      explanation: "Option B implies that being widely used caused the drawbacks — a logical error. The correct relationship is contrast/concession: widespread use is acknowledged, but drawbacks exist despite this. 'Nevertheless' is the correct marker.",
+    },
+    {
+      prompt: "Which sentence incorrectly uses 'also' instead of a more precise marker?",
+      options: [
+        "The study's scope was limited. Also, the data suggest an interesting pattern.",
+        "The study's scope was limited. Nevertheless, the data suggest an interesting pattern.",
+      ],
+      correct: 0,
+      explanation: "The relationship is concessive — something positive despite a limitation. 'Also' simply adds, making it sound as if both sentences are on equal footing without acknowledging the contrast. 'Nevertheless' correctly marks the pivot.",
+    },
+    {
+      prompt: "Which sentence uses 'while' correctly to signal contrast (not time)?",
+      options: [
+        "While quantitative studies seek generalisation, qualitative studies seek depth of understanding.",
+        "While I was writing, the fire alarm sounded.",
+      ],
+      correct: 0,
+      explanation: "Option A uses 'while' as a contrast marker, setting up a parallel contrast between two research paradigms. Option B uses 'while' temporally (= at the same time as). In academic writing, contrastive 'while' is very common and signals a whereas-type relationship.",
+    },
+    {
+      prompt: "Which sentence uses 'yet' correctly as a formal contrast marker?",
+      options: [
+        "The model is theoretically elegant, yet it fails to account for real-world complexity.",
+        "The model is theoretically elegant, yet however it fails to account for real-world complexity.",
+      ],
+      correct: 0,
+      explanation: "'Yet' used as a contrast marker (= but, nevertheless) is formal and concise. Option B combines 'yet' with 'however', which is redundant — only one contrast marker is needed between two clauses.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'by contrast' to open a sentence?",
+      options: [
+        "By contrast, the second group showed no improvement over the same period.",
+        "By contrast of the second group showed no improvement over the same period.",
+      ],
+      correct: 0,
+      explanation: "'By contrast' is a fixed adverbial phrase followed by a comma — it does not take 'of'. Option B incorrectly adds 'of', turning the phrase into an ungrammatical prepositional structure.",
+    },
+    {
+      prompt: "Which sentence uses 'alternatively' correctly?",
+      options: [
+        "One explanation is that the effect is real. Alternatively, it could be an artefact of the design.",
+        "The effect is real. Alternatively it could be an artefact of the design.",
+      ],
+      correct: 0,
+      explanation: "'Alternatively' introduces a second possible explanation or course of action. Like other conjunctive adverbs, it must be followed by a comma when opening a sentence. Option B omits this comma.",
+    },
+    {
+      prompt: "Which sentence uses 'as such' correctly?",
+      options: [
+        "The study is exploratory in nature; as such, its findings should be interpreted cautiously.",
+        "The study is exploratory in nature; as such the findings should be interpreted cautiously.",
+      ],
+      correct: 0,
+      explanation: "'As such' means 'for that reason' or 'in that capacity' and draws a consequence from the preceding clause. As a conjunctive adverb phrase, it must be followed by a comma when used to open a clause after a semicolon.",
+    },
+    {
+      prompt: "Which sentence uses 'that said' correctly as a concessive pivot?",
+      options: [
+        "The data have limitations. That said, the overall pattern is clear and consistent.",
+        "That said the data have limitations and the overall pattern is clear and consistent.",
+      ],
+      correct: 0,
+      explanation: "'That said' is a discourse marker meaning 'having acknowledged that' — it pivots from a concession to a counter-point. It must be followed by a comma and introduce a new main clause. Option B runs both ideas together without the concessive structure.",
+    },
+  ],
+
 };
