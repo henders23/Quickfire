@@ -4490,4 +4490,250 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+
+  present: [
+    // ── Tense Choice in Academic Writing ─────────────────────────
+    {
+      prompt: "Which sentence correctly uses present simple to attribute a position to a named author?",
+      options: [
+        "Smith (2019) argues that institutional trust is a precondition for policy compliance.",
+        "Smith (2019) argued that institutional trust is a precondition for policy compliance.",
+      ],
+      correct: 0,
+      explanation: "Present simple ('argues') is the standard choice when the author's claim is still current and relevant. Past simple ('argued') implies the view is outdated or no longer held, which is not the intention when citing an active scholarly position.",
+    },
+    {
+      prompt: "Which sentence correctly uses present simple to describe what a figure shows?",
+      options: [
+        "Figure 3 illustrates the relationship between temperature and reaction rate.",
+        "Figure 3 illustrated the relationship between temperature and reaction rate.",
+      ],
+      correct: 0,
+      explanation: "Figures and tables exist in the present — they continue to display their content whenever the reader looks at them. Present simple ('illustrates') is therefore the correct tense. Past simple ('illustrated') is used for completed events, not for objects that currently exist in the text.",
+    },
+    {
+      prompt: "Which sentence correctly uses present simple for a general scientific truth?",
+      options: [
+        "Higher stress levels impair working memory capacity.",
+        "Higher stress levels are impairing working memory capacity.",
+      ],
+      correct: 0,
+      explanation: "General truths and established scientific principles use present simple, not the present progressive. The present progressive ('are impairing') implies a temporary, ongoing action happening right now — inappropriate for a general principle.",
+    },
+    {
+      prompt: "Which sentence correctly uses past simple to describe the specific actions of a completed study?",
+      options: [
+        "The researchers recruited 120 participants from two secondary schools.",
+        "The researchers recruit 120 participants from two secondary schools.",
+      ],
+      correct: 0,
+      explanation: "Describing the specific procedures of a completed study requires past simple — the recruitment happened at a particular time and is now over. Present simple ('recruit') would be used for general, repeated, or currently true actions, which is incorrect for a past methodology.",
+    },
+    {
+      prompt: "Which sentence correctly uses present simple to describe what the data show?",
+      options: [
+        "The results suggest a positive correlation between reading frequency and vocabulary size.",
+        "The results are suggesting a positive correlation between reading frequency and vocabulary size.",
+      ],
+      correct: 0,
+      explanation: "Stative verbs like 'suggest', 'indicate', 'show', and 'reveal' are not normally used in progressive forms. Academic writing uses present simple for what data or findings show because the relationship is treated as a stable, current truth, not an ongoing progressive action.",
+    },
+  ],
+
+  noun_cl: [
+    // ── That-clauses, Whether-clauses, Fact-clauses ───────────────
+    {
+      prompt: "Which sentence correctly uses a noun clause as the object of a reporting verb?",
+      options: [
+        "The authors suggest that current models underestimate the role of affect.",
+        "The authors suggest current models underestimating the role of affect.",
+      ],
+      correct: 0,
+      explanation: "Reporting verbs like 'suggest', 'argue', and 'claim' take a 'that'-clause as their object. A gerund phrase ('models underestimating...') cannot fill this position correctly. Option B is ungrammatical in standard academic prose.",
+    },
+    {
+      prompt: "Which sentence correctly retains 'that' in an it-construction for formal academic writing?",
+      options: [
+        "It is evident that the results support the hypothesis.",
+        "It is evident the results support the hypothesis.",
+      ],
+      correct: 0,
+      explanation: "While 'that' can sometimes be omitted in informal speech, academic writing retains it in it-constructions for clarity and formality. Omitting 'that' (option B) is considered informal and is avoided in published academic prose.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'the fact that' to introduce a noun clause as subject?",
+      options: [
+        "The fact that participants were self-selected limits the generalisability of the findings.",
+        "The fact which participants were self-selected limits the generalisability of the findings.",
+      ],
+      correct: 0,
+      explanation: "'The fact that' is the fixed expression for introducing a noun clause — 'that' is the complementiser here. 'Which' introduces relative clauses modifying a noun, not a complement clause after 'fact'. Option B is therefore ungrammatical.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'whether' rather than 'if' for an indirect question in formal academic writing?",
+      options: [
+        "The key question is whether the findings can be replicated in other contexts.",
+        "The key question is if the findings can be replicated in other contexts.",
+      ],
+      correct: 0,
+      explanation: "In formal academic writing, 'whether' is preferred over 'if' for indirect questions, particularly in subject or complement positions. 'If' is more common in informal speech and conditional clauses. 'Whether' is considered more precise and more formal.",
+    },
+    {
+      prompt: "Which sentence correctly uses a noun clause after 'evidence'?",
+      options: [
+        "There is compelling evidence that socioeconomic status influences academic attainment.",
+        "There is compelling evidence of socioeconomic status to influence academic attainment.",
+      ],
+      correct: 0,
+      explanation: "After the noun 'evidence', a 'that'-clause is the standard complement structure in academic English. 'Evidence of + noun phrase' is also grammatical, but 'evidence of... to-infinitive' (option B) is not a standard construction and sounds unnatural.",
+    },
+  ],
+
+  zero_art: [
+    // ── Zero Article: Abstract Nouns, Disciplines, General Plurals ─
+    {
+      prompt: "Which sentence correctly uses zero article before the name of an academic discipline?",
+      options: [
+        "Linguistics draws on psychology, anthropology, and philosophy.",
+        "The linguistics draws on the psychology, the anthropology, and the philosophy.",
+      ],
+      correct: 0,
+      explanation: "Names of academic disciplines are proper nouns and take zero article when used in their general sense. Adding 'the' (option B) would imply specific, bounded fields being referred to in context — incorrect for general disciplinary reference.",
+    },
+    {
+      prompt: "Which sentence correctly uses zero article before a general plural noun?",
+      options: [
+        "Students who receive regular feedback tend to improve more rapidly.",
+        "The students who receive regular feedback tend to improve more rapidly.",
+      ],
+      correct: 0,
+      explanation: "'Students' with zero article refers to students in general — any student, everywhere. 'The students' (option B) would refer to a specific group of students already identified in context. When making a general claim about a category, zero article is correct.",
+    },
+    {
+      prompt: "Which sentence correctly uses zero article before an uncountable abstract noun in a general statement?",
+      options: [
+        "Evidence plays a crucial role in academic argumentation.",
+        "An evidence plays a crucial role in academic argumentation.",
+      ],
+      correct: 0,
+      explanation: "'Evidence' is an uncountable noun and cannot be preceded by the indefinite article 'a/an', which is used only with singular countable nouns. Abstract uncountable nouns (evidence, knowledge, research, information) take zero article when used in general statements.",
+    },
+    {
+      prompt: "Which sentence correctly uses zero article to make a general claim about a type of research?",
+      options: [
+        "Longitudinal studies offer insights that cross-sectional designs cannot provide.",
+        "The longitudinal studies offer insights that the cross-sectional designs cannot provide.",
+      ],
+      correct: 0,
+      explanation: "Zero article before a general plural ('longitudinal studies') signals that the claim is about the category as a whole — all longitudinal studies, by their nature. 'The longitudinal studies' (option B) would refer to a specific set of studies previously mentioned.",
+    },
+    {
+      prompt: "Which sentence correctly uses zero article before the name of a methodology?",
+      options: [
+        "Grounded theory was developed as an inductive approach to qualitative research.",
+        "The grounded theory was developed as an inductive approach to qualitative research.",
+      ],
+      correct: 0,
+      explanation: "Named methodologies and proper noun frameworks (Grounded Theory, Discourse Analysis, Thematic Analysis) take zero article when referring to the methodology in general. 'The grounded theory' (option B) would imply a specific, already-identified version, which is inappropriate for an introductory general reference.",
+    },
+  ],
+
+  real_cond: [
+    // ── If + Present Simple, Will/May/Can ─────────────────────────
+    {
+      prompt: "Which sentence correctly forms a real conditional?",
+      options: [
+        "If the sample size is increased, the findings will be more reliable.",
+        "If the sample size will be increased, the findings will be more reliable.",
+      ],
+      correct: 0,
+      explanation: "Real conditionals follow the pattern: if + present simple, will/may/can + base form. The if-clause uses present simple to describe the condition — never 'will'. Using 'will' in the if-clause (option B) is a common error in academic writing.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'may' in the result clause of a real conditional?",
+      options: [
+        "If the correlation holds across larger samples, it may indicate a genuine causal link.",
+        "If the correlation holds across larger samples, it would indicate a genuine causal link.",
+      ],
+      correct: 0,
+      explanation: "'May' is appropriate in the result clause of a real conditional when the outcome is possible but not certain — consistent with appropriate academic hedging. 'Would' (option B) belongs in hypothetical conditionals (if + past simple, would + base form), not real ones.",
+    },
+    {
+      prompt: "Which sentence correctly uses a real conditional to state an implication of evidence?",
+      options: [
+        "If these findings are replicated, they will provide strong support for the theoretical model.",
+        "If these findings were replicated, they would provide strong support for the theoretical model.",
+      ],
+      correct: 0,
+      explanation: "When the writer treats replication as a genuine, plausible possibility (not a hypothetical or counterfactual), a real conditional is used: if + present simple, will + base form. The hypothetical form (option B: if + past simple, would) implies the writer considers replication unlikely or imaginary.",
+    },
+    {
+      prompt: "Which sentence correctly uses a real conditional to frame a methodological recommendation?",
+      options: [
+        "If future studies include larger and more diverse samples, the results will be more generalisable.",
+        "If future studies included larger and more diverse samples, the results would be more generalisable.",
+      ],
+      correct: 0,
+      explanation: "A real conditional (if + present simple, will) frames a genuine recommendation — the writer expects or hopes this will happen. The hypothetical form (option B: if + past, would) implies the writer doubts future studies will follow the recommendation, which is typically not the intended tone in a recommendations section.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'can' in the result clause of a real conditional?",
+      options: [
+        "If the variables are controlled effectively, researchers can draw stronger causal inferences.",
+        "If the variables are controlled effectively, researchers could draw stronger causal inferences.",
+      ],
+      correct: 0,
+      explanation: "'Can' in the result clause of a real conditional expresses ability or possibility under the stated condition. 'Could' (option B) introduces greater tentativeness and is more typical of hypothetical conditionals — it softens the claim to the point where it may understate the practical benefit being recommended.",
+    },
+  ],
+
+  parallel: [
+    // ── Parallel Grammatical Forms ────────────────────────────────
+    {
+      prompt: "Which sentence correctly maintains parallel structure in a list of research aims?",
+      options: [
+        "The study aimed to identify patterns, to analyse relationships, and to evaluate outcomes.",
+        "The study aimed to identify patterns, analysing relationships, and an evaluation of outcomes.",
+      ],
+      correct: 0,
+      explanation: "All three items in a list of aims must share the same grammatical form. Option A consistently uses 'to + base verb' (to identify, to analyse, to evaluate). Option B mixes a to-infinitive, a gerund, and a noun phrase — a parallelism error that disrupts the balance of the sentence.",
+    },
+    {
+      prompt: "Which sentence correctly uses parallel structure in a research methods description?",
+      options: [
+        "Data were collected through interviews, observations, and document analysis.",
+        "Data were collected through interviews, making observations, and we analysed documents.",
+      ],
+      correct: 0,
+      explanation: "Option A lists three parallel noun phrases (interviews, observations, document analysis). Option B mixes a noun, a gerund phrase, and a full clause — a broken parallel that is grammatically inconsistent and stylistically awkward.",
+    },
+    {
+      prompt: "Which sentence correctly uses parallel structure in a contrastive comparison?",
+      options: [
+        "Quantitative methods prioritise breadth; qualitative methods prioritise depth.",
+        "Quantitative methods prioritise breadth; whereas depth is what qualitative methods focus on.",
+      ],
+      correct: 0,
+      explanation: "Option A uses a balanced parallel structure: subject + verb + noun object on each side of the semicolon, creating a clean rhetorical contrast. Option B uses a subordinate clause with inverted emphasis, which breaks the grammatical symmetry and is less elegant for academic contrast.",
+    },
+    {
+      prompt: "Which sentence correctly uses parallel infinitive structure in a thesis statement?",
+      options: [
+        "This paper seeks to examine the causes, to assess the consequences, and to propose solutions.",
+        "This paper seeks to examine the causes, an assessment of the consequences, and proposing solutions.",
+      ],
+      correct: 0,
+      explanation: "After 'seeks to', each subsequent item must also use 'to + base verb' for parallelism. Option A does so consistently. Option B switches to a noun phrase ('an assessment') and a gerund ('proposing'), breaking the parallel structure begun with 'to examine'.",
+    },
+    {
+      prompt: "Which sentence correctly uses parallel structure in a concessive comparison?",
+      options: [
+        "While the approach is time-consuming, it is thorough and well-validated.",
+        "While the approach is time-consuming, thoroughness and it being well-validated are features.",
+      ],
+      correct: 0,
+      explanation: "Option A pairs two parallel adjective complements ('thorough and well-validated') after the linking verb 'is', creating a clean, balanced contrast with 'time-consuming'. Option B attempts to rephrase the same contrast but uses a noun clause as subject and awkward nominalisation, destroying the grammatical balance.",
+    },
+  ],
+
 };
