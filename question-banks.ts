@@ -942,4 +942,474 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  reporting: [
+    // ── Verb strength / claim strength ─────────────────────────
+    {
+      prompt: "Which reporting verb makes the stronger, more confident claim?",
+      options: [
+        "Smith (2018) suggests that cognitive load affects reading speed.",
+        "Smith (2018) demonstrates that cognitive load affects reading speed.",
+      ],
+      correct: 1,
+      explanation: "'Demonstrates' signals that Smith presents strong evidence — it is a factive verb implying truth. 'Suggests' is non-factive and hedged, indicating possibility rather than proof.",
+    },
+    {
+      prompt: "Which reporting verb most strongly endorses the cited claim?",
+      options: [
+        "Jones (2020) claims that the policy reduced inequality.",
+        "Jones (2020) shows that the policy reduced inequality.",
+      ],
+      correct: 1,
+      explanation: "'Shows' is a factive verb — it presupposes the content is true. 'Claims' is non-factive and carries a slight sceptical tone, suggesting the writer is not fully endorsing the view.",
+    },
+    {
+      prompt: "Which reporting verb expresses the most tentative, hedged stance?",
+      options: [
+        "Lee (2019) speculates that microplastics may enter the food chain.",
+        "Lee (2019) confirms that microplastics may enter the food chain.",
+      ],
+      correct: 0,
+      explanation: "'Speculates' signals that Lee is offering an unverified hypothesis. 'Confirms' is a strong factive verb implying the claim has been verified — a much stronger endorsement.",
+    },
+    {
+      prompt: "Which reporting verb is most appropriate when summarising an argument the writer partially disagrees with?",
+      options: [
+        "Brown (2017) proves that economic growth always reduces poverty.",
+        "Brown (2017) contends that economic growth always reduces poverty.",
+      ],
+      correct: 1,
+      explanation: "'Contends' presents Brown's view as a position or argument being put forward, without the writer endorsing it. 'Proves' would mean the writer accepts the claim as definitively established.",
+    },
+    {
+      prompt: "Which reporting verb signals that the cited author is making an unsupported or controversial assertion?",
+      options: [
+        "Harrison (2021) asserts that all educational achievement gaps are caused by poverty.",
+        "Harrison (2021) acknowledges that all educational achievement gaps are caused by poverty.",
+      ],
+      correct: 0,
+      explanation: "'Asserts' signals a strong claim made without necessarily providing full evidence — often used when the writer is sceptical. 'Acknowledges' implies the cited author is conceding a point, which changes the meaning entirely.",
+    },
+
+    // ── Grammatical patterns ────────────────────────────────────
+    {
+      prompt: "Which sentence uses the correct grammatical pattern after 'argue'?",
+      options: [
+        "Chen (2015) argues that market deregulation increases inequality.",
+        "Chen (2015) argues market deregulation increases inequality.",
+      ],
+      correct: 0,
+      explanation: "Most reporting verbs that introduce a proposition take a 'that'-clause: 'argues that + clause'. While 'that' can sometimes be omitted in informal writing, it is retained in formal academic prose for clarity.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'suggest' with a noun phrase object?",
+      options: [
+        "The findings suggest a link between sleep deprivation and cognitive decline.",
+        "The findings suggest that a link between sleep deprivation and cognitive decline.",
+      ],
+      correct: 0,
+      explanation: "'Suggest' can take a noun phrase directly ('suggest a link') or a that-clause ('suggest that there is a link'). Option B incorrectly combines 'that' with a noun phrase, producing a fragment.",
+    },
+    {
+      prompt: "Which sentence uses 'recommend' with the correct grammatical pattern?",
+      options: [
+        "The authors recommend that future studies should include larger samples.",
+        "The authors recommend that future studies include larger samples.",
+      ],
+      correct: 1,
+      explanation: "After 'recommend that', the subjunctive (base form) is used in formal academic English: 'include', not 'should include'. The subjunctive is required after verbs of recommendation in formal registers.",
+    },
+    {
+      prompt: "Which correctly uses 'attribute' as a reporting verb?",
+      options: [
+        "Walsh (2019) attributes the decline to increased competition from imports.",
+        "Walsh (2019) attributes that the decline was caused by increased competition.",
+      ],
+      correct: 0,
+      explanation: "'Attribute' takes the pattern: attribute + noun phrase + 'to' + noun phrase. It does not take a 'that'-clause. Option B incorrectly uses 'that' + clause after 'attributes'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'describe' as a reporting verb?",
+      options: [
+        "Patel (2016) describes the phenomenon as a 'cognitive bottleneck'.",
+        "Patel (2016) describes that the phenomenon is a 'cognitive bottleneck'.",
+      ],
+      correct: 0,
+      explanation: "'Describe' takes the pattern: describe + NP + as + NP/adjective. It does not introduce a 'that'-clause in this sense. 'Describes that' is ungrammatical here.",
+    },
+
+    // ── Tense in reporting ─────────────────────────────────────
+    {
+      prompt: "Which tense is most appropriate when reporting a currently accepted theoretical position?",
+      options: [
+        "Chomsky (1965) argued that language acquisition is innate.",
+        "Chomsky (1965) argues that language acquisition is innate.",
+      ],
+      correct: 1,
+      explanation: "Present simple is used to report ideas that are still considered current or relevant. Past simple suggests the view is now outdated or merely historical. Citing living or influential theories uses present tense.",
+    },
+    {
+      prompt: "Which is most appropriate when reporting a specific finding from a completed study?",
+      options: [
+        "In their 2018 study, Kim and Park found that anxiety impairs working memory.",
+        "In their 2018 study, Kim and Park find that anxiety impairs working memory.",
+      ],
+      correct: 0,
+      explanation: "A specific completed study is typically reported in the past simple ('found'). The reporting verb reflects the time of the study; present tense is used when reporting a general, ongoing claim rather than a specific past result.",
+    },
+    {
+      prompt: "Which sentence correctly maintains tense consistency?",
+      options: [
+        "Miller (2020) argues that poverty causes stress, and he demonstrated this with longitudinal data.",
+        "Miller (2020) argues that poverty causes stress and demonstrates this with longitudinal data.",
+      ],
+      correct: 1,
+      explanation: "Both reporting verbs should be in the same tense when referring to the same source's current position. Mixing 'argues' (present) and 'demonstrated' (past) is inconsistent without a reason for the tense shift.",
+    },
+    {
+      prompt: "Which sentence uses the past simple reporting verb appropriately?",
+      options: [
+        "Darwin (1859) argued that species evolve through natural selection.",
+        "Darwin (1859) argues that species evolve through natural selection.",
+      ],
+      correct: 0,
+      explanation: "Both options are defensible in academic English. However, when reporting historical figures whose work is no longer actively debated as a live position, the past simple is acceptable. Present simple is also widely used — but past is more natural for 19th-century scholarship.",
+    },
+    {
+      prompt: "When using a reporting verb in the present perfect, which is correct?",
+      options: [
+        "Recent studies have shown that loneliness is a significant health risk.",
+        "Recent studies have showed that loneliness is a significant health risk.",
+      ],
+      correct: 0,
+      explanation: "The past participle of 'show' is 'shown', not 'showed'. 'Showed' is the simple past form. Present perfect passive: have/has + shown.",
+    },
+
+    // ── Choosing the right verb ────────────────────────────────
+    {
+      prompt: "Which reporting verb most accurately introduces a methodological procedure?",
+      options: [
+        "The authors employed a mixed-methods approach.",
+        "The authors speculated a mixed-methods approach.",
+      ],
+      correct: 0,
+      explanation: "'Employed' is appropriate for describing a method or tool used. 'Speculated' means to conjecture without evidence — it cannot take a noun phrase like 'a mixed-methods approach' in this sense.",
+    },
+    {
+      prompt: "Which reporting verb best introduces a statement where the author concedes a weakness?",
+      options: [
+        "The researchers acknowledge that their sample was not fully representative.",
+        "The researchers imply that their sample was not fully representative.",
+      ],
+      correct: 0,
+      explanation: "'Acknowledge' is used when an author explicitly admits or concedes a point. 'Imply' means to suggest indirectly, without stating it — which would change the meaning of what the author did.",
+    },
+    {
+      prompt: "Which reporting verb is most appropriate for introducing a conclusion drawn from data?",
+      options: [
+        "Garcia (2017) concludes that the data support the hypothesis.",
+        "Garcia (2017) imagines that the data support the hypothesis.",
+      ],
+      correct: 0,
+      explanation: "'Concludes' correctly introduces a logical endpoint drawn from evidence. 'Imagines' implies unfounded conjecture — it would be insulting and inaccurate as a neutral reporting verb.",
+    },
+    {
+      prompt: "Which verb correctly reports that an author is responding critically to another's work?",
+      options: [
+        "Wong (2021) challenges the assumption that market forces ensure efficiency.",
+        "Wong (2021) repeats the assumption that market forces ensure efficiency.",
+      ],
+      correct: 0,
+      explanation: "'Challenges' signals critical engagement — the author is questioning or disputing an assumption. 'Repeats' would mean Wong is simply restating the assumption, which misrepresents a critical argument.",
+    },
+    {
+      prompt: "Which reporting verb correctly signals that the author is drawing the reader's attention to something?",
+      options: [
+        "The authors note that the sample excluded non-native speakers.",
+        "The authors invent that the sample excluded non-native speakers.",
+      ],
+      correct: 0,
+      explanation: "'Note' is used to flag a point, limitation, or observation — common in academic writing. 'Invent' means to create something new and cannot function as a reporting verb in this context.",
+    },
+
+    // ── Verb + preposition / complementation ───────────────────
+    {
+      prompt: "Which sentence uses the correct preposition after 'focus'?",
+      options: [
+        "The study focuses on the relationship between diet and mental health.",
+        "The study focuses about the relationship between diet and mental health.",
+      ],
+      correct: 0,
+      explanation: "'Focus on' is the correct collocation — 'focus' takes the preposition 'on'. 'Focus about' is not a standard English prepositional collocation.",
+    },
+    {
+      prompt: "Which sentence uses 'refer' correctly?",
+      options: [
+        "The author refers to this phenomenon as 'epistemic injustice'.",
+        "The author refers this phenomenon as 'epistemic injustice'.",
+      ],
+      correct: 0,
+      explanation: "'Refer to' requires 'to': 'refers to X as Y'. Omitting 'to' is ungrammatical in this pattern.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'account for'?",
+      options: [
+        "This theory fails to account for cross-cultural variation.",
+        "This theory fails to account cross-cultural variation.",
+      ],
+      correct: 0,
+      explanation: "'Account for' is a phrasal verb — the preposition 'for' is obligatory. 'Account' without 'for' does not carry the same meaning of 'explain' or 'explain the presence of'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'differ' as a reporting verb?",
+      options: [
+        "The two studies differ in their conclusions about causation.",
+        "The two studies differ about their conclusions about causation.",
+      ],
+      correct: 0,
+      explanation: "'Differ in' is the correct collocation when specifying the dimension of difference. 'Differ about' can be used with people disagreeing, but is not standard when comparing what study conclusions say.",
+    },
+    {
+      prompt: "Which correctly uses 'point' as a reporting verb?",
+      options: [
+        "Liu (2022) points out that the data may be skewed by self-selection bias.",
+        "Liu (2022) points that the data may be skewed by self-selection bias.",
+      ],
+      correct: 0,
+      explanation: "'Point out' is a phrasal reporting verb meaning to draw attention to something. 'Point' alone cannot introduce a that-clause in this reporting sense — 'out' is obligatory.",
+    },
+
+    // ── Factive vs non-factive ─────────────────────────────────
+    {
+      prompt: "Which sentence uses a factive verb, presupposing the content is true?",
+      options: [
+        "The authors reveal that the placebo had a measurable neurological effect.",
+        "The authors allege that the placebo had a measurable neurological effect.",
+      ],
+      correct: 0,
+      explanation: "'Reveal' is factive — it presupposes that what is revealed is true. 'Allege' is non-factive and signals that the claim is unverified or disputed.",
+    },
+    {
+      prompt: "Which sentence uses a non-factive verb, leaving the truth of the claim open?",
+      options: [
+        "The study established that early exposure reduces risk.",
+        "The study proposed that early exposure reduces risk.",
+      ],
+      correct: 1,
+      explanation: "'Proposed' is non-factive — it presents the content as a hypothesis put forward, not a confirmed fact. 'Established' is strongly factive, implying the claim has been definitively proven.",
+    },
+    {
+      prompt: "A writer wants to report a claim neutrally without endorsing or doubting it. Which verb is most appropriate?",
+      options: [
+        "states",
+        "proves",
+      ],
+      correct: 0,
+      explanation: "'States' is a neutral reporting verb that presents content without evaluation. 'Proves' is factive and strongly endorses the claim as definitively established — not a neutral stance.",
+    },
+    {
+      prompt: "Which verb signals the writer's agreement with the cited claim?",
+      options: [
+        "recognises",
+        "alleges",
+      ],
+      correct: 0,
+      explanation: "'Recognises' is a factive verb implying the writer accepts the claim as correct. 'Alleges' implies scepticism or that the claim is unverified — the writer does not endorse it.",
+    },
+    {
+      prompt: "Which reporting verb is most appropriate when critically distancing yourself from a source's claim?",
+      options: [
+        "claims",
+        "demonstrates",
+      ],
+      correct: 0,
+      explanation: "'Claims' is non-factive and can signal the writer's scepticism — it presents the content as asserted but not necessarily true. 'Demonstrates' would mean the writer accepts the claim as proven.",
+    },
+
+    // ── Integral vs non-integral citation ──────────────────────
+    {
+      prompt: "Which is an integral citation (author as grammatical subject)?",
+      options: [
+        "Ahmed (2019) argues that biodiversity loss is irreversible.",
+        "Biodiversity loss is argued to be irreversible (Ahmed, 2019).",
+      ],
+      correct: 0,
+      explanation: "In an integral citation, the author's name appears as the grammatical subject of the reporting verb. In a non-integral citation, the author is placed in parentheses and the finding takes the subject position.",
+    },
+    {
+      prompt: "Which is a non-integral citation?",
+      options: [
+        "Sharma (2020) found that meditation reduces cortisol levels.",
+        "Meditation has been found to reduce cortisol levels (Sharma, 2020).",
+      ],
+      correct: 1,
+      explanation: "A non-integral citation places the citation in parentheses and foregrounds the finding as subject. Integral citations foreground the author as grammatical subject — a choice that can emphasise who made the claim.",
+    },
+    {
+      prompt: "Which non-integral passive construction is grammatically correct?",
+      options: [
+        "The link between stress and illness has been well documented (Cohen & Wills, 1985).",
+        "The link between stress and illness has well documented (Cohen & Wills, 1985).",
+      ],
+      correct: 0,
+      explanation: "The present perfect passive requires 'has/have + been + past participle'. Omitting 'been' ('has well documented') is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'according to' to introduce a non-integral citation?",
+      options: [
+        "According to Frost (2014), exposure to nature reduces stress hormones.",
+        "According Frost (2014), exposure to nature reduces stress hormones.",
+      ],
+      correct: 0,
+      explanation: "'According to' is a fixed prepositional phrase — 'to' is obligatory. 'According Frost' omits the preposition and is ungrammatical.",
+    },
+    {
+      prompt: "When a writer uses an integral citation, what effect does this typically have?",
+      options: [
+        "It gives greater prominence to the author and their role in making the claim.",
+        "It gives greater prominence to the finding and foregrounds the content.",
+      ],
+      correct: 0,
+      explanation: "Integral citations ('Smith argues that...') foreground the author as the agent of the claim — useful when the author's identity or stance is significant. Non-integral citations foreground the finding itself.",
+    },
+
+    // ── Reporting in literature reviews ───────────────────────
+    {
+      prompt: "Which sentence is most appropriate for synthesising two sources that agree?",
+      options: [
+        "Both García (2016) and Müller (2018) argue that income inequality drives political polarisation.",
+        "García (2016) argues that income inequality drives political polarisation. Müller (2018) argues that income inequality drives political polarisation.",
+      ],
+      correct: 0,
+      explanation: "Synthesising sources by combining them in a single sentence with 'both...and' is more efficient and shows the writer is actively comparing the literature rather than simply summarising sources in isolation.",
+    },
+    {
+      prompt: "Which sentence most effectively signals contrast between two sources?",
+      options: [
+        "While Nguyen (2017) concludes that the intervention is effective, Park (2019) finds little evidence of lasting impact.",
+        "Nguyen (2017) concludes that the intervention is effective. Park (2019) finds little evidence of lasting impact.",
+      ],
+      correct: 0,
+      explanation: "Using a concessive connector ('while') within a single sentence explicitly signals the contrast between the two sources. Placing them in separate sentences leaves the relationship implicit.",
+    },
+    {
+      prompt: "Which reporting verb is most appropriate for introducing a research gap?",
+      options: [
+        "Previous studies have neglected the role of peer influence in adolescent decision-making.",
+        "Previous studies have invented the role of peer influence in adolescent decision-making.",
+      ],
+      correct: 0,
+      explanation: "'Neglected' signals that an important topic has been overlooked in the literature — a standard way to justify a new study. 'Invented' implies the previous studies fabricated something, which is a very different (and accusatory) meaning.",
+    },
+    {
+      prompt: "Which verb is most appropriate for introducing the aim of a study?",
+      options: [
+        "This study seeks to examine the relationship between urbanisation and biodiversity loss.",
+        "This study hopes to examine the relationship between urbanisation and biodiversity loss.",
+      ],
+      correct: 0,
+      explanation: "'Seeks to' is the appropriate academic formulation for stating a study's aim or purpose. 'Hopes to' implies personal desire and is too informal — it attributes emotion to an inanimate study.",
+    },
+    {
+      prompt: "Which sentence most appropriately signals that the current study addresses a gap?",
+      options: [
+        "This paper addresses the lack of longitudinal evidence in this field.",
+        "This paper ignores the lack of longitudinal evidence in this field.",
+      ],
+      correct: 0,
+      explanation: "'Addresses' signals that the paper engages with and responds to an identified gap or problem. 'Ignores' would mean the paper fails to engage with it — the opposite of what the writer intends.",
+    },
+
+    // ── Error identification ────────────────────────────────────
+    {
+      prompt: "Which sentence contains an error in the reporting verb pattern?",
+      options: [
+        "The authors argue that the results are inconclusive.",
+        "The authors argue the results are inconclusive.",
+      ],
+      correct: 1,
+      explanation: "In formal academic writing, the 'that'-complementiser should be retained for clarity: 'argue that the results'. While omitting 'that' is acceptable informally, academic style conventions favour its inclusion.",
+    },
+    {
+      prompt: "Which sentence uses a reporting verb incorrectly?",
+      options: [
+        "The data support the conclusion that the drug is effective.",
+        "The data argue that the drug is effective.",
+      ],
+      correct: 1,
+      explanation: "'Argue' requires a human or institutional agent — data cannot argue. 'Support' is the appropriate verb when data backs a conclusion. This is a common error in academic writing.",
+    },
+    {
+      prompt: "Which sentence contains an error?",
+      options: [
+        "Chen (2020) identifies three limitations in the study.",
+        "Chen (2020) identifys three limitations in the study.",
+      ],
+      correct: 1,
+      explanation: "The third-person singular present simple of 'identify' is 'identifies', not 'identifys'. Verbs ending in consonant + -y follow the rule: change -y to -ies.",
+    },
+    {
+      prompt: "Which reporting structure is grammatically incorrect?",
+      options: [
+        "It is suggested by the authors that further testing is required.",
+        "It is suggested by the authors further testing is required.",
+      ],
+      correct: 1,
+      explanation: "The impersonal passive reporting structure requires a 'that'-clause: 'it is suggested that...'. Omitting 'that' in this construction creates a grammatically ambiguous sentence.",
+    },
+    {
+      prompt: "Which sentence uses 'highlight' incorrectly?",
+      options: [
+        "The review highlights several methodological inconsistencies.",
+        "The review highlights that several methodological inconsistencies.",
+      ],
+      correct: 1,
+      explanation: "'Highlight' followed directly by 'that' and a noun phrase (not a full clause) is ungrammatical. Option B would require a full clause: 'highlights that several inconsistencies exist'. Option A correctly uses 'highlight' + NP.",
+    },
+    {
+      prompt: "Which reporting verb best introduces a finding that contradicts the researcher's hypothesis?",
+      options: [
+        "The results reveal that the intervention had no significant effect.",
+        "The results confirm that the intervention had no significant effect.",
+      ],
+      correct: 0,
+      explanation: "'Reveal' is appropriate when results disclose something — including unexpected findings. 'Confirm' implies the finding matched a prediction, which contradicts the idea that it is surprising or contrary to the hypothesis.",
+    },
+    {
+      prompt: "Which verb correctly reports an author making an explicit comparison?",
+      options: [
+        "Obi (2019) compares the two models in terms of predictive validity.",
+        "Obi (2019) contrasts the two models have different predictive validity.",
+      ],
+      correct: 0,
+      explanation: "'Compares' takes a noun phrase object directly ('compares the two models'). Option B incorrectly attempts to use 'contrasts' with a that-clause ('contrasts the two models have...'), which is ungrammatical.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'maintain' as a reporting verb?",
+      options: [
+        "Despite the new evidence, some scholars maintain that the theory is still valid.",
+        "Despite the new evidence, some scholars maintain the theory to still be valid.",
+      ],
+      correct: 0,
+      explanation: "'Maintain' in the reporting sense takes a that-clause: 'maintain that + clause'. The pattern 'maintain + NP + to-infinitive' is not standard when 'maintain' means 'to continue to assert'.",
+    },
+    {
+      prompt: "Which sentence uses 'build on' correctly as a reporting verb phrase?",
+      options: [
+        "This study builds on the framework proposed by Crenshaw (1989).",
+        "This study builds on that the framework proposed by Crenshaw (1989).",
+      ],
+      correct: 0,
+      explanation: "'Build on' takes a noun phrase object ('builds on the framework'). It does not introduce a that-clause. Option B incorrectly inserts 'that' between the phrasal verb and its NP object.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'emphasise' as a reporting verb?",
+      options: [
+        "The authors emphasise the importance of replication in scientific research.",
+        "The authors emphasise of the importance of replication in scientific research.",
+      ],
+      correct: 0,
+      explanation: "'Emphasise' takes a direct NP object with no preposition: 'emphasise the importance'. 'Emphasise of' is ungrammatical — inserting 'of' between the verb and its object creates a prepositional error.",
+    },
+  ],
+
 };
