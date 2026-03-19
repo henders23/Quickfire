@@ -3298,4 +3298,474 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  perfect: [
+    // ── Present perfect vs simple past: core distinction ───────
+    {
+      prompt: "Which tense is most appropriate for reporting a finding that remains relevant to the current discussion?",
+      options: [
+        "Research has shown that sleep deprivation impairs cognitive performance.",
+        "Research showed that sleep deprivation impaired cognitive performance.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('has shown') connects past research to the present moment, signalling that the finding is still valid and relevant. The simple past ('showed') would suggest the finding is no longer considered current or applicable.",
+    },
+    {
+      prompt: "Which tense is most appropriate when referring to a specific completed study with a named date?",
+      options: [
+        "In 2018, Kim and Park found that exercise reduces cortisol levels.",
+        "In 2018, Kim and Park have found that exercise reduces cortisol levels.",
+      ],
+      correct: 0,
+      explanation: "When a specific past time is given ('in 2018'), the simple past is required. The present perfect cannot be used with a specific completed past time reference — it expresses an unspecified time with present relevance.",
+    },
+    {
+      prompt: "Which tense is correct for a literature review statement with no specified time?",
+      options: [
+        "Several studies have investigated the link between poverty and educational attainment.",
+        "Several studies investigated the link between poverty and educational attainment.",
+      ],
+      correct: 0,
+      explanation: "Without a specific past time reference, the present perfect is preferred in literature reviews to signal that the body of research is ongoing and relevant now. Simple past would suggest the research is closed and no longer active.",
+    },
+    {
+      prompt: "Which tense correctly describes a single completed past action at a known point in time?",
+      options: [
+        "Fleming discovered penicillin in 1928.",
+        "Fleming has discovered penicillin in 1928.",
+      ],
+      correct: 0,
+      explanation: "The present perfect cannot be used with a specific past time adverbial like 'in 1928'. Simple past is required when the time of completion is specified and in the past.",
+    },
+    {
+      prompt: "Which tense is more appropriate when summarising what a field has established up to the present?",
+      options: [
+        "Decades of research have established a strong link between stress and illness.",
+        "Decades of research established a strong link between stress and illness.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('have established') presents the accumulated findings as having present validity — the link is considered established now. Simple past would imply the link was established but is no longer necessarily accepted.",
+    },
+
+    // ── Time adverbials with present perfect ──────────────────
+    {
+      prompt: "Which time adverbial correctly triggers the present perfect?",
+      options: [
+        "Interest in this topic has grown considerably in recent years.",
+        "Interest in this topic grew considerably in recent years.",
+      ],
+      correct: 0,
+      explanation: "'In recent years' refers to a period extending up to the present — it requires the present perfect. Simple past is used for periods clearly finished ('in the 1990s'), not ones that include now.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'recently' with the present perfect?",
+      options: [
+        "Several longitudinal studies have recently challenged this assumption.",
+        "Several longitudinal studies recently challenged this assumption.",
+      ],
+      correct: 0,
+      explanation: "'Recently' typically collocates with the present perfect in academic writing because it implies a time up to and including the present. Simple past with 'recently' is possible informally but the present perfect is strongly preferred in formal prose.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'yet' with the present perfect?",
+      options: [
+        "A satisfactory explanation has not yet been offered.",
+        "A satisfactory explanation did not yet offer.",
+      ],
+      correct: 0,
+      explanation: "'Yet' in negative statements typically collocates with the present perfect ('has not yet been offered'). It refers to something that was expected to happen by now but has not. Option B uses simple past incorrectly and has a passive construction error.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'so far' with the present perfect?",
+      options: [
+        "So far, the evidence has been inconclusive.",
+        "So far, the evidence was inconclusive.",
+      ],
+      correct: 0,
+      explanation: "'So far' refers to the period from the past up to and including the present moment — it requires the present perfect. Simple past ('was') would suggest the period is over and things may have changed.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'already' with the present perfect?",
+      options: [
+        "This limitation has already been acknowledged in previous studies.",
+        "This limitation already acknowledged in previous studies.",
+      ],
+      correct: 0,
+      explanation: "'Already' signals that something happened before the current point — it typically collocates with the present perfect in formal writing. Option B omits the auxiliary 'has been', making it ungrammatical.",
+    },
+    {
+      prompt: "Which time expression requires the simple past, not the present perfect?",
+      options: [
+        "Last year, the government published a review of the policy.",
+        "Last year, the government has published a review of the policy.",
+      ],
+      correct: 0,
+      explanation: "'Last year' is a specific completed past time — it requires the simple past. The present perfect cannot be used with expressions that locate an event at a specific point clearly in the past ('yesterday', 'last year', 'in 2015', 'when I was a student').",
+    },
+
+    // ── Present perfect in literature reviews ─────────────────
+    {
+      prompt: "Which tense is standard at the start of a literature review to frame the field?",
+      options: [
+        "The relationship between diet and mental health has received growing attention.",
+        "The relationship between diet and mental health received growing attention.",
+      ],
+      correct: 0,
+      explanation: "Literature reviews conventionally open with the present perfect to frame the field as an ongoing conversation with present relevance. Simple past would imply interest has now waned.",
+    },
+    {
+      prompt: "Which sentence uses the correct tense to introduce a gap in the literature?",
+      options: [
+        "However, few studies have examined the role of peer influence in this context.",
+        "However, few studies examined the role of peer influence in this context.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('have examined') signals that the gap persists up to the present — justifying the current study. Simple past would suggest the gap existed in the past but may now be closed.",
+    },
+    {
+      prompt: "Which sentence correctly mixes tenses when moving from a general trend to a specific study?",
+      options: [
+        "Research has increasingly focused on behavioural interventions. One early study by Marcus (1998) found that brief counselling reduced smoking rates.",
+        "Research has increasingly focused on behavioural interventions. One early study by Marcus (1998) has found that brief counselling has reduced smoking rates.",
+      ],
+      correct: 0,
+      explanation: "The present perfect frames the general ongoing trend; simple past reports the specific 1998 study. Using present perfect for a named past study ('Marcus (1998) has found') is incorrect when the time of publication is specified.",
+    },
+    {
+      prompt: "Which sentence uses the present perfect correctly to introduce a consensus?",
+      options: [
+        "Scholars have broadly agreed that income inequality has increased since the 1980s.",
+        "Scholars broadly agreed that income inequality increased since the 1980s.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('have broadly agreed') presents the consensus as current. 'Since the 1980s' requires the present perfect ('has increased') for the period from the 1980s to now. Simple past with 'since' is ungrammatical.",
+    },
+    {
+      prompt: "Which tense correctly refers to the current paper's own contribution?",
+      options: [
+        "The present study has sought to address this gap by examining longitudinal data.",
+        "The present study sought to address this gap by examining longitudinal data.",
+      ],
+      correct: 1,
+      explanation: "When authors describe their own study's aims or approach, simple past is typically used in the body of the paper, since the study is a completed event being reported. Present perfect can appear in abstracts, but simple past is more standard for in-text method descriptions.",
+    },
+
+    // ── Present perfect passive ────────────────────────────────
+    {
+      prompt: "Which sentence uses the present perfect passive correctly?",
+      options: [
+        "The methodology has been replicated across twelve independent studies.",
+        "The methodology has replicated across twelve independent studies.",
+      ],
+      correct: 0,
+      explanation: "Present perfect passive = have/has + been + past participle. 'Has been replicated' is correct. 'Has replicated' is present perfect active — but 'methodology' cannot do the replicating, so passive is required.",
+    },
+    {
+      prompt: "Which sentence uses the present perfect passive correctly?",
+      options: [
+        "A number of competing theories have been proposed to explain this phenomenon.",
+        "A number of competing theories have proposed to explain this phenomenon.",
+      ],
+      correct: 0,
+      explanation: "Theories are proposed by researchers — the passive is needed. 'Have been proposed' (present perfect passive) is correct. 'Have proposed' would be active, implying the theories themselves do the proposing.",
+    },
+    {
+      prompt: "Which is the correct present perfect passive form?",
+      options: [
+        "The data have been verified by two independent coders.",
+        "The data have been verifying by two independent coders.",
+      ],
+      correct: 0,
+      explanation: "Present perfect passive requires: have/has + been + past participle. 'Have been verified' is correct. 'Have been verifying' is present perfect continuous active — 'verifying' is the present participle, not the past participle.",
+    },
+    {
+      prompt: "Which sentence uses subject-verb agreement correctly in the present perfect passive?",
+      options: [
+        "The results have been published in two peer-reviewed journals.",
+        "The results has been published in two peer-reviewed journals.",
+      ],
+      correct: 0,
+      explanation: "'Results' is plural, requiring the plural auxiliary 'have'. 'Has been published' would be correct only with a singular subject ('the result has been published'). Subject-verb agreement applies to the auxiliary in the present perfect.",
+    },
+    {
+      prompt: "Which sentence correctly uses the present perfect passive with a modal?",
+      options: [
+        "These findings should have been reported in the main text.",
+        "These findings should been reported in the main text.",
+      ],
+      correct: 0,
+      explanation: "Modal + past perfect passive = modal + have been + past participle. 'Should have been reported' is correct. 'Should been' omits 'have', which is required — the perfect aspect needs the auxiliary 'have'.",
+    },
+
+    // ── Past perfect ───────────────────────────────────────────
+    {
+      prompt: "Which sentence correctly uses the past perfect to show one past action preceded another?",
+      options: [
+        "The data had already been cleaned before the analysis began.",
+        "The data were already cleaned before the analysis began.",
+      ],
+      correct: 0,
+      explanation: "Past perfect ('had been cleaned') explicitly marks that cleaning was completed before another past event ('analysis began'). Simple past ('were cleaned') does not signal this sequence as clearly — it could be read as simultaneous.",
+    },
+    {
+      prompt: "Which sentence uses the past perfect correctly in reported speech?",
+      options: [
+        "The authors stated that previous models had failed to account for this variable.",
+        "The authors stated that previous models have failed to account for this variable.",
+      ],
+      correct: 0,
+      explanation: "In reported speech with a past reporting verb ('stated'), the present perfect backshifts to past perfect: 'have failed' → 'had failed'. Using present perfect after a past reporting verb is a tense sequence error.",
+    },
+    {
+      prompt: "Which sentence uses the past perfect appropriately?",
+      options: [
+        "By the time the second study was published, the first had already attracted widespread criticism.",
+        "By the time the second study was published, the first already attracted widespread criticism.",
+      ],
+      correct: 0,
+      explanation: "The past perfect ('had already attracted') correctly signals that criticism of the first study preceded the publication of the second. Without 'had', the sequence is implied but not grammatically marked.",
+    },
+    {
+      prompt: "Which sentence uses the past perfect passive correctly?",
+      options: [
+        "The instrument had been validated in a pilot study before the main data collection.",
+        "The instrument was validated in a pilot study before the main data collection.",
+      ],
+      correct: 0,
+      explanation: "Past perfect passive ('had been validated') precisely signals that validation was completed before data collection began — useful in methods sections to clarify sequencing. Simple past also works but is less explicit about sequence.",
+    },
+
+    // ── Present perfect continuous ─────────────────────────────
+    {
+      prompt: "Which sentence uses the present perfect continuous correctly?",
+      options: [
+        "Researchers have been investigating the causes of antibiotic resistance for decades.",
+        "Researchers have been investigate the causes of antibiotic resistance for decades.",
+      ],
+      correct: 0,
+      explanation: "Present perfect continuous = have/has + been + present participle (-ing). 'Have been investigating' is correct. 'Have been investigate' omits the -ing suffix, making it ungrammatical.",
+    },
+    {
+      prompt: "Which tense best emphasises the ongoing and continuing nature of a research activity?",
+      options: [
+        "Scientists have been working to develop a malaria vaccine since the 1980s.",
+        "Scientists worked to develop a malaria vaccine since the 1980s.",
+      ],
+      correct: 0,
+      explanation: "Present perfect continuous ('have been working') emphasises the continuous, unfinished nature of the effort from the 1980s to the present. Simple past ('worked') would imply the effort has ended. 'Since' also triggers the perfect aspect.",
+    },
+    {
+      prompt: "Which sentence uses the present perfect continuous appropriately to describe ongoing research attention?",
+      options: [
+        "The field has been moving towards more participatory research methods.",
+        "The field moved towards more participatory research methods.",
+      ],
+      correct: 0,
+      explanation: "Present perfect continuous signals an ongoing shift that began in the past and continues now — appropriate for describing a trend in a field. Simple past implies the shift occurred and is now complete.",
+    },
+
+    // ── Choosing between tenses: academic contexts ─────────────
+    {
+      prompt: "Which tense is most appropriate for describing the content of a text that is still read today?",
+      options: [
+        "Foucault argues that power operates through discourse.",
+        "Foucault argued that power operated through discourse.",
+      ],
+      correct: 0,
+      explanation: "For describing the content or arguments of canonical texts — particularly those still read and debated — the present simple or present perfect are used, not past simple. Past simple would imply Foucault's ideas are outdated or no longer relevant.",
+    },
+    {
+      prompt: "Which sentence correctly uses the present perfect to introduce the current study's rationale?",
+      options: [
+        "Despite its importance, this area has received limited empirical attention.",
+        "Despite its importance, this area received limited empirical attention.",
+      ],
+      correct: 0,
+      explanation: "'Has received limited attention' signals that the gap persists up to the present, directly justifying the current study. Simple past ('received') would suggest the gap was in the past and may now be filled, weakening the justification.",
+    },
+    {
+      prompt: "Which sentence uses the correct tense for describing general scientific knowledge?",
+      options: [
+        "Studies have consistently shown that exercise improves mood.",
+        "Studies consistently showed that exercise improved mood.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('have shown') presents the accumulated evidence as currently valid. The embedded verb 'improves' is present simple because it describes a general truth. Using simple past throughout would imply this is outdated knowledge.",
+    },
+    {
+      prompt: "Which tense is correct when describing what happens in the current paper?",
+      options: [
+        "Section 3 presents the theoretical framework.",
+        "Section 3 has presented the theoretical framework.",
+      ],
+      correct: 0,
+      explanation: "When describing what a section, table, or figure does or contains, the present simple is used — this is a 'performative' use describing the text itself. Present perfect would imply the presentation happened at some point before now.",
+    },
+
+    // ── Error identification ────────────────────────────────────
+    {
+      prompt: "Which sentence contains a tense error?",
+      options: [
+        "Since the 1990s, the number of publications on this topic has grown exponentially.",
+        "Since the 1990s, the number of publications on this topic grew exponentially.",
+      ],
+      correct: 1,
+      explanation: "'Since' marks a period from a past point to the present — it requires the present perfect. 'Grew' (simple past) is incorrect with 'since' when the period extends to the present.",
+    },
+    {
+      prompt: "Which sentence contains a tense error?",
+      options: [
+        "Smith (2019) found that the intervention reduced anxiety symptoms.",
+        "Smith (2019) has found that the intervention has reduced anxiety symptoms.",
+      ],
+      correct: 1,
+      explanation: "When a specific author and year are cited, the simple past is required. 'Smith (2019) has found' incorrectly uses the present perfect with a specific past time reference.",
+    },
+    {
+      prompt: "Which sentence contains an error in present perfect formation?",
+      options: [
+        "The researchers have conducted three pilot studies.",
+        "The researchers have conduct three pilot studies.",
+      ],
+      correct: 1,
+      explanation: "Present perfect requires: have/has + past participle. 'Have conduct' uses the base form — 'conducted' (past participle) is required.",
+    },
+    {
+      prompt: "Which sentence correctly uses the present perfect with 'for'?",
+      options: [
+        "Scholars have debated this question for over a century.",
+        "Scholars debated this question for over a century.",
+      ],
+      correct: 0,
+      explanation: "'For + duration' referring to a period extending to the present requires the present perfect. Simple past with 'for + duration' would imply the debate is now over — present perfect keeps it open and ongoing.",
+    },
+    {
+      prompt: "Which sentence contains a subject-verb agreement error in the present perfect?",
+      options: [
+        "Each of the three studies has been replicated independently.",
+        "Each of the three studies have been replicated independently.",
+      ],
+      correct: 1,
+      explanation: "'Each' is always singular and takes a singular verb. 'Each of the three studies has been' is correct. 'Have been' incorrectly agrees with 'studies' rather than with 'each'.",
+    },
+
+    // ── Present perfect vs simple past: nuanced cases ──────────
+    {
+      prompt: "Which tense is more appropriate in an abstract describing what the paper has done?",
+      options: [
+        "This paper has examined the relationship between housing policy and health outcomes.",
+        "This paper examined the relationship between housing policy and health outcomes.",
+      ],
+      correct: 0,
+      explanation: "In abstracts, the present perfect is commonly used to describe what the paper has done or found — the research is framed as having current relevance. Simple past is also used, but present perfect is typical for abstracts presenting contributions.",
+    },
+    {
+      prompt: "Which sentence uses the correct tense when moving from established knowledge to a new point?",
+      options: [
+        "While much research has focused on adults, relatively few studies have examined adolescents.",
+        "While much research focused on adults, relatively few studies examined adolescents.",
+      ],
+      correct: 0,
+      explanation: "Both clauses describe the current state of the literature — ongoing situations with present relevance. Present perfect in both clauses is the standard academic literature review form.",
+    },
+    {
+      prompt: "Which is correct when describing a result that no longer holds?",
+      options: [
+        "Early studies suggested a strong link, but this has since been challenged.",
+        "Early studies have suggested a strong link, but this has since been challenged.",
+      ],
+      correct: 0,
+      explanation: "Simple past ('suggested') is appropriate for 'early studies' — a clearly completed past activity. The contrast with 'has since been challenged' (present perfect) neatly shows the shift from past belief to current position.",
+    },
+    {
+      prompt: "Which correctly uses the present perfect to connect a past event to a present state?",
+      options: [
+        "The landscape has changed dramatically since the legislation was introduced.",
+        "The landscape changed dramatically since the legislation was introduced.",
+      ],
+      correct: 0,
+      explanation: "'Since' with a past reference point requires the present perfect for the main clause: 'has changed'. The 'since'-clause itself uses simple past ('was introduced') because it refers to the fixed past point.",
+    },
+    {
+      prompt: "Which sentence uses the most appropriate tense pair in a results summary?",
+      options: [
+        "The analysis revealed three themes, which have been described in detail in Section 4.",
+        "The analysis has revealed three themes, which have been described in detail in Section 4.",
+      ],
+      correct: 0,
+      explanation: "'The analysis revealed' (simple past) reports a completed research action. 'Which have been described in Section 4' (present perfect) refers to the current document — the description is present and accessible. This tense combination is standard in academic results sections.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'ever' with the present perfect?",
+      options: [
+        "This is the largest dataset that has ever been used in this field.",
+        "This is the largest dataset that was ever used in this field.",
+      ],
+      correct: 0,
+      explanation: "'Ever' in superlative constructions ('the largest... ever') collocates with the present perfect ('has ever been used') — it refers to the entire period up to and including the present. Simple past ('was ever used') implies the field no longer exists or the period is closed.",
+    },
+    {
+      prompt: "Which correctly uses 'to date' with the present perfect?",
+      options: [
+        "To date, no study has definitively established a causal mechanism.",
+        "To date, no study definitively established a causal mechanism.",
+      ],
+      correct: 0,
+      explanation: "'To date' means 'up until now' — it spans from the past to the present moment and therefore requires the present perfect. Simple past would imply the period has ended.",
+    },
+    {
+      prompt: "Which sentence correctly uses the present perfect with 'over the past decade'?",
+      options: [
+        "Public interest in this topic has intensified over the past decade.",
+        "Public interest in this topic intensified over the past decade.",
+      ],
+      correct: 0,
+      explanation: "'Over the past decade' describes a period from ten years ago to the present — the present perfect is required because the period includes now. Simple past ('intensified') would imply the decade ended at some point before now.",
+    },
+    {
+      prompt: "Which sentence correctly distinguishes completed past action from present relevance?",
+      options: [
+        "Watson and Crick described the structure of DNA in 1953; this discovery has transformed biology.",
+        "Watson and Crick have described the structure of DNA in 1953; this discovery transformed biology.",
+      ],
+      correct: 0,
+      explanation: "Simple past ('described... in 1953') is correct for the specific past event. Present perfect ('has transformed') correctly signals the discovery's ongoing relevance to the present. Option B makes two errors: present perfect with a specific year, and simple past for a continuing impact.",
+    },
+    {
+      prompt: "Which sentence uses the present perfect correctly in a conclusion?",
+      options: [
+        "This study has demonstrated that early intervention produces measurable benefits.",
+        "This study demonstrated that early intervention produces measurable benefits.",
+      ],
+      correct: 0,
+      explanation: "In conclusions, the present perfect ('has demonstrated') frames the study's contribution as having current significance — it presents the finding as now part of the evidence base. Simple past is also used, but present perfect is standard when summarising a contribution.",
+    },
+    {
+      prompt: "Which is the correct form of the present perfect with an irregular verb?",
+      options: [
+        "Subsequent studies have borne out the original hypothesis.",
+        "Subsequent studies have beared out the original hypothesis.",
+      ],
+      correct: 0,
+      explanation: "The past participle of 'bear (out)' is 'borne', not 'beared'. Irregular verb forms must be learned: bear → bore → borne. 'Have beared' is a common learner error.",
+    },
+    {
+      prompt: "Which sentence correctly uses the present perfect with 'emerge'?",
+      options: [
+        "A new consensus has emerged in the past five years.",
+        "A new consensus emerged in the past five years.",
+      ],
+      correct: 0,
+      explanation: "'In the past five years' describes a period that includes the present — the present perfect is required. Although this can overlap with simple past in some varieties of English, academic convention strongly favours the present perfect for periods spanning to now.",
+    },
+    {
+      prompt: "Which correctly uses the present perfect to frame an unanswered question?",
+      options: [
+        "The question of why this effect occurs has not been fully resolved.",
+        "The question of why this effect occurs was not fully resolved.",
+      ],
+      correct: 0,
+      explanation: "The present perfect ('has not been fully resolved') signals that the question remains open up to and including the present — motivating the current study. Simple past ('was not resolved') might imply it has since been resolved, or simply refers to a past state.",
+    },
+  ],
+
 };
