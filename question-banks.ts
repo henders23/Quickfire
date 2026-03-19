@@ -3768,4 +3768,480 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  cleft: [
+    // ── It-cleft: core form ────────────────────────────────────
+    {
+      prompt: "Which sentence is a correctly formed it-cleft?",
+      options: [
+        "It is the sample size that limits the generalisability of these findings.",
+        "It is the sample size which limits the generalisability of these findings.",
+      ],
+      correct: 0,
+      explanation: "In it-clefts, the relative clause is introduced by 'that' — not 'which'. 'It is X that...' is the standard academic form. Using 'which' is a very common error and is not accepted in formal cleft constructions.",
+    },
+    {
+      prompt: "Which is a correctly formed it-cleft with a person as the focus?",
+      options: [
+        "It was Foucault who introduced the concept of biopower.",
+        "It was Foucault that introduced the concept of biopower.",
+      ],
+      correct: 0,
+      explanation: "When the clefted element refers to a person, 'who' is preferred over 'that' in formal academic writing ('It was Foucault who...'). Both are grammatically possible, but 'who' is the standard choice for human referents.",
+    },
+    {
+      prompt: "Which sentence uses an it-cleft correctly to focus on a noun phrase?",
+      options: [
+        "It is the interaction between variables that accounts for most of the variance.",
+        "It is the interaction between variables accounts for most of the variance.",
+      ],
+      correct: 0,
+      explanation: "An it-cleft requires 'that' (or 'who/which') to introduce the second clause: 'It is X that + clause'. Omitting 'that' produces an ungrammatical string.",
+    },
+    {
+      prompt: "Which it-cleft correctly focuses on a time adverbial?",
+      options: [
+        "It was not until the 1980s that interest in this area grew substantially.",
+        "It was not until the 1980s when interest in this area grew substantially.",
+      ],
+      correct: 0,
+      explanation: "The pattern 'It was not until X that...' is an it-cleft — 'that' introduces the main clause. Using 'when' instead of 'that' breaks the cleft structure and is incorrect in formal writing.",
+    },
+    {
+      prompt: "Which it-cleft correctly focuses on a reason clause?",
+      options: [
+        "It is because the data are incomplete that the conclusions must remain tentative.",
+        "It is because the data are incomplete, the conclusions must remain tentative.",
+      ],
+      correct: 0,
+      explanation: "It-clefts can focus on reason clauses introduced by 'because': 'It is because X that Y'. Option B omits 'that', which is required to complete the cleft structure.",
+    },
+    {
+      prompt: "Which sentence correctly inverts an it-cleft for negative emphasis?",
+      options: [
+        "It is not the quantity of data that matters most, but the quality.",
+        "It is not the quantity of data which matters most, but the quality.",
+      ],
+      correct: 0,
+      explanation: "Negative it-clefts follow the same 'that' rule as positive ones: 'It is not X that...' The contrast ('but the quality') is a natural extension of the cleft structure for emphasis.",
+    },
+    {
+      prompt: "Which sentence is an it-cleft with a correctly formed structure?",
+      options: [
+        "It is this tension between theory and practice that motivates the current inquiry.",
+        "This tension between theory and practice that motivates the current inquiry.",
+      ],
+      correct: 0,
+      explanation: "Option B omits 'it is' — the essential dummy subject + copula — and is therefore not a complete sentence. Every it-cleft must begin with 'It is/was...'",
+    },
+
+    // ── It-cleft: tense and agreement ─────────────────────────
+    {
+      prompt: "Which it-cleft uses the correct tense when referring to a past study?",
+      options: [
+        "It was the absence of a control group that weakened the original study.",
+        "It is the absence of a control group that weakened the original study.",
+      ],
+      correct: 0,
+      explanation: "Tense in the 'it is/was' opener should match the time frame. Since the reference is to a past study, 'It was' is appropriate. 'It is' is used for present situations or general truths.",
+    },
+    {
+      prompt: "Which it-cleft uses correct subject-verb agreement in the relative clause?",
+      options: [
+        "It is the findings that have attracted the most debate.",
+        "It is the findings that has attracted the most debate.",
+      ],
+      correct: 0,
+      explanation: "The verb in the relative clause agrees with the clefted noun phrase ('the findings'), not with the dummy 'it'. 'The findings' is plural, so 'have attracted' is correct — not 'has attracted'.",
+    },
+    {
+      prompt: "Which is the correct it-cleft when the focused element is a prepositional phrase?",
+      options: [
+        "It is in this context that the theoretical contribution becomes clear.",
+        "It is in this context which the theoretical contribution becomes clear.",
+      ],
+      correct: 0,
+      explanation: "Even when the clefted element is a prepositional phrase, the relative clause must be introduced by 'that', not 'which'. 'It is in this context that...' is the standard form.",
+    },
+
+    // ── Wh-cleft (pseudo-cleft): core form ────────────────────
+    {
+      prompt: "Which sentence is a correctly formed wh-cleft (pseudo-cleft)?",
+      options: [
+        "What this study reveals is the complexity of the causal chain.",
+        "What this study reveals is that the complexity of the causal chain.",
+      ],
+      correct: 0,
+      explanation: "A wh-cleft has the form: Wh-clause + be + focused element. 'What this study reveals is the complexity of the causal chain' is correct. Option B inserts a spurious 'that' after 'is', breaking the structure.",
+    },
+    {
+      prompt: "Which is the standard wh-cleft (wh-clause first)?",
+      options: [
+        "What requires further attention is the key limitation of the study.",
+        "The key limitation of the study is what the study requires further attention to.",
+      ],
+      correct: 0,
+      explanation: "A standard wh-cleft places the wh-clause first: 'What requires further attention is the key limitation of the study.' Option B reverses and distorts the structure awkwardly.",
+    },
+    {
+      prompt: "Which wh-cleft uses 'what' correctly to focus on a conclusion?",
+      options: [
+        "What the analysis demonstrates is that cultural factors play a decisive role.",
+        "That the analysis demonstrates is what cultural factors play a decisive role.",
+      ],
+      correct: 0,
+      explanation: "'What + clause + is + focused element' is the wh-cleft pattern. Option B scrambles the structure — 'That the analysis demonstrates' cannot open a wh-cleft, and 'what cultural factors play' is ungrammatical in this slot.",
+    },
+    {
+      prompt: "Which wh-cleft correctly emphasises a course of action?",
+      options: [
+        "What the researchers did was conduct a series of semi-structured interviews.",
+        "What the researchers did was conducted a series of semi-structured interviews.",
+      ],
+      correct: 0,
+      explanation: "In a wh-cleft with 'do', the focused verb phrase after 'was' takes the bare infinitive, not the past tense: 'What X did was [base form]'. 'Was conduct' (bare infinitive) is correct; 'was conducted' uses the past tense, which is wrong here.",
+    },
+    {
+      prompt: "Which wh-cleft correctly emphasises a noun phrase outcome?",
+      options: [
+        "What emerged from the data was a clear pattern of exclusion.",
+        "What emerged from the data was that a clear pattern of exclusion.",
+      ],
+      correct: 0,
+      explanation: "When the focused element is a noun phrase ('a clear pattern of exclusion'), no 'that' is needed after 'was'. 'That' is needed only if the focused element is a full clause ('What emerged was that X is Y').",
+    },
+    {
+      prompt: "Which wh-cleft uses the correct verb after 'is'?",
+      options: [
+        "What is needed is a more nuanced approach to data collection.",
+        "What is needed is a more nuanced approach, to collect data better.",
+      ],
+      correct: 0,
+      explanation: "'What is needed is a more nuanced approach to data collection' — wh-clause states the need; the focused element ('a more nuanced approach to data collection') follows 'is' as a single coherent noun phrase. Option B splits the noun phrase with a comma and adds an unnecessary infinitive.",
+    },
+
+    // ── All-cleft ──────────────────────────────────────────────
+    {
+      prompt: "Which sentence is a correctly formed all-cleft?",
+      options: [
+        "All that is required is a minor adjustment to the sampling procedure.",
+        "Everything that is required is a minor adjustment to the sampling procedure.",
+      ],
+      correct: 0,
+      explanation: "'All that + clause + is + focused element' is the all-cleft pattern — it restricts the claim exhaustively ('just a minor adjustment'). 'Everything that is required is...' is not the standard all-cleft form.",
+    },
+    {
+      prompt: "Which all-cleft uses correct verb agreement?",
+      options: [
+        "All that remains is to validate the model against external datasets.",
+        "All that remains are to validate the model against external datasets.",
+      ],
+      correct: 0,
+      explanation: "'All that remains' takes a singular copula ('is'). The focused element is a singular infinitive clause. 'Are' is incorrect — agreement follows the singular 'all' in this construction.",
+    },
+
+    // ── Identifying cleft types ────────────────────────────────
+    {
+      prompt: "Which sentence is an it-cleft rather than a wh-cleft?",
+      options: [
+        "It is the methodological rigour that distinguishes this study.",
+        "What distinguishes this study is the methodological rigour.",
+      ],
+      correct: 0,
+      explanation: "An it-cleft begins with 'It is/was X that...'. A wh-cleft begins with a wh-clause ('What...'). Both foreground the same element, but through different structures.",
+    },
+    {
+      prompt: "Which sentence is a wh-cleft rather than an it-cleft?",
+      options: [
+        "What the study fails to address is the role of contextual factors.",
+        "It is the role of contextual factors that the study fails to address.",
+      ],
+      correct: 0,
+      explanation: "Option A is a wh-cleft ('What + clause + is + X'). Option B is an it-cleft ('It is X that...'). Both emphasise 'the role of contextual factors', but through different structures.",
+    },
+    {
+      prompt: "Which is an it-cleft used to focus on a time adverbial?",
+      options: [
+        "It was only after the intervention that significant gains were observed.",
+        "Only after the intervention were significant gains observed.",
+      ],
+      correct: 0,
+      explanation: "Option A is an it-cleft focusing on the time adverbial 'only after the intervention'. Option B is fronting with subject-auxiliary inversion — a different emphasis device. The it-cleft makes the timing explicitly prominent.",
+    },
+
+    // ── Clefts for contrastive focus ──────────────────────────
+    {
+      prompt: "Which it-cleft correctly sets up a contrast?",
+      options: [
+        "It is the long-term effects, not the short-term outcomes, that are most significant.",
+        "It is the long-term effects, not the short-term outcomes, which are most significant.",
+      ],
+      correct: 0,
+      explanation: "Contrastive it-clefts can include 'not X' phrases: 'It is X, not Y, that...'. The connector remains 'that', not 'which'. The comma-separated contrast is a stylistically effective academic device.",
+    },
+    {
+      prompt: "Which wh-cleft best signals a contrast between two findings?",
+      options: [
+        "What the data reveal is not correlation but causation.",
+        "What the data reveal is not correlation, causation.",
+      ],
+      correct: 0,
+      explanation: "'What X reveals is not A but B' is the standard wh-cleft pattern for contrastive focus — 'not A but B' is a fixed correlative conjunction. Option B omits 'but', making the contrast unclear.",
+    },
+
+    // ── Clefts in academic functions ──────────────────────────
+    {
+      prompt: "Which sentence uses an it-cleft to signal a paper's key contribution?",
+      options: [
+        "It is the use of longitudinal data that distinguishes this study from previous work.",
+        "The use of longitudinal data distinguishes this study from previous work.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft ('It is X that...') places strong focus on 'the use of longitudinal data'. The simple sentence (Option B) conveys the same meaning but without the explicit foregrounding the cleft provides.",
+    },
+    {
+      prompt: "Which wh-cleft effectively introduces a key argument?",
+      options: [
+        "What this paper argues is that current frameworks are insufficient to account for this phenomenon.",
+        "What this paper is arguing that current frameworks are insufficient to account for this phenomenon.",
+      ],
+      correct: 0,
+      explanation: "'What this paper argues is that...' correctly uses the wh-cleft. Option B inserts 'is' inside the wh-clause ('is arguing') and omits the second 'is', breaking the structure entirely.",
+    },
+    {
+      prompt: "Which it-cleft effectively focuses on a method used?",
+      options: [
+        "It is through ethnographic observation that the researchers gained access to this perspective.",
+        "It is by ethnographic observation which the researchers gained access to this perspective.",
+      ],
+      correct: 0,
+      explanation: "Prepositional phrases of method ('through...') can be clefted: 'It is through X that...'. Option B incorrectly uses 'which' instead of 'that'.",
+    },
+    {
+      prompt: "Which it-cleft appropriately focuses on a researcher's attribution?",
+      options: [
+        "It was Bourdieu who first formalised the concept of cultural capital.",
+        "It was Bourdieu which first formalised the concept of cultural capital.",
+      ],
+      correct: 0,
+      explanation: "For human referents, 'who' is used in the relative clause of an it-cleft. 'Which' is for non-human referents. Since Bourdieu is a person, 'who' is required.",
+    },
+
+    // ── Error identification ────────────────────────────────────
+    {
+      prompt: "Which sentence contains an error in the it-cleft?",
+      options: [
+        "It is the theoretical framework that needs to be refined.",
+        "It is the theoretical framework which needs to be refined.",
+      ],
+      correct: 1,
+      explanation: "It-clefts require 'that', not 'which', in the relative clause. 'It is X that...' is the correct form. Using 'which' is a very common learner error in formal academic writing.",
+    },
+    {
+      prompt: "Which sentence contains a verb agreement error in the wh-cleft?",
+      options: [
+        "What the review identifies is a significant gap in the evidence base.",
+        "What the review identifies are a significant gap in the evidence base.",
+      ],
+      correct: 1,
+      explanation: "The copula in a wh-cleft agrees with the focused element ('a significant gap'), which is singular — so 'is' is correct. 'Are' incorrectly treats the wh-clause as the subject for agreement purposes.",
+    },
+    {
+      prompt: "Which sentence contains a structural error in the it-cleft?",
+      options: [
+        "It is the external validity of the study that has been questioned.",
+        "It is that the external validity of the study has been questioned.",
+      ],
+      correct: 1,
+      explanation: "Option B places a 'that'-clause immediately after 'It is' — this produces an extraposed subject construction, not an it-cleft. An it-cleft must focus a noun phrase or adverbial: 'It is X that...', not 'It is that...'",
+    },
+    {
+      prompt: "Which it-cleft contains a verb agreement error in the relative clause?",
+      options: [
+        "It is the participants who were most affected by the intervention.",
+        "It is the participants who was most affected by the intervention.",
+      ],
+      correct: 0,
+      explanation: "'The participants' is plural, so the verb in the relative clause must be plural: 'who were'. 'Who was' incorrectly uses a singular verb with a plural antecedent.",
+    },
+    {
+      prompt: "Which wh-cleft contains a structural error?",
+      options: [
+        "What remains unclear is the direction of the causal relationship.",
+        "What remains unclear is unclear the direction of the causal relationship.",
+      ],
+      correct: 0,
+      explanation: "Option B redundantly inserts 'is unclear' after the copula, producing 'is unclear the direction...' — an ungrammatical string. The wh-cleft structure is: 'What [clause] + is + [focused element]'.",
+    },
+
+    // ── Choosing between cleft and non-cleft ──────────────────
+    {
+      prompt: "Which version most clearly foregrounds the causal factor?",
+      options: [
+        "It is the lack of transparency that undermines public trust in institutions.",
+        "The lack of transparency undermines public trust in institutions.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft ('It is X that...') explicitly highlights 'the lack of transparency' as the specific causal factor — particularly useful when making a pointed or contested claim. The simple sentence conveys the same idea but without foregrounding.",
+    },
+    {
+      prompt: "Which sentence uses a cleft to most effectively emphasise a surprising finding?",
+      options: [
+        "It was the control group, not the treatment group, that showed the largest improvement.",
+        "The control group showed the largest improvement, not the treatment group.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft with contrastive insert ('It was X, not Y, that...') foregrounds the surprising element from the start. Option B delivers the contrast as an afterthought, which is less emphatic.",
+    },
+
+    // ── Clefts and information structure ──────────────────────
+    {
+      prompt: "In the it-cleft 'It is the dependent variable that has been overlooked', what is the focus?",
+      options: [
+        "The dependent variable.",
+        "The fact that something has been overlooked.",
+      ],
+      correct: 0,
+      explanation: "In an it-cleft, the element between 'It is' and 'that' is the focus — the information the writer highlights as most significant. 'The dependent variable' is the focus; 'that has been overlooked' is presupposed background.",
+    },
+    {
+      prompt: "Which it-cleft correctly places new information in the focus position?",
+      options: [
+        "It is the ethical implications that previous studies have neglected.",
+        "It is the previous studies that neglected the ethical implications.",
+      ],
+      correct: 0,
+      explanation: "Clefts place the most significant new information in the focus slot. If the argument is that 'ethical implications' have been neglected, that topic should be clefted. Option B clefts 'the previous studies', which is typically given/old information.",
+    },
+    {
+      prompt: "Which wh-cleft correctly presents a conclusion as new information?",
+      options: [
+        "What the evidence ultimately suggests is that the relationship is bidirectional.",
+        "What is bidirectional is what the evidence ultimately suggests.",
+      ],
+      correct: 0,
+      explanation: "The standard wh-cleft places new information after 'is': 'What X suggests is [new conclusion]'. Option B reverses this — placing 'what is bidirectional' in the wh-slot, which conventionally holds given/presupposed information.",
+    },
+    {
+      prompt: "Which sentence uses a cleft to link back to a prior sentence while foregrounding new information?",
+      options: [
+        "Three factors were identified. It is the third factor — social capital — that proves most influential.",
+        "Three factors were identified. The third factor, social capital, proved most influential.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft picks up the shared reference ('the third factor') and foregrounds 'social capital' as the key new piece of information, creating cohesion while signalling emphasis. Option B conveys the same idea but without explicit foregrounding.",
+    },
+
+    // ── Cleft formation from base sentences ───────────────────
+    {
+      prompt: "Which is the correct it-cleft of 'Peer review ensures academic quality' — focusing on the subject?",
+      options: [
+        "It is peer review that ensures academic quality.",
+        "It is peer review which ensures academic quality.",
+      ],
+      correct: 0,
+      explanation: "To form an it-cleft focusing on the subject, place it between 'It is' and 'that': 'It is [subject] that [rest of sentence]'. The connector is always 'that', not 'which'.",
+    },
+    {
+      prompt: "Which correctly forms an it-cleft of 'The researchers collected the data in rural areas' — focusing on the place?",
+      options: [
+        "It was in rural areas that the researchers collected the data.",
+        "It was in rural areas where the researchers collected the data.",
+      ],
+      correct: 0,
+      explanation: "Even when the focus is a place ('in rural areas'), the connector in an it-cleft is 'that' — not 'where'. 'Where' introduces a relative clause modifying a noun, not a cleft clause.",
+    },
+    {
+      prompt: "Which correctly converts 'The experiment disproved the null hypothesis' into a wh-cleft?",
+      options: [
+        "What the experiment did was disprove the null hypothesis.",
+        "What the experiment did was disproved the null hypothesis.",
+      ],
+      correct: 0,
+      explanation: "In a wh-cleft with 'do', the verb phrase following 'was' takes the bare infinitive ('disprove'), not the past tense ('disproved'). The 'did' in the wh-clause already marks past tense.",
+    },
+
+    // ── Register and style ─────────────────────────────────────
+    {
+      prompt: "Which cleft is more appropriate for formal academic writing?",
+      options: [
+        "It is the theoretical contribution that sets this work apart.",
+        "What sets this work apart, it's the theoretical contribution.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft ('It is X that...') is the standard formal variant. Option B combines a wh-clause with a comma splice and a contracted 'it's' — all inappropriate in academic prose.",
+    },
+    {
+      prompt: "Which is the most concise and academically appropriate way to cleft the object?",
+      options: [
+        "It is methodological consistency that the field currently lacks.",
+        "The thing that the field currently lacks is methodological consistency.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft is more economical and formal. 'The thing that...' is a weakened pseudo-cleft variant — acceptable but wordier and slightly informal compared to the it-cleft.",
+    },
+    {
+      prompt: "Which sentence uses a cleft most effectively in an academic conclusion?",
+      options: [
+        "It is the integration of qualitative and quantitative methods that represents the key contribution of this study.",
+        "The key contribution of this study is integrating qualitative and quantitative methods.",
+      ],
+      correct: 0,
+      explanation: "In a conclusion, the it-cleft gives maximum prominence to the contribution ('the integration of qualitative and quantitative methods'). Option B is clear but does not signal the importance of the contribution as explicitly.",
+    },
+    {
+      prompt: "Which sentence uses a cleft to highlight an unexpected agent?",
+      options: [
+        "It was the junior researchers, not the senior staff, who identified the critical flaw.",
+        "The junior researchers, not the senior staff, identified the critical flaw.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft foregrounds 'the junior researchers' as the surprising agent, making the contrast more rhetorically forceful. Option B conveys the same content but without the same emphasis on the unexpected nature of the finding.",
+    },
+    {
+      prompt: "Which wh-cleft is correctly formed to focus on a recommendation?",
+      options: [
+        "What future research should do is examine the long-term effects of the intervention.",
+        "What future research should do is examined the long-term effects of the intervention.",
+      ],
+      correct: 0,
+      explanation: "After 'What X does/should do is', the following verb takes the bare infinitive. 'Examine' (bare infinitive) is correct; 'examined' (past tense) is incorrect in this wh-cleft pattern.",
+    },
+    {
+      prompt: "Which it-cleft correctly focuses on an instrument or means?",
+      options: [
+        "It is through these interviews that a richer understanding can be achieved.",
+        "It is through these interviews where a richer understanding can be achieved.",
+      ],
+      correct: 0,
+      explanation: "Prepositional phrases of means are clefted with 'that': 'It is through X that...'. 'Where' cannot be used to introduce the cleft clause — it is used only in relative clauses modifying place nouns.",
+    },
+    {
+      prompt: "Which it-cleft uses the correct structure when the focus is an adverb of manner?",
+      options: [
+        "It is cautiously that these conclusions should be interpreted.",
+        "It is cautiously which these conclusions should be interpreted.",
+      ],
+      correct: 0,
+      explanation: "Adverbs can be clefted in it-clefts: 'It is cautiously that...'. The connector is 'that', never 'which'. Although clefting adverbs of manner is less common, it is grammatically well-formed and used for emphasis.",
+    },
+    {
+      prompt: "Which sentence best demonstrates an it-cleft used to rebut a previous claim?",
+      options: [
+        "It is the structural factors, not individual choices, that drive inequality.",
+        "The structural factors drive inequality rather than individual choices.",
+      ],
+      correct: 0,
+      explanation: "The it-cleft with 'not X' ('It is X, not Y, that...') is the most forceful way to rebut a competing explanation. It places the writer's preferred factor in focus and explicitly names what is being displaced. Option B states the same contrast but less emphatically.",
+    },
+    {
+      prompt: "Which sentence uses a wh-cleft to effectively open a discussion section?",
+      options: [
+        "What these findings suggest is that socioeconomic status mediates the observed effect.",
+        "These findings suggest that socioeconomic status mediates the observed effect.",
+      ],
+      correct: 0,
+      explanation: "The wh-cleft ('What these findings suggest is that...') foregrounds the significance of the finding and creates a stronger rhetorical opening for a discussion section. The simple sentence (Option B) is clear but lacks the emphasis the wh-cleft provides.",
+    },
+  ],
+
 };
