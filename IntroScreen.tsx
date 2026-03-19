@@ -1,7 +1,7 @@
 import { ArrowLeft, Play, Zap, Clock, Target } from "lucide-react";
 import { allConcepts } from "./grammar-map";
 
-export const QUESTIONS_PER_SESSION = 6;
+export const QUESTIONS_PER_SESSION = 10;
 
 interface Props {
   conceptId: string;
@@ -73,7 +73,7 @@ export default function IntroScreen({ conceptId, streak, onStart, onBack }: Prop
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 { icon: <Target size={15} color="#22d3ee" />, text: "Choose the correct answer from 2 options." },
-                { icon: <Clock size={15} color="#fbbf24" />, text: "You have 10 seconds per question — answer as quickly as you can." },
+                { icon: <Clock size={15} color="#fbbf24" />, text: "You have 20 seconds per question — answer as quickly as you can." },
                 { icon: <Zap size={15} color={color} fill={color} />, text: "Speed bonus: the faster you answer correctly, the more points you earn." },
               ].map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>

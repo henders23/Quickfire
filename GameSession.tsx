@@ -6,7 +6,7 @@ import { QUESTIONS_PER_SESSION } from "./IntroScreen";
 
 type Phase = "playing" | "feedback" | "results";
 
-const QUESTION_TIME = 10;
+const QUESTION_TIME = 20;
 
 interface Props {
   conceptId: string;
@@ -35,6 +35,19 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
   const [totalTimeBonus, setTotalTimeBonus] = useState(0);
 
   const currentQ = questions[qIndex];
+
+  // Guard: no questions available for this concept yet
+  if (questions.length === 0) {
+    return (
+      <div style={{ background: "#000", minHeight: "100vh", fontFamily: "system-ui, sans-serif", color: "#fff", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
+        <div style={{ color: "#333", fontSize: 32 }}>✦</div>
+        <p style={{ color: "#555", fontSize: 13, margin: 0 }}>No questions available for this concept yet.</p>
+        <button onClick={onBack} style={{ marginTop: 8, background: "none", border: "1px solid #222", color: "#555", cursor: "pointer", padding: "8px 18px", fontSize: 11, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
+          Back to Map
+        </button>
+      </div>
+    );
+  }
 
   useEffect(() => {
     if (phase !== "playing") return;

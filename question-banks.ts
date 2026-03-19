@@ -472,4 +472,474 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  passive: [
+    // ── Identifying the passive ────────────────────────────────
+    {
+      prompt: "Which sentence is in the passive voice?",
+      options: [
+        "The committee approved the proposal unanimously.",
+        "The proposal was approved unanimously by the committee.",
+      ],
+      correct: 1,
+      explanation: "The passive voice places the recipient of the action ('the proposal') as subject, with 'be + past participle' (was approved). The committee is the agent, introduced with 'by'.",
+    },
+    {
+      prompt: "Which sentence is in the passive voice?",
+      options: [
+        "Researchers collected data from 200 participants.",
+        "Data were collected from 200 participants.",
+      ],
+      correct: 1,
+      explanation: "'Data were collected' is passive — 'data' is the subject receiving the action, and 'were collected' is 'be + past participle'. The active version names the researchers as subject.",
+    },
+    {
+      prompt: "Which sentence contains a passive verb form?",
+      options: [
+        "The model predicts a positive correlation between the variables.",
+        "A positive correlation is predicted by the model.",
+      ],
+      correct: 1,
+      explanation: "'Is predicted' is 'be + past participle' — the hallmark of the passive. In option A, the model is the active subject performing the prediction.",
+    },
+    {
+      prompt: "Which verb phrase is in the passive voice?",
+      options: [
+        "have demonstrated",
+        "have been demonstrated",
+      ],
+      correct: 1,
+      explanation: "'Have been demonstrated' is present perfect passive (have/has + been + past participle). 'Have demonstrated' is present perfect active.",
+    },
+    {
+      prompt: "Which sentence uses the passive voice correctly?",
+      options: [
+        "The participants were asked completing a questionnaire.",
+        "The participants were asked to complete a questionnaire.",
+      ],
+      correct: 1,
+      explanation: "After passive 'were asked', the infinitive 'to complete' is required. 'Were asked completing' is ungrammatical — it incorrectly uses the gerund.",
+    },
+
+    // ── Passive in academic register ───────────────────────────
+    {
+      prompt: "Which is more appropriate in an academic methods section?",
+      options: [
+        "We collected blood samples from 40 participants.",
+        "Blood samples were collected from 40 participants.",
+      ],
+      correct: 1,
+      explanation: "The passive is preferred in methods sections to foreground the procedure rather than the researchers, maintaining the objective, impersonal tone expected in academic writing.",
+    },
+    {
+      prompt: "Which sentence best foregrounds the result rather than the researcher?",
+      options: [
+        "Smith (2019) identified three key themes in the data.",
+        "Three key themes were identified in the data (Smith, 2019).",
+      ],
+      correct: 1,
+      explanation: "The passive version foregrounds 'three key themes' — the finding itself — as the topic of the sentence. The parenthetical citation still attributes the work without making the author the grammatical subject.",
+    },
+    {
+      prompt: "Which version is more appropriate in a formal academic paper?",
+      options: [
+        "People widely believe that climate change is anthropogenic.",
+        "It is widely believed that climate change is anthropogenic.",
+      ],
+      correct: 1,
+      explanation: "The impersonal passive 'it is widely believed' avoids the vague 'people' and creates the objective tone expected in academic writing. It also foregrounds the claim rather than who holds it.",
+    },
+    {
+      prompt: "In which section of an academic paper is the passive voice most commonly used?",
+      options: [
+        "The discussion section, to assert new findings",
+        "The methods section, to describe procedures objectively",
+      ],
+      correct: 1,
+      explanation: "The methods section conventionally uses the passive to describe what was done (e.g. 'samples were stored', 'participants were recruited'), keeping the focus on procedure rather than researcher.",
+    },
+    {
+      prompt: "Which sentence maintains an appropriately academic passive register?",
+      options: [
+        "Nobody knows why the effect disappeared in the second trial.",
+        "The reason for the disappearance of the effect in the second trial remains unknown.",
+      ],
+      correct: 1,
+      explanation: "Option B uses a nominalisation ('disappearance') and an impersonal construction ('remains unknown') that avoids the informal 'nobody knows'. This is the expected register in academic writing.",
+    },
+
+    // ── Agent omission ─────────────────────────────────────────
+    {
+      prompt: "Which passive correctly omits the agent because it is obvious or unimportant?",
+      options: [
+        "The data were analysed using SPSS by someone.",
+        "The data were analysed using SPSS.",
+      ],
+      correct: 1,
+      explanation: "When the agent is irrelevant or obvious (here, clearly the researchers), it is omitted. Adding 'by someone' is both redundant and unnatural in academic writing.",
+    },
+    {
+      prompt: "In which sentence is it most appropriate to omit the 'by' agent phrase?",
+      options: [
+        "The antibiotic was discovered by Fleming in 1928.",
+        "The survey was completed by participants.",
+      ],
+      correct: 1,
+      explanation: "In option B, stating 'by participants' is redundant — who else would complete a participant survey? When the agent is self-evident from context, omitting it produces cleaner prose. In option A, Fleming is a noteworthy attribution worth retaining.",
+    },
+    {
+      prompt: "Which sentence uses the passive to foreground unknown agency?",
+      options: [
+        "Someone damaged the equipment during transport.",
+        "The equipment was damaged during transport.",
+      ],
+      correct: 1,
+      explanation: "When the agent is unknown, the passive allows the action and its result to be foregrounded without awkward constructions like 'someone damaged'. This is a core function of the passive.",
+    },
+    {
+      prompt: "Which passive is best because the agent adds no new information?",
+      options: [
+        "Ethical approval was granted by the ethics committee.",
+        "Ethical approval was granted.",
+      ],
+      correct: 1,
+      explanation: "Ethics approval is always granted by an ethics committee — stating this is redundant. Omitting the obvious agent produces more concise academic prose.",
+    },
+    {
+      prompt: "When should the 'by + agent' phrase be retained in a passive sentence?",
+      options: [
+        "When the agent is obvious or unimportant",
+        "When the agent is noteworthy, surprising, or important to the argument",
+      ],
+      correct: 1,
+      explanation: "The agent phrase is worth keeping when it adds informational value — for example, naming a specific researcher, institution, or an unexpected actor that is relevant to the argument.",
+    },
+
+    // ── Passive constructions & forms ──────────────────────────
+    {
+      prompt: "Which correctly uses the present perfect passive?",
+      options: [
+        "The methodology has been refined over the past decade.",
+        "The methodology is refined over the past decade.",
+      ],
+      correct: 0,
+      explanation: "Present perfect passive = have/has + been + past participle. 'Has been refined' correctly links past refinement to the present. 'Is refined' is present simple passive, which does not convey this ongoing relevance.",
+    },
+    {
+      prompt: "Which is the correct past continuous passive?",
+      options: [
+        "The samples were being processed when the power failed.",
+        "The samples were processed when the power failed.",
+      ],
+      correct: 0,
+      explanation: "Past continuous passive = was/were + being + past participle. This conveys an action in progress at a past moment. Option B (past simple passive) implies the processing was completed, not interrupted.",
+    },
+    {
+      prompt: "Which sentence uses the future passive correctly?",
+      options: [
+        "The results will be published in the next issue.",
+        "The results will been published in the next issue.",
+      ],
+      correct: 0,
+      explanation: "Future passive = will + be + past participle. 'Will been published' is ungrammatical — 'been' cannot follow 'will' directly.",
+    },
+    {
+      prompt: "Which is the correct passive form with a modal verb?",
+      options: [
+        "The findings should be interpreted with caution.",
+        "The findings should interpreted with caution.",
+      ],
+      correct: 0,
+      explanation: "Modal passive = modal + be + past participle. 'Should be interpreted' is correct. 'Should interpreted' omits the required auxiliary 'be'.",
+    },
+    {
+      prompt: "Which sentence uses the present passive correctly?",
+      options: [
+        "The results are presented in Table 2.",
+        "The results are presenting in Table 2.",
+      ],
+      correct: 0,
+      explanation: "Present simple passive = am/is/are + past participle. 'Are presented' is correct. 'Are presenting' uses the present participle — this is the present continuous active form and is ungrammatical here.",
+    },
+
+    // ── Passive vs active choice ───────────────────────────────
+    {
+      prompt: "Which version is clearer because active voice makes the agent explicit?",
+      options: [
+        "It was argued by some scholars that the theory was flawed.",
+        "Some scholars argued that the theory was flawed.",
+      ],
+      correct: 1,
+      explanation: "When the agent ('some scholars') is important to the argument and identifiable, active voice is clearer and more direct. Overusing the passive can obscure who is responsible for claims.",
+    },
+    {
+      prompt: "Which choice best follows the academic writing convention for presenting new findings?",
+      options: [
+        "We found that dietary restriction significantly reduced tumour growth.",
+        "Dietary restriction was found to significantly reduce tumour growth.",
+      ],
+      correct: 1,
+      explanation: "In reporting findings, the passive foregrounds the finding itself ('dietary restriction') rather than the researchers. This is the dominant convention in results sections of academic papers.",
+    },
+    {
+      prompt: "Which use of the passive is grammatically and stylistically correct?",
+      options: [
+        "A significant effect was observed for the experimental group.",
+        "A significant effect was observing for the experimental group.",
+      ],
+      correct: 0,
+      explanation: "Passive requires the past participle: 'was observed'. 'Was observing' uses the present participle — this forms the past continuous active, not the passive.",
+    },
+    {
+      prompt: "Which passive correctly uses subject–verb agreement?",
+      options: [
+        "The data was collected over six months.",
+        "The data were collected over six months.",
+      ],
+      correct: 1,
+      explanation: "In formal academic English, 'data' is treated as a plural noun (plural of 'datum'), so it takes the plural verb 'were'. 'Data was' is common informally but 'data were' is the standard academic form.",
+    },
+    {
+      prompt: "Which sentence avoids the weak 'get' passive and uses the formal passive instead?",
+      options: [
+        "The report got completed on time.",
+        "The report was completed on time.",
+      ],
+      correct: 1,
+      explanation: "'Get + past participle' forms an informal passive. In academic writing, 'be + past participle' ('was completed') is the appropriate formal passive construction.",
+    },
+
+    // ── Passive with specific verbs & patterns ─────────────────
+    {
+      prompt: "Which passive correctly uses a verb that takes a complement?",
+      options: [
+        "The approach is considered to be the most reliable.",
+        "The approach is considered to being the most reliable.",
+      ],
+      correct: 0,
+      explanation: "After 'is considered', the infinitive 'to be' is required. 'To being' is ungrammatical — the gerund cannot follow 'to' when functioning as an infinitive marker.",
+    },
+    {
+      prompt: "Which sentence uses the passive correctly with 'report'?",
+      options: [
+        "Side effects were reported by 12% of participants.",
+        "Side effects reported by 12% of participants.",
+      ],
+      correct: 0,
+      explanation: "The passive requires the auxiliary 'be': 'were reported'. Option B is a noun phrase or relative clause fragment — it lacks a main finite verb.",
+    },
+    {
+      prompt: "Which correctly uses the passive in a relative clause?",
+      options: [
+        "The variable that was controlled for in the analysis is temperature.",
+        "The variable that controlled for in the analysis is temperature.",
+      ],
+      correct: 0,
+      explanation: "In the relative clause, 'was controlled for' is the correct passive form. 'Controlled for' without the auxiliary 'was' is ungrammatical as a finite verb in a relative clause.",
+    },
+    {
+      prompt: "Which sentence correctly uses passive voice after 'it'?",
+      options: [
+        "It was concluded that the intervention had no significant effect.",
+        "It concluded that the intervention had no significant effect.",
+      ],
+      correct: 0,
+      explanation: "Impersonal passive constructions use 'It + be + past participle + that-clause' (e.g. 'it was concluded'). 'It concluded' would mean 'it' performed the conclusion — ungrammatical in this context.",
+    },
+    {
+      prompt: "Which sentence uses 'be supposed to' as a passive-like expectation?",
+      options: [
+        "The control group is supposed to receive no treatment.",
+        "The control group supposes to receive no treatment.",
+      ],
+      correct: 0,
+      explanation: "'Is supposed to' expresses an expected or required condition — a semi-passive that takes 'be + supposed + infinitive'. 'Supposes to' is not a grammatical construction in English.",
+    },
+
+    // ── Passive: tense and context ──────────────────────────────
+    {
+      prompt: "Which passive is most appropriate for describing a past completed procedure?",
+      options: [
+        "Participants are randomly assigned to two conditions.",
+        "Participants were randomly assigned to two conditions.",
+      ],
+      correct: 1,
+      explanation: "The methods section describes what was done in a completed study, so the past simple passive ('were assigned') is correct. Present passive is used for describing ongoing or general procedures.",
+    },
+    {
+      prompt: "Which passive is appropriate for describing a general scientific fact?",
+      options: [
+        "ATP is produced during cellular respiration.",
+        "ATP was produced during cellular respiration.",
+      ],
+      correct: 0,
+      explanation: "General scientific truths and processes are described in the present simple passive ('is produced'). Past passive ('was produced') would imply ATP was only produced at a specific time in the past.",
+    },
+    {
+      prompt: "Which passive correctly describes an action that was in progress at a specific past moment?",
+      options: [
+        "The samples were being analysed when the fire alarm sounded.",
+        "The samples were analysed when the fire alarm sounded.",
+      ],
+      correct: 0,
+      explanation: "Past continuous passive ('were being analysed') expresses an action in progress at a past moment. Past simple passive ('were analysed') implies a completed action, not one interrupted.",
+    },
+    {
+      prompt: "Which passive is appropriate for a conclusion that is still considered valid?",
+      options: [
+        "It has been established that the two variables are strongly correlated.",
+        "It was established that the two variables are strongly correlated.",
+      ],
+      correct: 0,
+      explanation: "Present perfect passive ('has been established') signals that the conclusion was reached in the past and remains relevant now. Past simple passive would suggest it is no longer necessarily valid or accepted.",
+    },
+    {
+      prompt: "Which passive correctly uses the past perfect to show that one action preceded another?",
+      options: [
+        "The data had been cleaned before the analysis began.",
+        "The data was cleaned before the analysis began.",
+      ],
+      correct: 0,
+      explanation: "Past perfect passive ('had been cleaned') explicitly signals that cleaning was completed before the analysis started — useful when the sequence of events matters. Past simple passive does not signal this ordering.",
+    },
+
+    // ── Passive: error identification ──────────────────────────
+    {
+      prompt: "Which passive sentence contains a grammatical error?",
+      options: [
+        "The hypothesis was supported by the data.",
+        "The hypothesis was supporting by the data.",
+      ],
+      correct: 1,
+      explanation: "'Was supporting' uses the present participle, not the past participle. The correct passive requires the past participle: 'was supported'.",
+    },
+    {
+      prompt: "Which passive sentence contains an error?",
+      options: [
+        "The variables were controlled for in the regression model.",
+        "The variables were control for in the regression model.",
+      ],
+      correct: 1,
+      explanation: "'Were control' is ungrammatical. The passive requires the past participle: 'were controlled'. The phrasal verb 'control for' must be fully inflected: 'controlled for'.",
+    },
+    {
+      prompt: "Which sentence contains an error in the passive construction?",
+      options: [
+        "A number of confounding factors have been identified.",
+        "A number of confounding factors has been identified.",
+      ],
+      correct: 1,
+      explanation: "'A number of' takes a plural verb in standard usage ('have been identified'). 'Has been identified' treats 'a number' as singular, which is incorrect when 'number' is used in this partitive sense.",
+    },
+    {
+      prompt: "Which sentence is grammatically correct?",
+      options: [
+        "The study was designed to test whether the intervention could be replicated.",
+        "The study was design to test whether the intervention could be replicated.",
+      ],
+      correct: 0,
+      explanation: "'Was designed' is the correct past simple passive (be + past participle). 'Was design' omits the -ed suffix — 'design' is the base form, not a past participle.",
+    },
+    {
+      prompt: "Which sentence uses passive voice correctly throughout?",
+      options: [
+        "The results were recorded and then they were analysed by the team.",
+        "The results were recorded and then analysed.",
+      ],
+      correct: 1,
+      explanation: "When two passive verbs share the same subject and auxiliary, the second 'were' can be omitted: 'recorded and then analysed'. Option A is grammatically correct but unnecessarily wordy.",
+    },
+
+    // ── Passive: function and effect ───────────────────────────
+    {
+      prompt: "What is the primary rhetorical function of the passive voice in academic writing?",
+      options: [
+        "To make sentences shorter and simpler",
+        "To foreground information and maintain an impersonal, objective tone",
+      ],
+      correct: 1,
+      explanation: "The passive foregrounds the object/result of an action (what was done) rather than the agent (who did it), enabling the objective, impersonal register expected in academic prose.",
+    },
+    {
+      prompt: "Which sentence uses the passive to shift emphasis to the result?",
+      options: [
+        "Johnson and Lee developed the framework in 2012.",
+        "The framework was developed in 2012 (Johnson & Lee).",
+      ],
+      correct: 1,
+      explanation: "Passive voice makes 'the framework' the topic of the sentence — foregrounding the contribution rather than who made it. The parenthetical reference still credits the authors.",
+    },
+    {
+      prompt: "Which use of the passive most effectively creates cohesion across two sentences?",
+      options: [
+        "The study collected data from three sites. Researchers chose the sites to reflect regional variation.",
+        "The study collected data from three sites. The sites were chosen to reflect regional variation.",
+      ],
+      correct: 1,
+      explanation: "Option B uses the passive ('were chosen') to make 'the sites' the subject of the second sentence, creating a smooth link back to the topic of the first sentence. This is called 'given-new' structure.",
+    },
+    {
+      prompt: "Which passive construction is most appropriate for describing an established consensus?",
+      options: [
+        "Scholars broadly accept that language shapes cognition.",
+        "It is broadly accepted that language shapes cognition.",
+      ],
+      correct: 1,
+      explanation: "The impersonal passive 'it is broadly accepted that' presents a view as consensus rather than the view of specific agents. This is a standard academic hedging/consensus formula.",
+    },
+    {
+      prompt: "Which sentence correctly uses passive voice to maintain topic continuity?",
+      options: [
+        "The algorithm processes the inputs first. Then the algorithm outputs a probability score.",
+        "The algorithm processes the inputs first. A probability score is then output.",
+      ],
+      correct: 1,
+      explanation: "Option B uses the passive to keep 'a probability score' as the new focus and avoid repeating 'the algorithm'. This topic management is a key reason to choose passive voice in connected prose.",
+    },
+    {
+      prompt: "Which sentence most appropriately uses passive voice to avoid overclaiming?",
+      options: [
+        "Our findings prove that early intervention eliminates developmental delays.",
+        "Early intervention was found to be associated with reduced developmental delays.",
+      ],
+      correct: 1,
+      explanation: "The passive 'was found to be associated with' is more cautious than 'proves...eliminates'. Academic writing requires hedging — especially for causal claims — and the passive form helps achieve this.",
+    },
+    {
+      prompt: "Which sentence uses the passive to emphasise the process rather than the researcher?",
+      options: [
+        "We interviewed participants using a semi-structured protocol.",
+        "Participants were interviewed using a semi-structured protocol.",
+      ],
+      correct: 1,
+      explanation: "The passive ('were interviewed') foregrounds the participants and the procedure. In academic writing, particularly in methods sections, this objectification of the process is the preferred convention.",
+    },
+    {
+      prompt: "Which sentence is an example of a double passive construction?",
+      options: [
+        "The report was expected to be completed by Friday.",
+        "The report was completed and submitted by Friday.",
+      ],
+      correct: 0,
+      explanation: "'Was expected to be completed' contains two passive constructions: 'was expected' (main clause passive) and 'to be completed' (infinitive passive). Option B has one passive followed by an active coordination.",
+    },
+    {
+      prompt: "Which sentence correctly uses passive voice after a causative verb?",
+      options: [
+        "The authors had the data verified by an independent statistician.",
+        "The authors had the data to be verified by an independent statistician.",
+      ],
+      correct: 0,
+      explanation: "With the causative 'have', the pattern is: have + object + past participle ('had the data verified'). 'To be verified' after 'had' + object is ungrammatical in this causative structure.",
+    },
+    {
+      prompt: "Which sentence uses the passive voice in a relative clause correctly?",
+      options: [
+        "The framework that was proposed by Vygotsky remains influential today.",
+        "The framework that proposed by Vygotsky remains influential today.",
+      ],
+      correct: 0,
+      explanation: "In the relative clause, 'was proposed' is the correct passive form (be + past participle). Omitting 'was' leaves 'proposed' without an auxiliary, making the relative clause ungrammatical.",
+    },
+  ],
+
 };
