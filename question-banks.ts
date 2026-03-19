@@ -1412,4 +1412,475 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+  hedging: [
+    // ── What is hedging / why hedge ────────────────────────────
+    {
+      prompt: "Which sentence is appropriately hedged for an academic claim about cause?",
+      options: [
+        "Stress causes cardiovascular disease.",
+        "Stress has been linked to an increased risk of cardiovascular disease.",
+      ],
+      correct: 1,
+      explanation: "Causal claims in academic writing require hedging unless the evidence is overwhelming. 'Has been linked to an increased risk' hedges both the causal direction and the magnitude of the effect.",
+    },
+    {
+      prompt: "Which sentence is over-hedged to the point of becoming meaningless?",
+      options: [
+        "The results might possibly perhaps suggest a potential trend.",
+        "The results suggest a possible trend.",
+      ],
+      correct: 0,
+      explanation: "Stacking 'might', 'possibly', 'perhaps', and 'potential' is redundant and undermines the claim entirely. A single well-chosen hedge ('suggest a possible trend') is more precise and more credible.",
+    },
+    {
+      prompt: "Which sentence is under-hedged for an interpretation in a discussion section?",
+      options: [
+        "This proves that digital technology is damaging children's attention spans.",
+        "This may suggest that digital technology is associated with shorter attention spans in children.",
+      ],
+      correct: 0,
+      explanation: "A single study cannot 'prove' a broad claim. Option A is under-hedged — it overstates certainty. Option B hedges appropriately with 'may suggest' and 'associated with', which is expected in a discussion section.",
+    },
+    {
+      prompt: "Which sentence uses hedging appropriately for a well-established scientific fact?",
+      options: [
+        "Water may freeze at 0°C under standard atmospheric conditions.",
+        "Water freezes at 0°C under standard atmospheric conditions.",
+      ],
+      correct: 1,
+      explanation: "Established, replicable physical facts do not require hedging. Over-hedging known facts ('may freeze') makes the writer sound uncertain about things they should know — it undermines credibility.",
+    },
+    {
+      prompt: "Which sentence uses an appropriate level of hedging for a preliminary finding?",
+      options: [
+        "The data indicate that the treatment may be effective for this patient population.",
+        "The data definitively prove that the treatment is effective for all patients.",
+      ],
+      correct: 0,
+      explanation: "Preliminary findings require cautious hedging. 'Indicate that... may be effective' qualifies both the evidential base ('indicate') and the strength of the claim ('may be'). Option B overclaims scope and certainty.",
+    },
+
+    // ── Lexical verb hedges: appear / seem / tend ──────────────
+    {
+      prompt: "Which sentence correctly uses 'appear' as a hedging verb?",
+      options: [
+        "The results appear to support the hypothesis.",
+        "The results appear supporting the hypothesis.",
+      ],
+      correct: 0,
+      explanation: "'Appear' as a hedging verb takes a to-infinitive: 'appear to + bare infinitive'. 'Appear supporting' uses the gerund, which is ungrammatical in this semi-copular hedging construction.",
+    },
+    {
+      prompt: "Which hedging verb is used correctly?",
+      options: [
+        "Higher temperatures seem to accelerate the reaction rate.",
+        "Higher temperatures seem accelerating the reaction rate.",
+      ],
+      correct: 0,
+      explanation: "'Seem' takes a to-infinitive as a hedging construction: 'seem to + verb'. 'Seem accelerating' is ungrammatical — the present participle cannot follow 'seem' directly in this pattern.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'tend' as a hedging device?",
+      options: [
+        "Smaller firms tend to be more vulnerable to economic shocks.",
+        "Smaller firms tend being more vulnerable to economic shocks.",
+      ],
+      correct: 0,
+      explanation: "'Tend' takes a to-infinitive: 'tend to be'. 'Tend being' is ungrammatical. 'Tend to' softens a generalisation, indicating a pattern rather than a universal rule.",
+    },
+    {
+      prompt: "Which use of 'appear' most effectively hedges an interpretation?",
+      options: [
+        "The intervention appears to have had a limited effect on long-term outcomes.",
+        "The intervention appears having had a limited effect on long-term outcomes.",
+      ],
+      correct: 0,
+      explanation: "The pattern is: appear + to have + past participle (perfect infinitive passive). This hedges a retrospective interpretation. 'Appears having' is ungrammatical.",
+    },
+    {
+      prompt: "Which hedging construction is grammatically correct?",
+      options: [
+        "The pattern seems to be more pronounced in urban than in rural settings.",
+        "The pattern seems to being more pronounced in urban than in rural settings.",
+      ],
+      correct: 0,
+      explanation: "'Seem to be' uses the bare infinitive after 'to'. 'Seem to being' incorrectly uses the gerund where the infinitive is required.",
+    },
+
+    // ── Adverb hedges ──────────────────────────────────────────
+    {
+      prompt: "Which adverb is used appropriately to hedge an academic claim?",
+      options: [
+        "Inequality is arguably the most pressing challenge facing liberal democracies.",
+        "Inequality is definitely the most pressing challenge facing liberal democracies.",
+      ],
+      correct: 0,
+      explanation: "'Arguably' signals that the claim is debatable but defensible — a standard academic hedging adverb. 'Definitely' removes all qualification and is too assertive for a claim about which reasonable people disagree.",
+    },
+    {
+      prompt: "Which adverb hedge is most appropriate for signalling a generalisation with exceptions?",
+      options: [
+        "Participants generally performed better on the visual task.",
+        "Participants universally performed better on the visual task.",
+      ],
+      correct: 0,
+      explanation: "'Generally' acknowledges that the pattern holds in most but not all cases — appropriate for a finding from a sample. 'Universally' claims no exceptions exist, which is rarely supported by empirical data.",
+    },
+    {
+      prompt: "Which adverb is most suitable for hedging a broad claim in a theoretical argument?",
+      options: [
+        "Language acquisition is largely determined by environmental input.",
+        "Language acquisition is completely determined by environmental input.",
+      ],
+      correct: 0,
+      explanation: "'Largely' hedges the degree of determination, allowing for other factors. 'Completely' asserts total determination, which is difficult to support empirically and is likely false — environmental input is important but not the only factor.",
+    },
+    {
+      prompt: "Which sentence uses 'apparently' correctly as an epistemic adverb?",
+      options: [
+        "Apparently, the original data set was lost when the lab was relocated.",
+        "Apparently, two plus two equals four.",
+      ],
+      correct: 0,
+      explanation: "'Apparently' signals that information comes from what has been reported or observed indirectly — appropriate for unverified or second-hand information. Using it for an established mathematical fact is redundant and inappropriate.",
+    },
+    {
+      prompt: "Which hedging adverb is best for signalling that a claim holds in most typical cases?",
+      options: [
+        "Typically, more complex models require more computational power.",
+        "Certainly, more complex models require more computational power.",
+      ],
+      correct: 0,
+      explanation: "'Typically' hedges by signalling that the claim holds under normal conditions but may not in all cases — appropriate for a technical generalisation. 'Certainly' removes the qualification and asserts universal truth.",
+    },
+
+    // ── Adjective and noun hedges ──────────────────────────────
+    {
+      prompt: "Which sentence uses an adjective hedge correctly?",
+      options: [
+        "It is possible that the observed effect is an artefact of the measurement tool.",
+        "It is impossible that the observed effect is an artefact of the measurement tool.",
+      ],
+      correct: 0,
+      explanation: "'It is possible that' is a standard impersonal hedging construction acknowledging uncertainty. 'It is impossible that' asserts certainty of the opposite — ruling out the possibility entirely, which would require strong evidence.",
+    },
+    {
+      prompt: "Which sentence uses a noun hedge correctly?",
+      options: [
+        "There is a tendency for cognitive biases to increase under time pressure.",
+        "There is a certainty for cognitive biases to increase under time pressure.",
+      ],
+      correct: 0,
+      explanation: "'Tendency' hedges a generalisation — it signals a pattern without claiming it always occurs. 'Certainty' removes hedging entirely and overclaims. Note also that 'certainty for' is not a standard collocational pattern.",
+    },
+    {
+      prompt: "Which sentence uses 'likelihood' correctly as a noun hedge?",
+      options: [
+        "There is a likelihood that the variables interact in complex ways.",
+        "There is a likelihood of the variables are interacting in complex ways.",
+      ],
+      correct: 0,
+      explanation: "'Likelihood' takes 'that + clause' ('likelihood that') or 'of + gerund/NP' ('likelihood of interaction'). 'Likelihood of the variables are interacting' mixes two patterns ungrammatically.",
+    },
+    {
+      prompt: "Which adjective hedge is most appropriate for a speculative claim?",
+      options: [
+        "It seems likely that the warming trend will continue over the next decade.",
+        "It seems certain that the warming trend will continue over the next decade.",
+      ],
+      correct: 0,
+      explanation: "'Likely' combined with 'seems' creates a double hedge appropriate for a prediction based on current evidence. 'Certain' removes hedging and overclaims — long-term climate projections carry inherent uncertainty.",
+    },
+    {
+      prompt: "Which sentence uses 'possible' correctly as an impersonal hedging adjective?",
+      options: [
+        "It is possible that cultural factors mediate the relationship.",
+        "It is possible cultural factors mediate the relationship.",
+      ],
+      correct: 0,
+      explanation: "The impersonal construction requires 'that': 'it is possible that + clause'. While omitting 'that' is sometimes acceptable informally, academic writing convention retains it for clarity.",
+    },
+
+    // ── Choosing between hedges ────────────────────────────────
+    {
+      prompt: "Which hedge best signals that the claim is debatable but well-supported?",
+      options: [
+        "Globalisation has arguably widened economic disparities within nations.",
+        "Globalisation has perhaps widened economic disparities within nations.",
+      ],
+      correct: 0,
+      explanation: "'Arguably' signals that the claim is contentious but defensible — the writer is prepared to argue the case. 'Perhaps' is weaker and more uncertain, implying the writer is less confident in the claim.",
+    },
+    {
+      prompt: "Which hedge is more appropriate for signalling a weak statistical trend?",
+      options: [
+        "The data suggest a slight tendency towards improvement in the treatment group.",
+        "The data prove a slight tendency towards improvement in the treatment group.",
+      ],
+      correct: 0,
+      explanation: "'Suggest' is a reporting verb hedge appropriate for non-significant or weak trends. 'Prove' would require definitive statistical evidence — using it for a 'slight tendency' is a major overclaim.",
+    },
+    {
+      prompt: "Which hedging phrase best introduces a possible explanation?",
+      options: [
+        "One possible explanation is that participants misunderstood the instructions.",
+        "The only explanation is that participants misunderstood the instructions.",
+      ],
+      correct: 0,
+      explanation: "'One possible explanation' hedges in two ways: 'one' signals there may be others, and 'possible' signals uncertainty. 'The only explanation' asserts exclusivity — rarely appropriate in academic argument.",
+    },
+    {
+      prompt: "Which hedged claim best reflects appropriate scientific caution?",
+      options: [
+        "The vaccine appears to reduce transmission rates in the short term.",
+        "The vaccine eliminates transmission completely and permanently.",
+      ],
+      correct: 0,
+      explanation: "Option A uses 'appears to' (epistemic verb) and 'in the short term' (scope qualifier) — both appropriate hedges for early evidence. Option B makes two absolute claims ('eliminates completely', 'permanently') unsupported by the evidence base.",
+    },
+    {
+      prompt: "Which hedge is most appropriate for an interpretation that contradicts the hypothesis?",
+      options: [
+        "This unexpected result could indicate a confounding variable not controlled for.",
+        "This unexpected result is evidence that the entire theory is wrong.",
+      ],
+      correct: 0,
+      explanation: "'Could indicate' hedges the interpretation of an unexpected finding. Option B draws an overly broad conclusion — a single unexpected result may have many explanations and does not typically invalidate an entire theory.",
+    },
+
+    // ── Hedging in different sections ──────────────────────────
+    {
+      prompt: "Which sentence is most appropriate in the limitations section of a paper?",
+      options: [
+        "The small sample size may limit the generalisability of the findings.",
+        "The small sample size proves the findings are wrong.",
+      ],
+      correct: 0,
+      explanation: "Limitations sections use hedged language to acknowledge constraints without completely undermining the study. 'May limit' appropriately signals a potential constraint. 'Proves the findings are wrong' is destructive overclaiming.",
+    },
+    {
+      prompt: "Which sentence uses hedging appropriately in a results section?",
+      options: [
+        "A moderate positive correlation was observed between the variables (r = .42).",
+        "A perfect relationship was proven between the variables (r = .42).",
+      ],
+      correct: 0,
+      explanation: "Results sections describe what was found objectively. 'Was observed' is appropriately neutral. Option B misrepresents r = .42 (a moderate, not perfect, correlation) and 'proven' overclaims from a single study.",
+    },
+    {
+      prompt: "Which opening is most appropriate for the discussion section?",
+      options: [
+        "These findings suggest that the intervention may be effective for reducing anxiety.",
+        "These findings prove that the intervention cures anxiety.",
+      ],
+      correct: 0,
+      explanation: "Discussion sections interpret findings with appropriate hedging. 'Suggest...may be effective' is cautiously worded. 'Prove...cures' overclaims — suggesting a single study provides proof and using the absolute 'cures'.",
+    },
+    {
+      prompt: "Which sentence uses hedging appropriately in a conclusion?",
+      options: [
+        "The present study provides preliminary evidence that peer mentoring improves academic outcomes.",
+        "The present study finally and definitively solves the problem of low academic achievement.",
+      ],
+      correct: 0,
+      explanation: "'Preliminary evidence' hedges the strength of the contribution — appropriate for a single study. Option B claims to 'finally and definitively solve' a complex educational problem, which is an extreme overclaim.",
+    },
+    {
+      prompt: "Which sentence uses hedging appropriately in a literature review?",
+      options: [
+        "The evidence on this topic is mixed, with some studies indicating a positive effect and others finding no significant difference.",
+        "The evidence conclusively shows there is no effect.",
+      ],
+      correct: 0,
+      explanation: "When findings are mixed, acknowledging the heterogeneity is more accurate and credible than overstating consensus. Option B misrepresents a contested field as settled.",
+    },
+
+    // ── Double hedging and scope qualification ─────────────────
+    {
+      prompt: "Which sentence uses 'scope' hedging to appropriately limit the claim?",
+      options: [
+        "In most Western contexts, individualism tends to correlate with lower collectivist values.",
+        "Everywhere in the world, individualism correlates with lower collectivist values.",
+      ],
+      correct: 0,
+      explanation: "'In most Western contexts' and 'tends to' both limit scope — geographically and in terms of generalisation strength. Option B claims universal applicability, which requires evidence from every cultural context.",
+    },
+    {
+      prompt: "Which sentence uses appropriate hedging for a claim about frequency?",
+      options: [
+        "Feedback on written work is often perceived as more threatening than verbal feedback.",
+        "Feedback on written work is always perceived as more threatening than verbal feedback.",
+      ],
+      correct: 0,
+      explanation: "'Often' hedges the frequency claim, allowing for exceptions. 'Always' claims universal consistency — impossible to support and empirically implausible given individual variation.",
+    },
+    {
+      prompt: "Which sentence uses 'to some extent' correctly as a hedging phrase?",
+      options: [
+        "The findings support, to some extent, the theoretical predictions of the model.",
+        "The findings support, to no extent, the theoretical predictions of the model.",
+      ],
+      correct: 0,
+      explanation: "'To some extent' is a degree hedge — it qualifies how fully the findings support the model, acknowledging partial rather than total support. 'To no extent' is not a hedging phrase; it means the findings provide no support at all.",
+    },
+    {
+      prompt: "Which sentence uses 'under certain conditions' correctly as a scope hedge?",
+      options: [
+        "Under certain conditions, economic competition may foster innovation.",
+        "Economic competition always fosters innovation.",
+      ],
+      correct: 0,
+      explanation: "'Under certain conditions' restricts the claim to specific contexts, avoiding overgeneralisation. Option B claims a universal causal relationship — not supported by economic evidence and inconsistent with contexts where competition reduces innovation.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'in some cases' as a hedge?",
+      options: [
+        "In some cases, patients respond better to psychological therapy than to medication.",
+        "In no cases do patients respond better to psychological therapy than to medication.",
+      ],
+      correct: 0,
+      explanation: "'In some cases' appropriately limits the scope of a claim about differential treatment response. 'In no cases' asserts the complete opposite — that medication is always superior — which would require very strong evidence.",
+    },
+
+    // ── Identifying and correcting hedging errors ──────────────
+    {
+      prompt: "Which sentence contains an inappropriate hedge for a well-established finding?",
+      options: [
+        "It is possible that smoking may sometimes potentially cause lung cancer.",
+        "Smoking is a well-established risk factor for lung cancer.",
+      ],
+      correct: 0,
+      explanation: "The causal link between smoking and lung cancer is one of the most robustly established in medicine. Triple hedging ('possible', 'may', 'potentially') is inappropriate — it misrepresents the strength of the evidence and undermines the writer's credibility.",
+    },
+    {
+      prompt: "Which sentence hedges appropriately rather than understating a strong finding?",
+      options: [
+        "The intervention resulted in statistically significant improvements across all five outcome measures.",
+        "The intervention might have possibly had a small effect on some of the outcomes.",
+      ],
+      correct: 0,
+      explanation: "When findings are statistically significant across multiple measures, precise reporting is required — not excessive hedging. Option B understates strong results to the point of misrepresentation.",
+    },
+    {
+      prompt: "Which sentence uses a hedge that is consistent with the strength of the claim?",
+      options: [
+        "Early childhood nutrition appears to influence long-term cognitive development.",
+        "Early childhood nutrition has absolutely no connection to long-term cognitive development.",
+      ],
+      correct: 0,
+      explanation: "'Appears to influence' is a well-calibrated hedge for a claim with substantial but not conclusive evidence. Option B makes an absolute denial that would also require strong evidence — and is empirically contradicted by existing research.",
+    },
+    {
+      prompt: "Which sentence is over-hedged in the context of a methodological description?",
+      options: [
+        "Participants may have perhaps possibly completed the questionnaire.",
+        "Participants completed the questionnaire.",
+      ],
+      correct: 0,
+      explanation: "Describing a documented methodological procedure requires no hedging — if participants completed the questionnaire, that is a fact. Hedging a factual procedure ('may have perhaps possibly') is inappropriate and weakens the writing.",
+    },
+    {
+      prompt: "Which sentence correctly hedges a comparison between groups?",
+      options: [
+        "The experimental group showed somewhat higher scores than the control group, though the difference was not statistically significant.",
+        "The experimental group clearly outperformed the control group in every respect.",
+      ],
+      correct: 0,
+      explanation: "When a difference is not statistically significant, appropriate hedging ('somewhat higher', 'though not significant') is essential. Option B asserts clear superiority without qualification — a claim that cannot be made from non-significant results.",
+    },
+    {
+      prompt: "Which sentence demonstrates appropriate hedging of a theoretical claim?",
+      options: [
+        "Social identity theory provides one framework for understanding intergroup conflict, though its predictive power varies across contexts.",
+        "Social identity theory is the only correct explanation of all forms of intergroup conflict.",
+      ],
+      correct: 0,
+      explanation: "Option A uses two hedges: 'one framework' (not the only one) and 'varies across contexts' (scope limitation). Option B makes two absolute claims — 'only correct' and 'all forms' — which are inconsistent with the plurality of explanatory frameworks in social psychology.",
+    },
+    // ── Hedging with 'it' constructions ───────────────────────
+    {
+      prompt: "Which sentence uses an impersonal 'it' hedging construction correctly?",
+      options: [
+        "It would appear that the current regulatory framework is inadequate.",
+        "It would appear the current regulatory framework inadequate.",
+      ],
+      correct: 0,
+      explanation: "'It would appear that + clause' is a standard impersonal hedging construction. Option B is ungrammatical — it lacks both 'that' and a finite verb in the subordinate clause.",
+    },
+    {
+      prompt: "Which impersonal hedge expresses the appropriate level of uncertainty for an interpretation?",
+      options: [
+        "It seems likely that socioeconomic factors play a mediating role.",
+        "It is certain that socioeconomic factors play a mediating role.",
+      ],
+      correct: 0,
+      explanation: "'It seems likely that' layers two hedges (epistemic verb + adjective), calibrating the claim as probable but not proven. 'It is certain' removes all uncertainty — rarely appropriate for an interpretive claim about mediating variables.",
+    },
+    {
+      prompt: "Which sentence uses 'it is worth noting' correctly as a hedging phrase?",
+      options: [
+        "It is worth noting that the study was conducted before the policy change.",
+        "It is worth noting that 2 + 2 = 4.",
+      ],
+      correct: 0,
+      explanation: "'It is worth noting' draws attention to a qualifying detail that might otherwise be overlooked. Using it for a universally known fact is meaningless — this hedging phrase is for contextualising or qualifying a finding, not stating axioms.",
+    },
+    // ── Hedges with 'suggest' and 'indicate' ──────────────────
+    {
+      prompt: "Which sentence uses 'indicate' as an appropriate data-driven hedge?",
+      options: [
+        "The survey results indicate a growing dissatisfaction with public transport.",
+        "The survey results indicate that public transport will definitely improve.",
+      ],
+      correct: 0,
+      explanation: "'Indicate' is appropriate for presenting what data point toward. Option B is contradictory — 'indicate' hedges, but 'definitely improve' removes all uncertainty, creating an inconsistent level of certainty within the same sentence.",
+    },
+    {
+      prompt: "Which sentence uses 'suggest' at the correct strength for a single study?",
+      options: [
+        "These findings suggest that a relationship may exist between screen time and sleep quality.",
+        "These findings suggest, beyond all doubt, that screen time destroys sleep quality.",
+      ],
+      correct: 0,
+      explanation: "'Suggest that a relationship may exist' is appropriately cautious for a single study. Option B contradicts the hedging force of 'suggest' by adding 'beyond all doubt' and using the unqualified verb 'destroys'.",
+    },
+    // ── Hedging collocations ───────────────────────────────────
+    {
+      prompt: "Which hedging collocation is standard in academic writing?",
+      options: [
+        "To a certain extent, the results support the proposed model.",
+        "To a definite extent, the results support the proposed model.",
+      ],
+      correct: 0,
+      explanation: "'To a certain extent' is a fixed hedging phrase meaning 'partly' or 'in some ways'. 'To a definite extent' is not a standard academic collocation — 'definite' contradicts the softening purpose of the phrase.",
+    },
+    {
+      prompt: "Which is the more natural academic hedging phrase?",
+      options: [
+        "There is some evidence to suggest that bilingualism delays cognitive decline.",
+        "There is all evidence to suggest that bilingualism delays cognitive decline.",
+      ],
+      correct: 0,
+      explanation: "'There is some evidence to suggest' is a standard academic hedging formula signalling that evidence exists but is not conclusive. 'There is all evidence' is not grammatical in this context and would suggest unanimous support.",
+    },
+    {
+      prompt: "Which hedging phrase correctly qualifies a broad claim?",
+      options: [
+        "For the most part, learners acquire vocabulary incidentally through exposure.",
+        "Without exception, learners acquire vocabulary incidentally through exposure.",
+      ],
+      correct: 0,
+      explanation: "'For the most part' hedges by signalling that the generalisation holds in the majority of cases but not universally. 'Without exception' claims no individual differences exist — a claim that cannot be supported by research on human learners.",
+    },
+    {
+      prompt: "Which sentence uses the hedging phrase 'on balance' correctly?",
+      options: [
+        "On balance, the evidence supports a moderate positive effect of exercise on mood.",
+        "On balance, the evidence proves a guaranteed positive effect of exercise on mood.",
+      ],
+      correct: 0,
+      explanation: "'On balance' signals that after weighing conflicting evidence, the writer leans toward a conclusion — an appropriate hedge for mixed literatures. Combining it with 'proves a guaranteed effect' is contradictory and overclaims.",
+    },
+  ],
+
 };
