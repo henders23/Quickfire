@@ -4736,4 +4736,250 @@ export const questionBanks: Record<string, Question[]> = {
     },
   ],
 
+
+  reference: [
+    // ── Pronoun and Noun Chains ───────────────────────────────────
+    {
+      prompt: "Which sentence most clearly avoids ambiguous reference when two groups are involved?",
+      options: [
+        "The study examined both teachers and students. The teachers were interviewed first.",
+        "The study examined both teachers and students. They were interviewed first.",
+      ],
+      correct: 0,
+      explanation: "'They' in option B could refer to either teachers or students — the pronoun is ambiguous. Option A uses the specifying noun phrase 'the teachers', which removes all ambiguity. When two or more referents are in play, a repeated or specifying noun is safer than a pronoun.",
+    },
+    {
+      prompt: "Which sentence correctly uses a summary noun to create a cohesive reference chain?",
+      options: [
+        "Participants reported increased anxiety, poor sleep, and reduced motivation. These effects were most pronounced in the youngest age group.",
+        "Participants reported increased anxiety, poor sleep, and reduced motivation. They were most pronounced in the youngest age group.",
+      ],
+      correct: 0,
+      explanation: "'They' in option B is ambiguous — it could refer to the participants themselves or to the reported effects. Option A uses the summary noun 'these effects', which labels the preceding list and creates a clear, cohesive link. Summary nouns (effects, factors, issues, findings) are a key tool in academic reference chains.",
+    },
+    {
+      prompt: "Which sentence correctly uses the definite article to maintain a reference chain on second mention?",
+      options: [
+        "A new assessment framework was proposed. The framework underwent three rounds of peer review.",
+        "A new assessment framework was proposed. A framework underwent three rounds of peer review.",
+      ],
+      correct: 0,
+      explanation: "Once a noun has been introduced with 'a' (first mention), subsequent references use 'the' to signal that reader and writer now share knowledge of the specific referent. Using 'a' again on second mention (option B) implies a different or new framework, breaking the chain.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'these' (not 'those') for immediate backward reference?",
+      options: [
+        "Three patterns were observed: avoidance, withdrawal, and disengagement. These patterns were consistent across all groups.",
+        "Three patterns were observed: avoidance, withdrawal, and disengagement. Those patterns were consistent across all groups.",
+      ],
+      correct: 0,
+      explanation: "'These' refers to something close in the text — the patterns just listed in the preceding sentence. 'Those' implies greater distance or contrast, and can sound as if the writer is referring to patterns mentioned much earlier or distancing themselves from them. For immediate backward reference, 'these' is the natural choice.",
+    },
+    {
+      prompt: "Which sentence correctly uses a 'this + framing noun' to label and refer back to a preceding idea?",
+      options: [
+        "Dropout rates fell by 15% during the intervention period. This reduction is especially notable given the historically high attrition at the school.",
+        "Dropout rates fell by 15% during the intervention period. This is especially notable given the historically high attrition at the school.",
+      ],
+      correct: 0,
+      explanation: "While 'this' alone (option B) is grammatical, it leaves the referent vague — what exactly is notable? 'This reduction' (option A) labels the specific finding explicitly. Using 'this + category noun' (reduction, finding, result, approach) strengthens cohesion and makes academic prose more precise and reader-friendly.",
+    },
+  ],
+
+  indefinite: [
+    // ── A/An: First Mention, Classification, Vowel Sound ─────────
+    {
+      prompt: "Which sentence correctly uses 'a' to introduce a concept for the first time?",
+      options: [
+        "This study proposes a novel framework for analysing policy implementation.",
+        "This study proposes the novel framework for analysing policy implementation.",
+      ],
+      correct: 0,
+      explanation: "When something is introduced for the first time, 'a/an' signals that it is new to the reader. 'The' (option B) presupposes that reader and writer already know which framework is meant — but since this is the first mention, that shared knowledge does not yet exist. First mention → 'a'; second mention → 'the'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'a' to classify something as one member of a category?",
+      options: [
+        "Ethnography is a qualitative method used to study cultural practices in context.",
+        "Ethnography is the qualitative method used to study cultural practices in context.",
+      ],
+      correct: 0,
+      explanation: "'A qualitative method' classifies ethnography as one type among many. 'The qualitative method' (option B) implies it is the only or definitive qualitative method, which is inaccurate and misleading. When classifying, use 'a/an'.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'an' before a vowel sound?",
+      options: [
+        "This represents an important contribution to the existing body of knowledge.",
+        "This represents a important contribution to the existing body of knowledge.",
+      ],
+      correct: 0,
+      explanation: "'An' is used before words beginning with a vowel sound. 'Important' begins with the vowel sound /ɪ/, so 'an important' is correct. 'A important' (option B) is ungrammatical — the rule is based on the sound of the following word, not its spelling.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'a' to introduce a hypothetical example?",
+      options: [
+        "Consider a scenario in which the independent variable cannot be controlled.",
+        "Consider the scenario in which the independent variable cannot be controlled.",
+      ],
+      correct: 0,
+      explanation: "'A scenario' introduces an imagined, non-specific example — one possibility among many. 'The scenario' (option B) implies a specific, pre-identified scenario that both writer and reader already know, which is not the case when setting up a hypothetical illustration.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'a' when introducing a study limitation?",
+      options: [
+        "A significant limitation of this research is the reliance on self-reported data.",
+        "The significant limitation of this research is the reliance on self-reported data.",
+      ],
+      correct: 0,
+      explanation: "'A significant limitation' introduces this particular limitation as one of potentially several — the reader does not yet know which limitation is being discussed. 'The significant limitation' (option B) implies there is only one, already-known limitation, which is usually false and can sound dismissive of other weaknesses.",
+    },
+  ],
+
+  hypo_cond: [
+    // ── If + Past Simple / Would ──────────────────────────────────
+    {
+      prompt: "Which sentence correctly forms a hypothetical conditional?",
+      options: [
+        "If this framework were applied globally, outcomes would differ significantly.",
+        "If this framework were applied globally, outcomes will differ significantly.",
+      ],
+      correct: 0,
+      explanation: "Hypothetical conditionals follow the pattern: if + past simple (or 'were'), would + base form. Using 'will' in the result clause (option B) confuses the hypothetical form with a real conditional. 'Would' marks the result as contingent on an unlikely or imaginary condition.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'were' (not 'was') in a formal academic hypothetical?",
+      options: [
+        "If the study were replicated with a more diverse sample, the results might be more reliable.",
+        "If the study was replicated with a more diverse sample, the results might be more reliable.",
+      ],
+      correct: 0,
+      explanation: "In formal academic English, the subjunctive 'were' is used for all persons in hypothetical if-clauses. 'Was' (option B) is common in informal speech but is considered non-standard in academic writing. The subjunctive 'were' signals clearly that the condition is hypothetical, not factual.",
+    },
+    {
+      prompt: "Which sentence correctly uses a hypothetical conditional to explore a theoretical alternative?",
+      options: [
+        "If a different sampling method were used, the findings might be more generalisable.",
+        "If a different sampling method were used, the findings are more generalisable.",
+      ],
+      correct: 0,
+      explanation: "The result clause of a hypothetical conditional requires 'would/might/could + base form', not present simple. 'The findings are' (option B) describes a current fact, not a hypothetical outcome. Option A correctly pairs the hypothetical if-clause with 'might be' to signal contingency.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'were to' for a formal academic hypothetical?",
+      options: [
+        "If these findings were to be replicated, this would constitute strong evidence for the theory.",
+        "If these findings would be replicated, this would constitute strong evidence for the theory.",
+      ],
+      correct: 0,
+      explanation: "'Were to + infinitive' is a formal variant used to introduce an imagined future possibility with appropriate tentativeness. Using 'would' in the if-clause (option B) is a common error — 'would' belongs in the result clause only, never in the if-clause of a conditional.",
+    },
+    {
+      prompt: "Which sentence correctly uses a hypothetical conditional to discuss a scenario the writer treats as contrary to fact?",
+      options: [
+        "If resources were unlimited, researchers could pursue far more ambitious longitudinal designs.",
+        "If resources are unlimited, researchers can pursue far more ambitious longitudinal designs.",
+      ],
+      correct: 0,
+      explanation: "Option A uses if + past simple ('were') + 'could', signalling that the condition is hypothetical — resources are not, in reality, unlimited. Option B uses if + present simple + 'can', forming a real conditional that implies the condition is genuinely possible. The choice between real and hypothetical depends on how the writer treats the condition.",
+    },
+  ],
+
+  mixed_cond: [
+    // ── If + Past Perfect → Would (Present Result) ────────────────
+    {
+      prompt: "Which sentence correctly forms a mixed conditional (past cause, present result)?",
+      options: [
+        "If the methodology had been more robust, the conclusions would be stronger today.",
+        "If the methodology had been more robust, the conclusions would have been stronger.",
+      ],
+      correct: 0,
+      explanation: "A mixed conditional links a past condition (if + past perfect: 'had been') with a present result (would + base form: 'would be'). Option B uses 'would have been', which creates a standard past unreal conditional — both condition and result are in the past. Option A is mixed because the past decision has consequences visible in the present ('today').",
+    },
+    {
+      prompt: "Which sentence correctly uses a mixed conditional to reflect on a past decision's present impact?",
+      options: [
+        "If the initial data collection had been more systematic, the current analysis would be considerably more reliable.",
+        "If the initial data collection were more systematic, the current analysis would be considerably more reliable.",
+      ],
+      correct: 0,
+      explanation: "Option A is a mixed conditional: the if-clause uses past perfect ('had been') to refer to a past event, while the result clause uses 'would be' to describe the present consequence. Option B is a pure hypothetical conditional (if + past simple → would) — it imagines a different present situation, rather than reflecting on a past cause.",
+    },
+    {
+      prompt: "Which sentence correctly uses a mixed conditional in critical analysis of a past study?",
+      options: [
+        "If earlier studies had accounted for these variables, the field would now have a clearer theoretical foundation.",
+        "If earlier studies had accounted for these variables, the field would now have had a clearer theoretical foundation.",
+      ],
+      correct: 0,
+      explanation: "'Would now have' (option A) correctly places the result in the present — the current state of the field is what has been affected by the past omission. 'Would now have had' (option B) is grammatically awkward; the result clause of a mixed conditional takes 'would + base form', not 'would have + past participle'.",
+    },
+    {
+      prompt: "Which sentence is a mixed conditional (not a standard past unreal conditional)?",
+      options: [
+        "If the researchers had chosen a different design, the study would still be running today.",
+        "If the researchers had chosen a different design, the study would have been completed sooner.",
+      ],
+      correct: 0,
+      explanation: "Option A is a mixed conditional: the past perfect if-clause ('had chosen') refers to a past decision, and the result ('would still be running today') describes a present consequence. Option B has both clauses in the past — past perfect condition and 'would have been' result — making it a standard past unreal conditional, not mixed.",
+    },
+    {
+      prompt: "Which sentence correctly uses a mixed conditional to evaluate the present impact of a past methodological limitation?",
+      options: [
+        "If a control group had been included, the causal claims made in this study would be far more credible now.",
+        "If a control group were included, the causal claims made in this study would be far more credible now.",
+      ],
+      correct: 0,
+      explanation: "Option A uses past perfect ('had been included') to refer to a past methodological decision, paired with a present-tense result ('would be... now') — the classic mixed conditional structure. Option B uses past simple ('were included'), which forms a hypothetical conditional about an imagined present scenario, not a reflection on what was or wasn't done in the past.",
+    },
+  ],
+
+  degree: [
+    // ── Degree Adverbs: Formal Intensifiers and Hedges ───────────
+    {
+      prompt: "Which sentence uses a formal degree adverb to intensify a claim appropriately in academic writing?",
+      options: [
+        "Attendance rates markedly improved following the introduction of the new policy.",
+        "Attendance rates really improved following the introduction of the new policy.",
+      ],
+      correct: 0,
+      explanation: "'Markedly' is a formal degree adverb conveying a clear, measurable improvement — suitable for academic prose. 'Really' (option B) is an informal intensifier used in conversational English. Academic writing favours: markedly, substantially, considerably, notably, significantly — over very, really, quite, pretty.",
+    },
+    {
+      prompt: "Which sentence correctly uses a degree adverb to hedge a claim with appropriate academic caution?",
+      options: [
+        "The results were somewhat inconclusive, suggesting that further investigation is warranted.",
+        "The results were totally inconclusive, suggesting that further investigation is warranted.",
+      ],
+      correct: 0,
+      explanation: "'Somewhat' is a downgrading (hedging) degree adverb that signals partial or moderate inconclusiveness — appropriate for calibrating a claim carefully. 'Totally' (option B) is an informal intensifier that overstates the case and belongs in conversational rather than academic register.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'notably' as a sentence adverb to flag an important detail?",
+      options: [
+        "Most participants agreed with the statement; notably, the youngest cohort was the sole exception.",
+        "Most participants agreed with the statement; very, the youngest cohort was the sole exception.",
+      ],
+      correct: 0,
+      explanation: "'Notably' can function as a sentence adverb, drawing the reader's attention to something worthy of special notice. 'Very' (option B) is only an intensifier — it must modify an adjective or adverb ('very different') and cannot stand alone as a sentence adverb. Option B is therefore ungrammatical.",
+    },
+    {
+      prompt: "Which sentence uses a formal degree adverb appropriately in a comparative claim?",
+      options: [
+        "The second intervention proved considerably more effective than the first.",
+        "The second intervention proved a lot more effective than the first.",
+      ],
+      correct: 0,
+      explanation: "'Considerably' is a formal intensifier appropriate for academic comparisons. 'A lot' (option B) is informal and conversational — it is avoided in published academic writing. Preferred formal alternatives include: considerably, substantially, markedly, significantly, notably.",
+    },
+    {
+      prompt: "Which sentence correctly uses 'highly' rather than 'very' with a formal academic adjective?",
+      options: [
+        "The difference between groups was highly significant (p < .001).",
+        "The difference between groups was very significant (p < .001).",
+      ],
+      correct: 0,
+      explanation: "In academic and statistical writing, 'highly significant' is the established collocating phrase — 'highly' pairs naturally with adjectives such as significant, relevant, effective, and influential. 'Very significant' (option B) is weaker in register; 'very' is a general-purpose intensifier, whereas 'highly' is more precise and formal.",
+    },
+  ],
+
 };
