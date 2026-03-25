@@ -279,7 +279,7 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
           {concept.title}
         </div>
 
-        <h2 style={{ color: "#fff", fontSize: 19, fontWeight: 700, textAlign: "center", lineHeight: 1.5, margin: "0 0 36px", maxWidth: 500 }}>
+        <h2 style={{ color: "#fff", fontSize: 38, fontWeight: 700, textAlign: "center", lineHeight: 1.5, margin: "0 0 36px", maxWidth: 500 }}>
           {currentQ.prompt}
         </h2>
 
@@ -309,7 +309,7 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
                   opacity: textOpacity,
                   padding: "18px 22px", textAlign: "left" as const,
                   cursor: phase === "feedback" ? "default" : "pointer",
-                  fontSize: 14, fontWeight: 600, lineHeight: 1.45,
+                  fontSize: 28, fontWeight: 600, lineHeight: 1.45,
                   display: "flex", alignItems: "flex-start", gap: 14,
                   transition: "all 0.1s", width: "100%",
                 }}

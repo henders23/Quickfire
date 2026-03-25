@@ -5,7 +5,7 @@ export const questionBanks: Record<string, Question[]> = {
   modals: [
     // ── Epistemic vs Deontic ───────────────────────────────────
     {
-      prompt: "Which sentence uses 'must' epistemically (deduction from evidence)?",
+      prompt: "Which sentence uses 'must' to make a deduction from evidence?",
       options: [
         "Researchers must obtain ethical approval before data collection.",
         "The anomalous result must reflect an error in the measurement process.",
@@ -14,7 +14,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Must' in option B is epistemic — the writer deduces a conclusion from evidence. In option A it is deontic (obligation/requirement).",
     },
     {
-      prompt: "Which sentence uses 'may' to express permission (deontic)?",
+      prompt: "Which sentence uses 'may' to express permission?",
       options: [
         "The discrepancy may reflect differences in measurement techniques.",
         "Participants may withdraw from the study at any time without penalty.",
@@ -23,7 +23,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option B uses deontic 'may' (= is permitted to). Option A uses epistemic 'may' (= it is possible that).",
     },
     {
-      prompt: "Which sentence uses 'should' to express a logical expectation (epistemic)?",
+      prompt: "Which sentence uses 'should' to express a logical expectation?",
       options: [
         "Given the sample size, the results should be statistically reliable.",
         "Authors should cite all primary sources in the reference list.",
@@ -32,7 +32,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A is epistemic: 'should' expresses what we logically expect given the circumstances. Option B is deontic (obligation).",
     },
     {
-      prompt: "Which modal use is deontic (expressing obligation or necessity)?",
+      prompt: "Which sentence uses a modal to express an obligation or necessity?",
       options: [
         "The pattern must be related to seasonal temperature variation.",
         "All participants must provide written informed consent.",
@@ -240,7 +240,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Past Modals ────────────────────────────────────────────
     {
-      prompt: "Which uses a past epistemic modal to make a deduction about a past event?",
+      prompt: "Which sentence uses a modal to make a deduction about a past event?",
       options: [
         "The equipment must have malfunctioned during the experiment.",
         "The equipment must malfunction during the experiment.",
@@ -426,7 +426,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Modal 'dare' takes a bare infinitive (no 'to'). 'Dare we suggest' is the correct form — modal 'dare' behaves like other modals in questions and negatives.",
     },
     {
-      prompt: "Which most accurately describes the function of 'may' in 'The results may indicate a threshold effect'?",
+      prompt: "Which sentence uses 'may' correctly in 'The results may indicate a threshold effect'?",
       options: [
         "It expresses epistemic possibility — the writer is not fully certain of the interpretation.",
         "It expresses deontic permission — the results are allowed to indicate a threshold effect.",
@@ -1180,7 +1180,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Factive vs non-factive ─────────────────────────────────
     {
-      prompt: "Which sentence uses a factive verb, presupposing the content is true?",
+      prompt: "Which sentence uses a verb that presents the cited information as true?",
       options: [
         "The authors reveal that the placebo had a measurable neurological effect.",
         "The authors allege that the placebo had a measurable neurological effect.",
@@ -1189,7 +1189,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Reveal' is factive — it presupposes that what is revealed is true. 'Allege' is non-factive and signals that the claim is unverified or disputed.",
     },
     {
-      prompt: "Which sentence uses a non-factive verb, leaving the truth of the claim open?",
+      prompt: "Which sentence uses a verb like 'claim' or 'suggest', leaving the truth of the claim open?",
       options: [
         "The study established that early exposure reduces risk.",
         "The study proposed that early exposure reduces risk.",
@@ -1536,7 +1536,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Largely' hedges the degree of determination, allowing for other factors. 'Completely' asserts total determination, which is difficult to support empirically and is likely false — environmental input is important but not the only factor.",
     },
     {
-      prompt: "Which sentence uses 'apparently' correctly as an epistemic adverb?",
+      prompt: "Which sentence uses 'apparently' correctly as a hedging adverb?",
       options: [
         "Apparently, the original data set was lost when the lab was relocated.",
         "Apparently, two plus two equals four.",
@@ -1922,7 +1922,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'In contrast' used as a sentence connector stands alone, followed by a comma. 'In contrast to' is a preposition requiring a noun phrase, not a full clause: 'In contrast to Southern European countries, Northern European countries...'",
     },
     {
-      prompt: "Which marker is most appropriate for a concessive contrast (acknowledging before countering)?",
+      prompt: "Which marker is most appropriate for acknowledging a point before countering it?",
       options: [
         "While the methodology has limitations, the findings are broadly consistent with previous research.",
         "Furthermore, the methodology has limitations, the findings are broadly consistent with previous research.",
@@ -2280,7 +2280,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Despite' must be followed by a noun phrase or gerund — not a full clause. 'Despite the study has limitations' is ungrammatical. Use 'although the study has limitations' if a clause is needed.",
     },
     {
-      prompt: "Which sentence uses a result marker where a contrast marker is needed?",
+      prompt: "Which sentence incorrectly uses a result word ('consequently') where a contrast word ('nevertheless') is needed?",
       options: [
         "The approach is widely used. Nevertheless, it has significant drawbacks.",
         "The approach is widely used. Consequently, it has significant drawbacks.",
@@ -2356,7 +2356,7 @@ export const questionBanks: Record<string, Question[]> = {
   relative: [
     // ── Defining vs non-defining ───────────────────────────────
     {
-      prompt: "Which sentence contains a defining (restrictive) relative clause?",
+      prompt: "Which sentence contains a relative clause that identifies which one is meant?",
       options: [
         "The study that used the largest sample produced the most reliable results.",
         "The study, which used the largest sample, produced the most reliable results.",
@@ -2365,7 +2365,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "A defining relative clause (no commas) identifies which study is meant — it restricts the reference to a specific one. The non-defining version (commas) adds extra information about a study already uniquely identified.",
     },
     {
-      prompt: "Which sentence contains a non-defining (non-restrictive) relative clause?",
+      prompt: "Which sentence contains a relative clause that adds extra information (using commas)?",
       options: [
         "Researchers who fail to declare conflicts of interest risk retraction.",
         "Smith (2019), who has published extensively on this topic, questions the consensus.",
@@ -2374,7 +2374,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option B has a non-defining clause (set off by commas) — 'Smith (2019)' is already uniquely identified, so the clause adds information rather than defining which Smith is meant. Option A defines which researchers (those who fail to declare) are at risk.",
     },
     {
-      prompt: "Which sentence punctuates a non-defining relative clause correctly?",
+      prompt: "Which sentence uses commas correctly with a relative clause that adds extra information?",
       options: [
         "The framework, which was developed in the 1970s, remains widely cited.",
         "The framework which was developed in the 1970s remains widely cited.",
@@ -2392,7 +2392,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In option A, the defining relative clause ('that most strongly predicted') is essential — removing it leaves 'The variable was socioeconomic status', which loses the specific identification. In option B, the non-defining clause can be removed without changing the core claim.",
     },
     {
-      prompt: "Which sentence uses a non-defining relative clause appropriately?",
+      prompt: "Which sentence uses a relative clause that adds extra information appropriately?",
       options: [
         "The data, which were collected over three years, show a consistent upward trend.",
         "The data which were collected over three years show a consistent upward trend.",
@@ -2412,7 +2412,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Who' (or 'whom') refers to people. 'Which' refers to things, concepts, or animals. Using 'which' for a person is a grammatical error in standard English.",
     },
     {
-      prompt: "Which relative pronoun is correct for referring to a non-defining clause about a thing?",
+      prompt: "Which relative pronoun is correct in a clause that adds extra information about a thing?",
       options: [
         "The methodology, which had been validated in three prior studies, was adopted here.",
         "The methodology, that had been validated in three prior studies, was adopted here.",
@@ -2421,7 +2421,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'That' cannot be used in non-defining relative clauses in standard written English. Non-defining clauses (set off by commas) must use 'which' for things and 'who' for people.",
     },
     {
-      prompt: "Which relative pronoun is correct in a defining clause referring to a thing?",
+      prompt: "Which relative pronoun is correct in a clause that identifies which thing is meant?",
       options: [
         "The approach that yielded the strongest results was replicated in Experiment 2.",
         "The approach who yielded the strongest results was replicated in Experiment 2.",
@@ -2602,7 +2602,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Relative clauses with quantifiers ─────────────────────
     {
-      prompt: "Which sentence uses a non-defining relative clause with a quantifier correctly?",
+      prompt: "Which sentence uses a relative clause that adds extra information, with a quantifier, correctly?",
       options: [
         "Three studies were identified, all of which used randomised controlled designs.",
         "Three studies were identified, all of that used randomised controlled designs.",
@@ -2611,7 +2611,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "After a quantifier ('all of', 'some of', 'none of', 'both of'), 'which' must be used — never 'that'. 'All of which' is the correct form for a non-defining clause.",
     },
     {
-      prompt: "Which sentence correctly uses 'none of whom' in a non-defining clause?",
+      prompt: "Which sentence correctly uses 'none of whom' in a relative clause that adds extra information?",
       options: [
         "Twenty participants were recruited, none of whom had prior experience with the task.",
         "Twenty participants were recruited, none of who had prior experience with the task.",
@@ -2669,7 +2669,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option B contains a resumptive pronoun error — 'it' must not be inserted after the relative clause. The relative pronoun 'which' already represents the object; adding 'it' duplicates the object and is ungrammatical in standard English.",
     },
     {
-      prompt: "Which sentence incorrectly uses 'that' in a non-defining clause?",
+      prompt: "Which sentence incorrectly uses 'that' in a relative clause that adds extra information?",
       options: [
         "The sample, which was drawn from three regions, was broadly representative.",
         "The sample, that was drawn from three regions, was broadly representative.",
@@ -2791,7 +2791,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "After superlatives ('the most...', 'the best...', 'the only...'), 'that' is strongly preferred over 'which' in defining relative clauses. 'The most comprehensive review that' is the standard academic form.",
     },
     {
-      prompt: "Which sentence correctly uses a defining relative clause after 'the only'?",
+      prompt: "Which sentence correctly uses a relative clause that identifies which one is meant after 'the only'?",
       options: [
         "This was the only study that controlled for all three variables simultaneously.",
         "This was the only study, which controlled for all three variables simultaneously.",
@@ -3319,7 +3319,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When a specific past time is given ('in 2018'), the simple past is required. The present perfect cannot be used with a specific completed past time reference — it expresses an unspecified time with present relevance.",
     },
     {
-      prompt: "Which tense is correct for a literature review statement with no specified time?",
+      prompt: "Which tense is most appropriate for a general literature review statement?",
       options: [
         "Several studies have investigated the link between poverty and educational attainment.",
         "Several studies investigated the link between poverty and educational attainment.",
@@ -3771,7 +3771,7 @@ export const questionBanks: Record<string, Question[]> = {
   cleft: [
     // ── It-cleft: core form ────────────────────────────────────
     {
-      prompt: "Which sentence is a correctly formed it-cleft?",
+      prompt: "Which is the correct sentence?",
       options: [
         "It is the sample size that limits the generalisability of these findings.",
         "It is the sample size which limits the generalisability of these findings.",
@@ -3780,7 +3780,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In it-clefts, the relative clause is introduced by 'that' — not 'which'. 'It is X that...' is the standard academic form. Using 'which' is a very common error and is not accepted in formal cleft constructions.",
     },
     {
-      prompt: "Which is a correctly formed it-cleft with a person as the focus?",
+      prompt: "Which sentence correctly emphasises a person as the key information?",
       options: [
         "It was Foucault who introduced the concept of biopower.",
         "It was Foucault that introduced the concept of biopower.",
@@ -3789,7 +3789,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When the clefted element refers to a person, 'who' is preferred over 'that' in formal academic writing ('It was Foucault who...'). Both are grammatically possible, but 'who' is the standard choice for human referents.",
     },
     {
-      prompt: "Which sentence uses an it-cleft correctly to focus on a noun phrase?",
+      prompt: "Which sentence correctly emphasises the key noun?",
       options: [
         "It is the interaction between variables that accounts for most of the variance.",
         "It is the interaction between variables accounts for most of the variance.",
@@ -3798,7 +3798,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "An it-cleft requires 'that' (or 'who/which') to introduce the second clause: 'It is X that + clause'. Omitting 'that' produces an ungrammatical string.",
     },
     {
-      prompt: "Which it-cleft correctly focuses on a time adverbial?",
+      prompt: "Which sentence correctly emphasises the time?",
       options: [
         "It was not until the 1980s that interest in this area grew substantially.",
         "It was not until the 1980s when interest in this area grew substantially.",
@@ -3807,7 +3807,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The pattern 'It was not until X that...' is an it-cleft — 'that' introduces the main clause. Using 'when' instead of 'that' breaks the cleft structure and is incorrect in formal writing.",
     },
     {
-      prompt: "Which it-cleft correctly focuses on a reason clause?",
+      prompt: "Which sentence correctly emphasises the reason?",
       options: [
         "It is because the data are incomplete that the conclusions must remain tentative.",
         "It is because the data are incomplete, the conclusions must remain tentative.",
@@ -3816,7 +3816,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "It-clefts can focus on reason clauses introduced by 'because': 'It is because X that Y'. Option B omits 'that', which is required to complete the cleft structure.",
     },
     {
-      prompt: "Which sentence correctly inverts an it-cleft for negative emphasis?",
+      prompt: "Which sentence correctly emphasises what matters most using negation?",
       options: [
         "It is not the quantity of data that matters most, but the quality.",
         "It is not the quantity of data which matters most, but the quality.",
@@ -3825,7 +3825,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Negative it-clefts follow the same 'that' rule as positive ones: 'It is not X that...' The contrast ('but the quality') is a natural extension of the cleft structure for emphasis.",
     },
     {
-      prompt: "Which sentence is an it-cleft with a correctly formed structure?",
+      prompt: "Which is the correct sentence?",
       options: [
         "It is this tension between theory and practice that motivates the current inquiry.",
         "This tension between theory and practice that motivates the current inquiry.",
@@ -3836,7 +3836,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── It-cleft: tense and agreement ─────────────────────────
     {
-      prompt: "Which it-cleft uses the correct tense when referring to a past study?",
+      prompt: "Which sentence uses the correct tense when referring to a past study?",
       options: [
         "It was the absence of a control group that weakened the original study.",
         "It is the absence of a control group that weakened the original study.",
@@ -3845,7 +3845,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Tense in the 'it is/was' opener should match the time frame. Since the reference is to a past study, 'It was' is appropriate. 'It is' is used for present situations or general truths.",
     },
     {
-      prompt: "Which it-cleft uses correct subject-verb agreement in the relative clause?",
+      prompt: "Which sentence uses correct subject-verb agreement?",
       options: [
         "It is the findings that have attracted the most debate.",
         "It is the findings that has attracted the most debate.",
@@ -3854,7 +3854,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The verb in the relative clause agrees with the clefted noun phrase ('the findings'), not with the dummy 'it'. 'The findings' is plural, so 'have attracted' is correct — not 'has attracted'.",
     },
     {
-      prompt: "Which is the correct it-cleft when the focused element is a prepositional phrase?",
+      prompt: "Which sentence correctly emphasises a prepositional phrase?",
       options: [
         "It is in this context that the theoretical contribution becomes clear.",
         "It is in this context which the theoretical contribution becomes clear.",
@@ -3865,7 +3865,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Wh-cleft (pseudo-cleft): core form ────────────────────
     {
-      prompt: "Which sentence is a correctly formed wh-cleft (pseudo-cleft)?",
+      prompt: "Which is the correct sentence?",
       options: [
         "What this study reveals is the complexity of the causal chain.",
         "What this study reveals is that the complexity of the causal chain.",
@@ -3874,7 +3874,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "A wh-cleft has the form: Wh-clause + be + focused element. 'What this study reveals is the complexity of the causal chain' is correct. Option B inserts a spurious 'that' after 'is', breaking the structure.",
     },
     {
-      prompt: "Which is the standard wh-cleft (wh-clause first)?",
+      prompt: "Which sentence has the correct word order?",
       options: [
         "What requires further attention is the key limitation of the study.",
         "The key limitation of the study is what the study requires further attention to.",
@@ -3883,7 +3883,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "A standard wh-cleft places the wh-clause first: 'What requires further attention is the key limitation of the study.' Option B reverses and distorts the structure awkwardly.",
     },
     {
-      prompt: "Which wh-cleft uses 'what' correctly to focus on a conclusion?",
+      prompt: "Which sentence correctly uses 'what' to emphasise a conclusion?",
       options: [
         "What the analysis demonstrates is that cultural factors play a decisive role.",
         "That the analysis demonstrates is what cultural factors play a decisive role.",
@@ -3892,7 +3892,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'What + clause + is + focused element' is the wh-cleft pattern. Option B scrambles the structure — 'That the analysis demonstrates' cannot open a wh-cleft, and 'what cultural factors play' is ungrammatical in this slot.",
     },
     {
-      prompt: "Which wh-cleft correctly emphasises a course of action?",
+      prompt: "Which sentence correctly emphasises a course of action?",
       options: [
         "What the researchers did was conduct a series of semi-structured interviews.",
         "What the researchers did was conducted a series of semi-structured interviews.",
@@ -3901,7 +3901,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In a wh-cleft with 'do', the focused verb phrase after 'was' takes the bare infinitive, not the past tense: 'What X did was [base form]'. 'Was conduct' (bare infinitive) is correct; 'was conducted' uses the past tense, which is wrong here.",
     },
     {
-      prompt: "Which wh-cleft correctly emphasises a noun phrase outcome?",
+      prompt: "Which sentence correctly emphasises the outcome?",
       options: [
         "What emerged from the data was a clear pattern of exclusion.",
         "What emerged from the data was that a clear pattern of exclusion.",
@@ -3910,7 +3910,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When the focused element is a noun phrase ('a clear pattern of exclusion'), no 'that' is needed after 'was'. 'That' is needed only if the focused element is a full clause ('What emerged was that X is Y').",
     },
     {
-      prompt: "Which wh-cleft uses the correct verb after 'is'?",
+      prompt: "Which sentence uses the correct verb form?",
       options: [
         "What is needed is a more nuanced approach to data collection.",
         "What is needed is a more nuanced approach, to collect data better.",
@@ -3921,7 +3921,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── All-cleft ──────────────────────────────────────────────
     {
-      prompt: "Which sentence is a correctly formed all-cleft?",
+      prompt: "Which is the correct sentence?",
       options: [
         "All that is required is a minor adjustment to the sampling procedure.",
         "Everything that is required is a minor adjustment to the sampling procedure.",
@@ -3930,7 +3930,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'All that + clause + is + focused element' is the all-cleft pattern — it restricts the claim exhaustively ('just a minor adjustment'). 'Everything that is required is...' is not the standard all-cleft form.",
     },
     {
-      prompt: "Which all-cleft uses correct verb agreement?",
+      prompt: "Which sentence uses correct verb agreement?",
       options: [
         "All that remains is to validate the model against external datasets.",
         "All that remains are to validate the model against external datasets.",
@@ -3941,7 +3941,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Identifying cleft types ────────────────────────────────
     {
-      prompt: "Which sentence is an it-cleft rather than a wh-cleft?",
+      prompt: "Which sentence emphasises the subject using 'It is... that'?",
       options: [
         "It is the methodological rigour that distinguishes this study.",
         "What distinguishes this study is the methodological rigour.",
@@ -3950,7 +3950,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "An it-cleft begins with 'It is/was X that...'. A wh-cleft begins with a wh-clause ('What...'). Both foreground the same element, but through different structures.",
     },
     {
-      prompt: "Which sentence is a wh-cleft rather than an it-cleft?",
+      prompt: "Which sentence emphasises the key element using 'What... is'?",
       options: [
         "What the study fails to address is the role of contextual factors.",
         "It is the role of contextual factors that the study fails to address.",
@@ -3959,7 +3959,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A is a wh-cleft ('What + clause + is + X'). Option B is an it-cleft ('It is X that...'). Both emphasise 'the role of contextual factors', but through different structures.",
     },
     {
-      prompt: "Which is an it-cleft used to focus on a time adverbial?",
+      prompt: "Which sentence correctly emphasises the time using 'It was... that'?",
       options: [
         "It was only after the intervention that significant gains were observed.",
         "Only after the intervention were significant gains observed.",
@@ -3970,7 +3970,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Clefts for contrastive focus ──────────────────────────
     {
-      prompt: "Which it-cleft correctly sets up a contrast?",
+      prompt: "Which sentence correctly sets up a contrast?",
       options: [
         "It is the long-term effects, not the short-term outcomes, that are most significant.",
         "It is the long-term effects, not the short-term outcomes, which are most significant.",
@@ -3979,7 +3979,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Contrastive it-clefts can include 'not X' phrases: 'It is X, not Y, that...'. The connector remains 'that', not 'which'. The comma-separated contrast is a stylistically effective academic device.",
     },
     {
-      prompt: "Which wh-cleft best signals a contrast between two findings?",
+      prompt: "Which sentence best signals a contrast between two findings?",
       options: [
         "What the data reveal is not correlation but causation.",
         "What the data reveal is not correlation, causation.",
@@ -3990,7 +3990,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Clefts in academic functions ──────────────────────────
     {
-      prompt: "Which sentence uses an it-cleft to signal a paper's key contribution?",
+      prompt: "Which sentence most clearly emphasises the paper's key contribution?",
       options: [
         "It is the use of longitudinal data that distinguishes this study from previous work.",
         "The use of longitudinal data distinguishes this study from previous work.",
@@ -3999,7 +3999,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft ('It is X that...') places strong focus on 'the use of longitudinal data'. The simple sentence (Option B) conveys the same meaning but without the explicit foregrounding the cleft provides.",
     },
     {
-      prompt: "Which wh-cleft effectively introduces a key argument?",
+      prompt: "Which sentence effectively introduces a key argument?",
       options: [
         "What this paper argues is that current frameworks are insufficient to account for this phenomenon.",
         "What this paper is arguing that current frameworks are insufficient to account for this phenomenon.",
@@ -4008,7 +4008,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'What this paper argues is that...' correctly uses the wh-cleft. Option B inserts 'is' inside the wh-clause ('is arguing') and omits the second 'is', breaking the structure entirely.",
     },
     {
-      prompt: "Which it-cleft effectively focuses on a method used?",
+      prompt: "Which sentence correctly emphasises the method used?",
       options: [
         "It is through ethnographic observation that the researchers gained access to this perspective.",
         "It is by ethnographic observation which the researchers gained access to this perspective.",
@@ -4017,7 +4017,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Prepositional phrases of method ('through...') can be clefted: 'It is through X that...'. Option B incorrectly uses 'which' instead of 'that'.",
     },
     {
-      prompt: "Which it-cleft appropriately focuses on a researcher's attribution?",
+      prompt: "Which sentence correctly attributes the contribution to the researcher?",
       options: [
         "It was Bourdieu who first formalised the concept of cultural capital.",
         "It was Bourdieu which first formalised the concept of cultural capital.",
@@ -4028,7 +4028,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Error identification ────────────────────────────────────
     {
-      prompt: "Which sentence contains an error in the it-cleft?",
+      prompt: "Which sentence contains an error?",
       options: [
         "It is the theoretical framework that needs to be refined.",
         "It is the theoretical framework which needs to be refined.",
@@ -4037,7 +4037,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "It-clefts require 'that', not 'which', in the relative clause. 'It is X that...' is the correct form. Using 'which' is a very common learner error in formal academic writing.",
     },
     {
-      prompt: "Which sentence contains a verb agreement error in the wh-cleft?",
+      prompt: "Which sentence contains a verb agreement error?",
       options: [
         "What the review identifies is a significant gap in the evidence base.",
         "What the review identifies are a significant gap in the evidence base.",
@@ -4046,7 +4046,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The copula in a wh-cleft agrees with the focused element ('a significant gap'), which is singular — so 'is' is correct. 'Are' incorrectly treats the wh-clause as the subject for agreement purposes.",
     },
     {
-      prompt: "Which sentence contains a structural error in the it-cleft?",
+      prompt: "Which sentence contains a structural error?",
       options: [
         "It is the external validity of the study that has been questioned.",
         "It is that the external validity of the study has been questioned.",
@@ -4055,7 +4055,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option B places a 'that'-clause immediately after 'It is' — this produces an extraposed subject construction, not an it-cleft. An it-cleft must focus a noun phrase or adverbial: 'It is X that...', not 'It is that...'",
     },
     {
-      prompt: "Which it-cleft contains a verb agreement error in the relative clause?",
+      prompt: "Which sentence contains a verb agreement error in the relative clause?",
       options: [
         "It is the participants who were most affected by the intervention.",
         "It is the participants who was most affected by the intervention.",
@@ -4064,7 +4064,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'The participants' is plural, so the verb in the relative clause must be plural: 'who were'. 'Who was' incorrectly uses a singular verb with a plural antecedent.",
     },
     {
-      prompt: "Which wh-cleft contains a structural error?",
+      prompt: "Which sentence contains a structural error?",
       options: [
         "What remains unclear is the direction of the causal relationship.",
         "What remains unclear is unclear the direction of the causal relationship.",
@@ -4084,7 +4084,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft ('It is X that...') explicitly highlights 'the lack of transparency' as the specific causal factor — particularly useful when making a pointed or contested claim. The simple sentence conveys the same idea but without foregrounding.",
     },
     {
-      prompt: "Which sentence uses a cleft to most effectively emphasise a surprising finding?",
+      prompt: "Which sentence most effectively emphasises a surprising finding?",
       options: [
         "It was the control group, not the treatment group, that showed the largest improvement.",
         "The control group showed the largest improvement, not the treatment group.",
@@ -4095,7 +4095,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Clefts and information structure ──────────────────────
     {
-      prompt: "In the it-cleft 'It is the dependent variable that has been overlooked', what is the focus?",
+      prompt: "In the sentence 'It is the dependent variable that has been overlooked', what is being emphasised?",
       options: [
         "The dependent variable.",
         "The fact that something has been overlooked.",
@@ -4104,7 +4104,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In an it-cleft, the element between 'It is' and 'that' is the focus — the information the writer highlights as most significant. 'The dependent variable' is the focus; 'that has been overlooked' is presupposed background.",
     },
     {
-      prompt: "Which it-cleft correctly places new information in the focus position?",
+      prompt: "Which sentence correctly places the new information in the position of emphasis?",
       options: [
         "It is the ethical implications that previous studies have neglected.",
         "It is the previous studies that neglected the ethical implications.",
@@ -4113,7 +4113,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Clefts place the most significant new information in the focus slot. If the argument is that 'ethical implications' have been neglected, that topic should be clefted. Option B clefts 'the previous studies', which is typically given/old information.",
     },
     {
-      prompt: "Which wh-cleft correctly presents a conclusion as new information?",
+      prompt: "Which sentence correctly presents a conclusion as new information?",
       options: [
         "What the evidence ultimately suggests is that the relationship is bidirectional.",
         "What is bidirectional is what the evidence ultimately suggests.",
@@ -4122,7 +4122,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The standard wh-cleft places new information after 'is': 'What X suggests is [new conclusion]'. Option B reverses this — placing 'what is bidirectional' in the wh-slot, which conventionally holds given/presupposed information.",
     },
     {
-      prompt: "Which sentence uses a cleft to link back to a prior sentence while foregrounding new information?",
+      prompt: "Which sentence links back to the prior sentence while emphasising new information?",
       options: [
         "Three factors were identified. It is the third factor — social capital — that proves most influential.",
         "Three factors were identified. The third factor, social capital, proved most influential.",
@@ -4133,7 +4133,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Cleft formation from base sentences ───────────────────
     {
-      prompt: "Which is the correct it-cleft of 'Peer review ensures academic quality' — focusing on the subject?",
+      prompt: "Which correctly emphasises the subject of 'Peer review ensures academic quality'?",
       options: [
         "It is peer review that ensures academic quality.",
         "It is peer review which ensures academic quality.",
@@ -4142,7 +4142,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "To form an it-cleft focusing on the subject, place it between 'It is' and 'that': 'It is [subject] that [rest of sentence]'. The connector is always 'that', not 'which'.",
     },
     {
-      prompt: "Which correctly forms an it-cleft of 'The researchers collected the data in rural areas' — focusing on the place?",
+      prompt: "Which correctly emphasises where in 'The researchers collected the data in rural areas'?",
       options: [
         "It was in rural areas that the researchers collected the data.",
         "It was in rural areas where the researchers collected the data.",
@@ -4151,7 +4151,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Even when the focus is a place ('in rural areas'), the connector in an it-cleft is 'that' — not 'where'. 'Where' introduces a relative clause modifying a noun, not a cleft clause.",
     },
     {
-      prompt: "Which correctly converts 'The experiment disproved the null hypothesis' into a wh-cleft?",
+      prompt: "Which correctly emphasises the action in 'The experiment disproved the null hypothesis'?",
       options: [
         "What the experiment did was disprove the null hypothesis.",
         "What the experiment did was disproved the null hypothesis.",
@@ -4162,7 +4162,7 @@ export const questionBanks: Record<string, Question[]> = {
 
     // ── Register and style ─────────────────────────────────────
     {
-      prompt: "Which cleft is more appropriate for formal academic writing?",
+      prompt: "Which sentence is more appropriate for formal academic writing?",
       options: [
         "It is the theoretical contribution that sets this work apart.",
         "What sets this work apart, it's the theoretical contribution.",
@@ -4171,7 +4171,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft ('It is X that...') is the standard formal variant. Option B combines a wh-clause with a comma splice and a contracted 'it's' — all inappropriate in academic prose.",
     },
     {
-      prompt: "Which is the most concise and academically appropriate way to cleft the object?",
+      prompt: "Which is the most concise and academically appropriate way to emphasise the object?",
       options: [
         "It is methodological consistency that the field currently lacks.",
         "The thing that the field currently lacks is methodological consistency.",
@@ -4180,7 +4180,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft is more economical and formal. 'The thing that...' is a weakened pseudo-cleft variant — acceptable but wordier and slightly informal compared to the it-cleft.",
     },
     {
-      prompt: "Which sentence uses a cleft most effectively in an academic conclusion?",
+      prompt: "Which sentence most effectively emphasises the contribution in an academic conclusion?",
       options: [
         "It is the integration of qualitative and quantitative methods that represents the key contribution of this study.",
         "The key contribution of this study is integrating qualitative and quantitative methods.",
@@ -4189,7 +4189,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In a conclusion, the it-cleft gives maximum prominence to the contribution ('the integration of qualitative and quantitative methods'). Option B is clear but does not signal the importance of the contribution as explicitly.",
     },
     {
-      prompt: "Which sentence uses a cleft to highlight an unexpected agent?",
+      prompt: "Which sentence most effectively highlights an unexpected agent?",
       options: [
         "It was the junior researchers, not the senior staff, who identified the critical flaw.",
         "The junior researchers, not the senior staff, identified the critical flaw.",
@@ -4198,7 +4198,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft foregrounds 'the junior researchers' as the surprising agent, making the contrast more rhetorically forceful. Option B conveys the same content but without the same emphasis on the unexpected nature of the finding.",
     },
     {
-      prompt: "Which wh-cleft is correctly formed to focus on a recommendation?",
+      prompt: "Which sentence correctly emphasises a recommendation?",
       options: [
         "What future research should do is examine the long-term effects of the intervention.",
         "What future research should do is examined the long-term effects of the intervention.",
@@ -4207,7 +4207,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "After 'What X does/should do is', the following verb takes the bare infinitive. 'Examine' (bare infinitive) is correct; 'examined' (past tense) is incorrect in this wh-cleft pattern.",
     },
     {
-      prompt: "Which it-cleft correctly focuses on an instrument or means?",
+      prompt: "Which sentence correctly emphasises the instrument or means?",
       options: [
         "It is through these interviews that a richer understanding can be achieved.",
         "It is through these interviews where a richer understanding can be achieved.",
@@ -4216,7 +4216,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Prepositional phrases of means are clefted with 'that': 'It is through X that...'. 'Where' cannot be used to introduce the cleft clause — it is used only in relative clauses modifying place nouns.",
     },
     {
-      prompt: "Which it-cleft uses the correct structure when the focus is an adverb of manner?",
+      prompt: "Which sentence uses the correct structure when emphasising an adverb of manner?",
       options: [
         "It is cautiously that these conclusions should be interpreted.",
         "It is cautiously which these conclusions should be interpreted.",
@@ -4225,7 +4225,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Adverbs can be clefted in it-clefts: 'It is cautiously that...'. The connector is 'that', never 'which'. Although clefting adverbs of manner is less common, it is grammatically well-formed and used for emphasis.",
     },
     {
-      prompt: "Which sentence best demonstrates an it-cleft used to rebut a previous claim?",
+      prompt: "Which sentence best emphasises a rebuttal of a previous claim?",
       options: [
         "It is the structural factors, not individual choices, that drive inequality.",
         "The structural factors drive inequality rather than individual choices.",
@@ -4234,7 +4234,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The it-cleft with 'not X' ('It is X, not Y, that...') is the most forceful way to rebut a competing explanation. It places the writer's preferred factor in focus and explicitly names what is being displaced. Option B states the same contrast but less emphatically.",
     },
     {
-      prompt: "Which sentence uses a wh-cleft to effectively open a discussion section?",
+      prompt: "Which sentence more effectively opens a discussion section?",
       options: [
         "What these findings suggest is that socioeconomic status mediates the observed effect.",
         "These findings suggest that socioeconomic status mediates the observed effect.",
@@ -4248,7 +4248,7 @@ export const questionBanks: Record<string, Question[]> = {
   fronting: [
     // ── Adjective/Complement Fronting with Inversion ─────────────
     {
-      prompt: "Which sentence correctly fronts an adjective phrase with subject-verb inversion?",
+      prompt: "Which sentence correctly moves the adjective phrase to the start?",
       options: [
         "Particularly noteworthy is the consistency of results across all three sites.",
         "Particularly noteworthy the consistency of results across all three sites is.",
@@ -4257,7 +4257,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Fronting an adjective phrase requires inversion: adjective phrase + auxiliary/copula + subject. Option A correctly places 'is' before the subject noun phrase. Option B produces an ungrammatical SOV order.",
     },
     {
-      prompt: "Which sentence fronts a prepositional phrase to foreground an evaluative comment?",
+      prompt: "Which sentence correctly moves the prepositional phrase to the start to highlight the evaluation?",
       options: [
         "Of equal importance is the need to consider socioeconomic variables.",
         "The need to consider socioeconomic variables is of equal importance.",
@@ -4266,7 +4266,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Fronting 'Of equal importance' with inversion ('is the need...') brings the evaluation to the front of the sentence, signalling its rhetorical weight immediately. The non-fronted version (B) places the evaluation at the end, which is less emphatic.",
     },
     {
-      prompt: "Which sentence uses fronting to create a cohesive link with a preceding discussion of research gaps?",
+      prompt: "Which sentence correctly moves part of it to the start to link to what came before?",
       options: [
         "Less well understood is the mechanism by which this effect occurs.",
         "The mechanism by which this effect occurs is less well understood.",
@@ -4275,7 +4275,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Fronting 'Less well understood' connects directly to a preceding discussion of what is and is not known, orienting the reader before naming the topic. Option B, though grammatical, delivers the evaluative comment less prominently.",
     },
     {
-      prompt: "Which sentence correctly fronts a complement phrase?",
+      prompt: "Which sentence correctly moves the complement to the start?",
       options: [
         "Central to this argument is the assumption that language shapes thought.",
         "Central to this argument the assumption that language shapes thought is.",
@@ -4284,7 +4284,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Fronted complement phrases require inversion: complement + copula + subject. Option A is grammatically correct. Option B places the copula ('is') at the end, producing an ungrammatical structure in English.",
     },
     {
-      prompt: "Which sentence uses fronting of a negative adverbial to create subject-auxiliary inversion?",
+      prompt: "Which sentence correctly moves the negative adverb to the start?",
       options: [
         "Rarely has such a comprehensive dataset been assembled in this field.",
         "Such a comprehensive dataset has rarely been assembled in this field.",
@@ -4297,7 +4297,7 @@ export const questionBanks: Record<string, Question[]> = {
   impersonal: [
     // ── It-constructions & There-constructions ────────────────────
     {
-      prompt: "Which sentence uses an impersonal construction to distance the writer from a claim?",
+      prompt: "Which sentence states this claim without naming the writer?",
       options: [
         "It could be argued that the current framework is insufficient.",
         "I would argue that the current framework is insufficient.",
@@ -4306,7 +4306,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Impersonal constructions like 'It could be argued that...' present a claim without a named agent, maintaining formal academic distance. The first-person 'I would argue' (option B) is less common in formal writing and directly attributes the view to the author.",
     },
     {
-      prompt: "Which sentence correctly uses a 'there' existential construction to introduce evidence impersonally?",
+      prompt: "Which sentence correctly uses 'There is/are...' to introduce the evidence?",
       options: [
         "There is growing evidence that diet affects cognitive function in older adults.",
         "It is growing evidence that diet affects cognitive function in older adults.",
@@ -4315,7 +4315,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'There is/are' is the correct existential construction for introducing the existence of something (evidence, reasons, factors). 'It is' cannot be used in this way — option B is ungrammatical.",
     },
     {
-      prompt: "Which sentence uses an impersonal passive to report an established finding?",
+      prompt: "Which sentence correctly uses the passive to report this finding impersonally?",
       options: [
         "It has been demonstrated that regular exercise improves working memory.",
         "It was demonstrated regular exercise improves working memory.",
@@ -4324,7 +4324,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The impersonal passive 'It has been demonstrated that...' requires the complementiser 'that' before the embedded clause. Omitting 'that' (option B) is ungrammatical in this construction.",
     },
     {
-      prompt: "Which sentence uses a dummy-subject 'it' construction (impersonal) appropriately?",
+      prompt: "Which sentence correctly uses 'It is...' to state this impersonally?",
       options: [
         "It is important to acknowledge the limitations of this approach.",
         "It was the most significant finding of the study.",
@@ -4346,7 +4346,7 @@ export const questionBanks: Record<string, Question[]> = {
   definite: [
     // ── Second-mention & Specific Reference ──────────────────────
     {
-      prompt: "Which sentence correctly uses 'the' for second-mention reference?",
+      prompt: "Which sentence correctly uses 'the' when referring to something already mentioned?",
       options: [
         "A qualitative study was conducted. The study involved twenty participants.",
         "A qualitative study was conducted. A study involved twenty participants.",
@@ -4355,7 +4355,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'The' is used on second mention because both writer and reader now share knowledge of which study is meant. Using 'a' on second mention (option B) treats the noun as if it were being introduced for the first time, which confuses the reader.",
     },
     {
-      prompt: "Which sentence correctly uses 'the' before a noun modified by a specifying post-modifier?",
+      prompt: "Which sentence correctly uses 'the' before a noun with a specific description after it?",
       options: [
         "The role of culture in language acquisition has been widely debated.",
         "A role of culture in language acquisition has been widely debated.",
@@ -4364,7 +4364,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When a noun is followed by a phrase that uniquely specifies it ('of culture in language acquisition'), 'the' is required because the post-modifier makes the referent identifiable. 'A role of culture...' implies a non-specific or first-mention context, which clashes with the specificity of the modifier.",
     },
     {
-      prompt: "Which sentence correctly uses 'the' with a backward-referencing noun phrase?",
+      prompt: "Which sentence correctly uses 'the' to refer back to something?",
       options: [
         "Following the procedure outlined in Section 2, samples were analysed.",
         "Following a procedure outlined in Section 2, samples were analysed.",
@@ -4395,7 +4395,7 @@ export const questionBanks: Record<string, Question[]> = {
   comparative: [
     // ── Form & Usage of Comparatives ─────────────────────────────
     {
-      prompt: "Which sentence uses the correct comparative form for a multi-syllable adjective?",
+      prompt: "Which sentence uses the correct comparative form here?",
       options: [
         "The second methodology proved more reliable than the first.",
         "The second methodology proved more reliable that the first.",
@@ -4404,7 +4404,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Comparative constructions require 'than', not 'that', to introduce the second element of the comparison. Option A is correct. This is a common error in academic writing.",
     },
     {
-      prompt: "Which sentence maintains grammatical parallelism in a comparative structure?",
+      prompt: "Which sentence uses the correct comparative form?",
       options: [
         "Smith's (2019) findings were considerably more robust than those of Jones (2020).",
         "Smith's (2019) findings were considerably more robust than Jones (2020).",
@@ -4413,7 +4413,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When comparing findings to findings, the pronoun 'those' is needed to stand in for 'findings' — otherwise the sentence compares 'Smith's findings' to 'Jones (2020)' (a person or publication, not findings). Option A maintains parallel comparison of equivalent entities.",
     },
     {
-      prompt: "Which sentence correctly uses a one-syllable comparative form?",
+      prompt: "Which sentence uses the correct comparative form?",
       options: [
         "The new model produced clearer predictions than its predecessor.",
         "The new model produced more clear predictions than its predecessor.",
@@ -4422,7 +4422,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "One-syllable adjectives form comparatives with the suffix '-er' (clear → clearer), not with 'more'. 'More clear' (option B) is non-standard, though occasionally seen. 'Clearer' (option A) is the standard academic form.",
     },
     {
-      prompt: "Which sentence correctly uses 'as... as' to express equivalence?",
+      prompt: "Which sentence correctly compares two things as equal?",
       options: [
         "The control group performed as well as the experimental group on the pre-test.",
         "The control group performed as good as the experimental group on the pre-test.",
@@ -4431,7 +4431,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'As well as' is correct when modifying a verb (performed). 'Good' is an adjective and cannot modify a verb — 'as good as' would be used with a linking verb + adjective (e.g., 'as good as expected'). Option A correctly uses the adverb 'well'.",
     },
     {
-      prompt: "Which sentence uses a comparative structure to frame an evaluative claim effectively?",
+      prompt: "Which sentence uses the correct comparative form?",
       options: [
         "The qualitative approach yielded richer contextual data than the survey alone could provide.",
         "The qualitative approach yielded rich contextual data and the survey was not as useful.",
@@ -4444,7 +4444,7 @@ export const questionBanks: Record<string, Question[]> = {
   adverbial: [
     // ── Concession, Cause, Condition, Contrast ────────────────────
     {
-      prompt: "Which sentence correctly uses an adverbial clause of concession?",
+      prompt: "Which sentence correctly introduces a contrasting idea using 'although' or 'while'?",
       options: [
         "Although the sample was small, the results indicate a consistent trend.",
         "Despite the sample was small, the results indicate a consistent trend.",
@@ -4453,7 +4453,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Although' is a subordinating conjunction and is correctly followed by a full clause (subject + verb). 'Despite' is a preposition and must be followed by a noun phrase or gerund ('Despite the small sample size...' or 'Despite being small...'). Option B is therefore ungrammatical.",
     },
     {
-      prompt: "Which sentence correctly uses an adverbial clause of cause?",
+      prompt: "Which sentence correctly states the reason using 'because' or 'since'?",
       options: [
         "Because the intervention was introduced late, its effects were limited.",
         "However the intervention was introduced late, its effects were limited.",
@@ -4462,7 +4462,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Because' is a subordinating conjunction correctly used to introduce a causal adverbial clause. 'However' is a conjunctive adverb (discourse marker) and cannot introduce a subordinate clause — it connects independent clauses or sentences. Option B is therefore ungrammatical.",
     },
     {
-      prompt: "Which sentence uses an adverbial clause of condition to express an uncertain future outcome?",
+      prompt: "Which sentence correctly uses 'if' or 'unless' to express an uncertain future outcome?",
       options: [
         "If the effect is replicated in subsequent studies, the theory will gain empirical support.",
         "When the effect is replicated in subsequent studies, the theory will gain empirical support.",
@@ -4471,7 +4471,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'If' introduces a conditional clause — it treats replication as uncertain (possible but not certain). 'When' treats replication as certain (a matter of time, not possibility). In academic contexts, 'if' is more epistemically honest when an outcome is not guaranteed.",
     },
     {
-      prompt: "Which sentence correctly uses an adverbial clause of concession to acknowledge a scope limitation?",
+      prompt: "Which sentence correctly uses 'while' or 'although' to acknowledge a scope limitation?",
       options: [
         "While this study focuses on quantitative measures, qualitative insights remain equally valuable.",
         "Although this study focuses on quantitative measures because qualitative insights remain equally valuable.",
@@ -4480,7 +4480,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A correctly uses 'while' as a subordinating conjunction of concession, creating a balanced acknowledgement of a limitation. Option B conflates two clause types: 'although... because' creates a structural contradiction — a concession cannot simultaneously be explained by a cause within the same clause.",
     },
     {
-      prompt: "Which sentence uses an adverbial clause to express contrast rather than cause?",
+      prompt: "Which sentence uses 'whereas' to show contrast rather than 'because' to show cause?",
       options: [
         "Whereas experimental studies control variables, observational studies capture real-world complexity.",
         "Because experimental studies control variables, observational studies capture real-world complexity.",
@@ -4494,7 +4494,7 @@ export const questionBanks: Record<string, Question[]> = {
   present: [
     // ── Tense Choice in Academic Writing ─────────────────────────
     {
-      prompt: "Which sentence correctly uses present simple to attribute a position to a named author?",
+      prompt: "Which sentence uses the correct tense to attribute a position to a named author?",
       options: [
         "Smith (2019) argues that institutional trust is a precondition for policy compliance.",
         "Smith (2019) argued that institutional trust is a precondition for policy compliance.",
@@ -4521,7 +4521,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "General truths and established scientific principles use present simple, not the present progressive. The present progressive ('are impairing') implies a temporary, ongoing action happening right now — inappropriate for a general principle.",
     },
     {
-      prompt: "Which sentence correctly uses past simple to describe the specific actions of a completed study?",
+      prompt: "Which sentence uses the correct tense to describe the specific actions of a completed study?",
       options: [
         "The researchers recruited 120 participants from two secondary schools.",
         "The researchers recruit 120 participants from two secondary schools.",
@@ -4592,7 +4592,7 @@ export const questionBanks: Record<string, Question[]> = {
   zero_art: [
     // ── Zero Article: Abstract Nouns, Disciplines, General Plurals ─
     {
-      prompt: "Which sentence correctly uses zero article before the name of an academic discipline?",
+      prompt: "Which sentence correctly uses no article before the name of an academic discipline?",
       options: [
         "Linguistics draws on psychology, anthropology, and philosophy.",
         "The linguistics draws on the psychology, the anthropology, and the philosophy.",
@@ -4601,7 +4601,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Names of academic disciplines are proper nouns and take zero article when used in their general sense. Adding 'the' (option B) would imply specific, bounded fields being referred to in context — incorrect for general disciplinary reference.",
     },
     {
-      prompt: "Which sentence correctly uses zero article before a general plural noun?",
+      prompt: "Which sentence correctly uses no article before a plural noun used in a general sense?",
       options: [
         "Students who receive regular feedback tend to improve more rapidly.",
         "The students who receive regular feedback tend to improve more rapidly.",
@@ -4610,7 +4610,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Students' with zero article refers to students in general — any student, everywhere. 'The students' (option B) would refer to a specific group of students already identified in context. When making a general claim about a category, zero article is correct.",
     },
     {
-      prompt: "Which sentence correctly uses zero article before an uncountable abstract noun in a general statement?",
+      prompt: "Which sentence correctly uses no article before an uncountable noun in a general statement?",
       options: [
         "Evidence plays a crucial role in academic argumentation.",
         "An evidence plays a crucial role in academic argumentation.",
@@ -4619,7 +4619,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Evidence' is an uncountable noun and cannot be preceded by the indefinite article 'a/an', which is used only with singular countable nouns. Abstract uncountable nouns (evidence, knowledge, research, information) take zero article when used in general statements.",
     },
     {
-      prompt: "Which sentence correctly uses zero article to make a general claim about a type of research?",
+      prompt: "Which sentence correctly uses no article to make a general claim about a type of research?",
       options: [
         "Longitudinal studies offer insights that cross-sectional designs cannot provide.",
         "The longitudinal studies offer insights that the cross-sectional designs cannot provide.",
@@ -4628,7 +4628,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Zero article before a general plural ('longitudinal studies') signals that the claim is about the category as a whole — all longitudinal studies, by their nature. 'The longitudinal studies' (option B) would refer to a specific set of studies previously mentioned.",
     },
     {
-      prompt: "Which sentence correctly uses zero article before the name of a methodology?",
+      prompt: "Which sentence correctly uses no article before the name of a methodology?",
       options: [
         "Grounded theory was developed as an inductive approach to qualitative research.",
         "The grounded theory was developed as an inductive approach to qualitative research.",
@@ -4641,7 +4641,7 @@ export const questionBanks: Record<string, Question[]> = {
   real_cond: [
     // ── If + Present Simple, Will/May/Can ─────────────────────────
     {
-      prompt: "Which sentence correctly forms a real conditional?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If the sample size is increased, the findings will be more reliable.",
         "If the sample size will be increased, the findings will be more reliable.",
@@ -4650,7 +4650,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Real conditionals follow the pattern: if + present simple, will/may/can + base form. The if-clause uses present simple to describe the condition — never 'will'. Using 'will' in the if-clause (option B) is a common error in academic writing.",
     },
     {
-      prompt: "Which sentence correctly uses 'may' in the result clause of a real conditional?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If the correlation holds across larger samples, it may indicate a genuine causal link.",
         "If the correlation holds across larger samples, it would indicate a genuine causal link.",
@@ -4659,7 +4659,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'May' is appropriate in the result clause of a real conditional when the outcome is possible but not certain — consistent with appropriate academic hedging. 'Would' (option B) belongs in hypothetical conditionals (if + past simple, would + base form), not real ones.",
     },
     {
-      prompt: "Which sentence correctly uses a real conditional to state an implication of evidence?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If these findings are replicated, they will provide strong support for the theoretical model.",
         "If these findings were replicated, they would provide strong support for the theoretical model.",
@@ -4668,7 +4668,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When the writer treats replication as a genuine, plausible possibility (not a hypothetical or counterfactual), a real conditional is used: if + present simple, will + base form. The hypothetical form (option B: if + past simple, would) implies the writer considers replication unlikely or imaginary.",
     },
     {
-      prompt: "Which sentence correctly uses a real conditional to frame a methodological recommendation?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If future studies include larger and more diverse samples, the results will be more generalisable.",
         "If future studies included larger and more diverse samples, the results would be more generalisable.",
@@ -4677,7 +4677,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "A real conditional (if + present simple, will) frames a genuine recommendation — the writer expects or hopes this will happen. The hypothetical form (option B: if + past, would) implies the writer doubts future studies will follow the recommendation, which is typically not the intended tone in a recommendations section.",
     },
     {
-      prompt: "Which sentence correctly uses 'can' in the result clause of a real conditional?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If the variables are controlled effectively, researchers can draw stronger causal inferences.",
         "If the variables are controlled effectively, researchers could draw stronger causal inferences.",
@@ -4690,7 +4690,7 @@ export const questionBanks: Record<string, Question[]> = {
   parallel: [
     // ── Parallel Grammatical Forms ────────────────────────────────
     {
-      prompt: "Which sentence correctly maintains parallel structure in a list of research aims?",
+      prompt: "Which sentence uses the same grammatical form for all items in the list of research aims?",
       options: [
         "The study aimed to identify patterns, to analyse relationships, and to evaluate outcomes.",
         "The study aimed to identify patterns, analysing relationships, and an evaluation of outcomes.",
@@ -4699,7 +4699,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "All three items in a list of aims must share the same grammatical form. Option A consistently uses 'to + base verb' (to identify, to analyse, to evaluate). Option B mixes a to-infinitive, a gerund, and a noun phrase — a parallelism error that disrupts the balance of the sentence.",
     },
     {
-      prompt: "Which sentence correctly uses parallel structure in a research methods description?",
+      prompt: "Which sentence uses the same grammatical form throughout the research methods description?",
       options: [
         "Data were collected through interviews, observations, and document analysis.",
         "Data were collected through interviews, making observations, and we analysed documents.",
@@ -4708,7 +4708,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A lists three parallel noun phrases (interviews, observations, document analysis). Option B mixes a noun, a gerund phrase, and a full clause — a broken parallel that is grammatically inconsistent and stylistically awkward.",
     },
     {
-      prompt: "Which sentence correctly uses parallel structure in a contrastive comparison?",
+      prompt: "Which sentence uses the same grammatical form in the comparison?",
       options: [
         "Quantitative methods prioritise breadth; qualitative methods prioritise depth.",
         "Quantitative methods prioritise breadth; whereas depth is what qualitative methods focus on.",
@@ -4717,7 +4717,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A uses a balanced parallel structure: subject + verb + noun object on each side of the semicolon, creating a clean rhetorical contrast. Option B uses a subordinate clause with inverted emphasis, which breaks the grammatical symmetry and is less elegant for academic contrast.",
     },
     {
-      prompt: "Which sentence correctly uses parallel infinitive structure in a thesis statement?",
+      prompt: "Which sentence uses the same infinitive form for all items in the thesis statement?",
       options: [
         "This paper seeks to examine the causes, to assess the consequences, and to propose solutions.",
         "This paper seeks to examine the causes, an assessment of the consequences, and proposing solutions.",
@@ -4726,7 +4726,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "After 'seeks to', each subsequent item must also use 'to + base verb' for parallelism. Option A does so consistently. Option B switches to a noun phrase ('an assessment') and a gerund ('proposing'), breaking the parallel structure begun with 'to examine'.",
     },
     {
-      prompt: "Which sentence correctly uses parallel structure in a concessive comparison?",
+      prompt: "Which sentence uses the same grammatical form in the concessive comparison?",
       options: [
         "While the approach is time-consuming, it is thorough and well-validated.",
         "While the approach is time-consuming, thoroughness and it being well-validated are features.",
@@ -4749,7 +4749,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'They' in option B could refer to either teachers or students — the pronoun is ambiguous. Option A uses the specifying noun phrase 'the teachers', which removes all ambiguity. When two or more referents are in play, a repeated or specifying noun is safer than a pronoun.",
     },
     {
-      prompt: "Which sentence correctly uses a summary noun to create a cohesive reference chain?",
+      prompt: "Which sentence correctly uses a noun to summarise and refer back to the previous idea?",
       options: [
         "Participants reported increased anxiety, poor sleep, and reduced motivation. These effects were most pronounced in the youngest age group.",
         "Participants reported increased anxiety, poor sleep, and reduced motivation. They were most pronounced in the youngest age group.",
@@ -4776,7 +4776,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'These' refers to something close in the text — the patterns just listed in the preceding sentence. 'Those' implies greater distance or contrast, and can sound as if the writer is referring to patterns mentioned much earlier or distancing themselves from them. For immediate backward reference, 'these' is the natural choice.",
     },
     {
-      prompt: "Which sentence correctly uses a 'this + framing noun' to label and refer back to a preceding idea?",
+      prompt: "Which sentence correctly uses 'this' + a noun to label and refer back to the previous idea?",
       options: [
         "Dropout rates fell by 15% during the intervention period. This reduction is especially notable given the historically high attrition at the school.",
         "Dropout rates fell by 15% during the intervention period. This is especially notable given the historically high attrition at the school.",
@@ -4798,7 +4798,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "When something is introduced for the first time, 'a/an' signals that it is new to the reader. 'The' (option B) presupposes that reader and writer already know which framework is meant — but since this is the first mention, that shared knowledge does not yet exist. First mention → 'a'; second mention → 'the'.",
     },
     {
-      prompt: "Which sentence correctly uses 'a' to classify something as one member of a category?",
+      prompt: "Which sentence correctly uses 'a' to describe what type of thing it is?",
       options: [
         "Ethnography is a qualitative method used to study cultural practices in context.",
         "Ethnography is the qualitative method used to study cultural practices in context.",
@@ -4838,7 +4838,7 @@ export const questionBanks: Record<string, Question[]> = {
   hypo_cond: [
     // ── If + Past Simple / Would ──────────────────────────────────
     {
-      prompt: "Which sentence correctly forms a hypothetical conditional?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If this framework were applied globally, outcomes would differ significantly.",
         "If this framework were applied globally, outcomes will differ significantly.",
@@ -4847,7 +4847,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Hypothetical conditionals follow the pattern: if + past simple (or 'were'), would + base form. Using 'will' in the result clause (option B) confuses the hypothetical form with a real conditional. 'Would' marks the result as contingent on an unlikely or imaginary condition.",
     },
     {
-      prompt: "Which sentence correctly uses 'were' (not 'was') in a formal academic hypothetical?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If the study were replicated with a more diverse sample, the results might be more reliable.",
         "If the study was replicated with a more diverse sample, the results might be more reliable.",
@@ -4856,7 +4856,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "In formal academic English, the subjunctive 'were' is used for all persons in hypothetical if-clauses. 'Was' (option B) is common in informal speech but is considered non-standard in academic writing. The subjunctive 'were' signals clearly that the condition is hypothetical, not factual.",
     },
     {
-      prompt: "Which sentence correctly uses a hypothetical conditional to explore a theoretical alternative?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If a different sampling method were used, the findings might be more generalisable.",
         "If a different sampling method were used, the findings are more generalisable.",
@@ -4865,7 +4865,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "The result clause of a hypothetical conditional requires 'would/might/could + base form', not present simple. 'The findings are' (option B) describes a current fact, not a hypothetical outcome. Option A correctly pairs the hypothetical if-clause with 'might be' to signal contingency.",
     },
     {
-      prompt: "Which sentence correctly uses 'were to' for a formal academic hypothetical?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If these findings were to be replicated, this would constitute strong evidence for the theory.",
         "If these findings would be replicated, this would constitute strong evidence for the theory.",
@@ -4874,7 +4874,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Were to + infinitive' is a formal variant used to introduce an imagined future possibility with appropriate tentativeness. Using 'would' in the if-clause (option B) is a common error — 'would' belongs in the result clause only, never in the if-clause of a conditional.",
     },
     {
-      prompt: "Which sentence correctly uses a hypothetical conditional to discuss a scenario the writer treats as contrary to fact?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If resources were unlimited, researchers could pursue far more ambitious longitudinal designs.",
         "If resources are unlimited, researchers can pursue far more ambitious longitudinal designs.",
@@ -4887,7 +4887,7 @@ export const questionBanks: Record<string, Question[]> = {
   mixed_cond: [
     // ── If + Past Perfect → Would (Present Result) ────────────────
     {
-      prompt: "Which sentence correctly forms a mixed conditional (past cause, present result)?",
+      prompt: "Which sentence correctly expresses a past situation with a present consequence?",
       options: [
         "If the methodology had been more robust, the conclusions would be stronger today.",
         "If the methodology had been more robust, the conclusions would have been stronger.",
@@ -4896,7 +4896,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "A mixed conditional links a past condition (if + past perfect: 'had been') with a present result (would + base form: 'would be'). Option B uses 'would have been', which creates a standard past unreal conditional — both condition and result are in the past. Option A is mixed because the past decision has consequences visible in the present ('today').",
     },
     {
-      prompt: "Which sentence correctly uses a mixed conditional to reflect on a past decision's present impact?",
+      prompt: "Which sentence correctly expresses a past situation with a present consequence?",
       options: [
         "If the initial data collection had been more systematic, the current analysis would be considerably more reliable.",
         "If the initial data collection were more systematic, the current analysis would be considerably more reliable.",
@@ -4905,7 +4905,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A is a mixed conditional: the if-clause uses past perfect ('had been') to refer to a past event, while the result clause uses 'would be' to describe the present consequence. Option B is a pure hypothetical conditional (if + past simple → would) — it imagines a different present situation, rather than reflecting on a past cause.",
     },
     {
-      prompt: "Which sentence correctly uses a mixed conditional in critical analysis of a past study?",
+      prompt: "Which is the correct sentence?",
       options: [
         "If earlier studies had accounted for these variables, the field would now have a clearer theoretical foundation.",
         "If earlier studies had accounted for these variables, the field would now have had a clearer theoretical foundation.",
@@ -4914,7 +4914,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Would now have' (option A) correctly places the result in the present — the current state of the field is what has been affected by the past omission. 'Would now have had' (option B) is grammatically awkward; the result clause of a mixed conditional takes 'would + base form', not 'would have + past participle'.",
     },
     {
-      prompt: "Which sentence is a mixed conditional (not a standard past unreal conditional)?",
+      prompt: "Which sentence correctly expresses a past situation with a present consequence?",
       options: [
         "If the researchers had chosen a different design, the study would still be running today.",
         "If the researchers had chosen a different design, the study would have been completed sooner.",
@@ -4923,7 +4923,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "Option A is a mixed conditional: the past perfect if-clause ('had chosen') refers to a past decision, and the result ('would still be running today') describes a present consequence. Option B has both clauses in the past — past perfect condition and 'would have been' result — making it a standard past unreal conditional, not mixed.",
     },
     {
-      prompt: "Which sentence correctly uses a mixed conditional to evaluate the present impact of a past methodological limitation?",
+      prompt: "Which sentence correctly expresses a past situation with a present consequence?",
       options: [
         "If a control group had been included, the causal claims made in this study would be far more credible now.",
         "If a control group were included, the causal claims made in this study would be far more credible now.",
@@ -4936,7 +4936,7 @@ export const questionBanks: Record<string, Question[]> = {
   degree: [
     // ── Degree Adverbs: Formal Intensifiers and Hedges ───────────
     {
-      prompt: "Which sentence uses a formal degree adverb to intensify a claim appropriately in academic writing?",
+      prompt: "Which sentence uses the correct word to strengthen this claim?",
       options: [
         "Attendance rates markedly improved following the introduction of the new policy.",
         "Attendance rates really improved following the introduction of the new policy.",
@@ -4945,7 +4945,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Markedly' is a formal degree adverb conveying a clear, measurable improvement — suitable for academic prose. 'Really' (option B) is an informal intensifier used in conversational English. Academic writing favours: markedly, substantially, considerably, notably, significantly — over very, really, quite, pretty.",
     },
     {
-      prompt: "Which sentence correctly uses a degree adverb to hedge a claim with appropriate academic caution?",
+      prompt: "Which sentence uses the correct word to soften this claim?",
       options: [
         "The results were somewhat inconclusive, suggesting that further investigation is warranted.",
         "The results were totally inconclusive, suggesting that further investigation is warranted.",
@@ -4954,7 +4954,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Somewhat' is a downgrading (hedging) degree adverb that signals partial or moderate inconclusiveness — appropriate for calibrating a claim carefully. 'Totally' (option B) is an informal intensifier that overstates the case and belongs in conversational rather than academic register.",
     },
     {
-      prompt: "Which sentence correctly uses 'notably' as a sentence adverb to flag an important detail?",
+      prompt: "Which sentence correctly uses 'notably' to highlight an important detail?",
       options: [
         "Most participants agreed with the statement; notably, the youngest cohort was the sole exception.",
         "Most participants agreed with the statement; very, the youngest cohort was the sole exception.",
@@ -4963,7 +4963,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Notably' can function as a sentence adverb, drawing the reader's attention to something worthy of special notice. 'Very' (option B) is only an intensifier — it must modify an adjective or adverb ('very different') and cannot stand alone as a sentence adverb. Option B is therefore ungrammatical.",
     },
     {
-      prompt: "Which sentence uses a formal degree adverb appropriately in a comparative claim?",
+      prompt: "Which sentence uses the correct word in this comparison?",
       options: [
         "The second intervention proved considerably more effective than the first.",
         "The second intervention proved a lot more effective than the first.",
@@ -4972,7 +4972,7 @@ export const questionBanks: Record<string, Question[]> = {
       explanation: "'Considerably' is a formal intensifier appropriate for academic comparisons. 'A lot' (option B) is informal and conversational — it is avoided in published academic writing. Preferred formal alternatives include: considerably, substantially, markedly, significantly, notably.",
     },
     {
-      prompt: "Which sentence correctly uses 'highly' rather than 'very' with a formal academic adjective?",
+      prompt: "Which sentence uses the correct word to strengthen this claim?",
       options: [
         "The difference between groups was highly significant (p < .001).",
         "The difference between groups was very significant (p < .001).",
