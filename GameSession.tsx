@@ -3,6 +3,7 @@ import { ArrowLeft, Zap, CheckCircle, XCircle, RotateCcw, Map } from "lucide-rea
 import { allConcepts } from "./grammar-map";
 import { questionBanks } from "./question-banks";
 import { QUESTIONS_PER_SESSION } from "./IntroScreen";
+import type { IncorrectQuestion } from "./useConceptProgress";
 
 type Phase = "playing" | "feedback" | "results";
 
@@ -11,7 +12,7 @@ const QUESTION_TIME = 20;
 interface Props {
   conceptId: string;
   streak: number;
-  onComplete: (passed: boolean) => void;
+  onComplete: (passed: boolean, conceptId: string, score: number, incorrectQs: IncorrectQuestion[]) => void;
   onBack: () => void;
 }
 
@@ -214,7 +215,19 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
           </div>
         </div>
 
-        <ResultNotifier passed={passed} onComplete={onComplete} />
+        <ResultNotifier
+          passed={passed}
+          conceptId={conceptId}
+          score={pct}
+          incorrectQs={wrongItems.map(({ q, ans }) => ({
+            prompt: q.prompt,
+            options: q.options,
+            correct: q.correct,
+            explanation: q.explanation,
+            yourAnswer: ans,
+          }))}
+          onComplete={onComplete}
+        />
       </div>
     );
   }
@@ -330,7 +343,15 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
   );
 }
 
-function ResultNotifier({ passed, onComplete }: { passed: boolean; onComplete: (p: boolean) => void }) {
-  useEffect(() => { onComplete(passed); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+function ResultNotifier({
+  passed, conceptId, score, incorrectQs, onComplete,
+}: {
+  passed: boolean;
+  conceptId: string;
+  score: number;
+  incorrectQs: IncorrectQuestion[];
+  onComplete: (passed: boolean, conceptId: string, score: number, incorrectQs: IncorrectQuestion[]) => void;
+}) {
+  useEffect(() => { onComplete(passed, conceptId, score, incorrectQs); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return null;
 }

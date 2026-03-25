@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { ArrowLeft, Zap, Play } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowLeft, Zap, Play, XCircle, CheckCircle } from "lucide-react";
+import type { AllProgress, IncorrectQuestion } from "./useConceptProgress";
 
 const W = 1100, H = 920;
 const CX = 550, CY = 460;
@@ -214,12 +215,17 @@ interface Props {
   streak: number;
   onPractice: (conceptId: string) => void;
   onBack: () => void;
+  progress: AllProgress;
+  suggestedConceptId: string | null;
 }
 
-export default function GrammarMap({ streak, onPractice, onBack }: Props) {
+export default function GrammarMap({ streak, onPractice, onBack, progress, suggestedConceptId }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
+  const [showIncorrect, setShowIncorrect] = useState(false);
   const concept = allConcepts.find(c => c.id === selected);
+
+  useEffect(() => { setShowIncorrect(false); }, [selected]);
 
   return (
     <div style={{ background: "#000", minHeight: "100vh", fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column", color: "#f1f5f9" }}>
@@ -306,11 +312,24 @@ export default function GrammarMap({ streak, onPractice, onBack }: Props) {
             {layoutData.map(cat => cat.concepts.map(c => {
               const isSel = selected === c.id;
               const isHov = hovered === c.id;
+              const isSugg = suggestedConceptId === c.id;
+              const cp = progress[c.id];
+              const avgScore = cp && cp.scoreHistory.length > 0
+                ? Math.round(cp.scoreHistory.reduce((s, v) => s + v, 0) / cp.scoreHistory.length)
+                : null;
+              const hasStats = cp && cp.attempts > 0;
+              // Shift labels up slightly when showing stats line
+              const labelYOffset = hasStats ? -3 : 0;
+              const statsY = c.y! + (c.label.length === 1 ? 14 : 18) + labelYOffset;
               return (
                 <g key={c.id} style={{ cursor: "pointer" }}
                   onClick={() => setSelected(isSel ? null : c.id)}
                   onMouseEnter={() => setHovered(c.id)}
                   onMouseLeave={() => setHovered(null)}>
+                  {isSugg && (
+                    <circle cx={c.x} cy={c.y} r={46} fill="none" stroke="#fbbf24"
+                      strokeWidth={1.5} strokeDasharray="4 3" strokeOpacity={0.7} />
+                  )}
                   {(isSel || isHov) && (
                     <circle cx={c.x} cy={c.y} r={42} fill="none" stroke={cat.color} strokeWidth={7} strokeOpacity={0.14} />
                   )}
@@ -320,11 +339,23 @@ export default function GrammarMap({ streak, onPractice, onBack }: Props) {
                     strokeWidth={isSel ? 0 : isHov ? 2 : 1.2}
                   />
                   {c.label.map((line, i) => (
-                    <text key={i} x={c.x} y={c.y! - (c.label.length - 1) * 6 + i * 12}
+                    <text key={i} x={c.x} y={c.y! - (c.label.length - 1) * 6 + i * 12 + labelYOffset}
                       textAnchor="middle"
                       fill={isSel ? "#000" : cat.color}
                       fontSize={9.5} fontWeight={800}>{line}</text>
                   ))}
+                  {hasStats && (
+                    <text x={c.x} y={statsY}
+                      textAnchor="middle"
+                      fill={isSel ? "#00000088" : "#ffffff66"}
+                      fontSize={7.5} fontWeight={700}>
+                      L{cp.attempts} · {avgScore}%
+                    </text>
+                  )}
+                  {isSugg && (
+                    <text x={c.x! + 27} y={c.y! - 23}
+                      textAnchor="middle" fontSize={11} fill="#fbbf24">★</text>
+                  )}
                 </g>
               );
             }))}
@@ -375,6 +406,26 @@ export default function GrammarMap({ streak, onPractice, onBack }: Props) {
               >
                 <Play size={14} fill="currentColor" /> Practice This
               </button>
+
+              {(() => {
+                const cp = progress[concept.id];
+                return cp && cp.lastIncorrect.length > 0 ? (
+                  <button
+                    onClick={() => setShowIncorrect(true)}
+                    style={{
+                      width: "100%", background: "none",
+                      border: `1px solid ${concept.catColor}44`,
+                      color: concept.catColor, padding: "10px 0",
+                      fontWeight: 700, fontSize: 11,
+                      letterSpacing: 1.5, textTransform: "uppercase" as const,
+                      cursor: "pointer", marginTop: 8,
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                    }}
+                  >
+                    <XCircle size={13} /> Review Last Mistakes ({cp.lastIncorrect.length})
+                  </button>
+                ) : null;
+              })()}
             </div>
           ) : (
             <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: 32, textAlign: "center" }}>
@@ -385,10 +436,86 @@ export default function GrammarMap({ streak, onPractice, onBack }: Props) {
               <p style={{ fontSize: 9, lineHeight: 1.6, marginTop: 14, color: "#fff", opacity: 0.1, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
                 8 categories · 24 concepts
               </p>
+              <p style={{ fontSize: 9, lineHeight: 1.6, marginTop: 8, color: "#fbbf24", opacity: 0.35, letterSpacing: 1, textTransform: "uppercase" as const }}>
+                ★ = suggested next practice
+              </p>
             </div>
           )}
         </div>
       </div>
+
+      {/* Incorrect Questions Modal */}
+      {showIncorrect && concept && (() => {
+        const cp = progress[concept.id];
+        if (!cp || cp.lastIncorrect.length === 0) return null;
+        return (
+          <div
+            style={{
+              position: "fixed", inset: 0, background: "rgba(0,0,0,0.88)",
+              zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 24,
+            }}
+            onClick={() => setShowIncorrect(false)}
+          >
+            <div
+              style={{
+                background: "#080808", border: "1px solid #1a1a1a",
+                maxWidth: 520, width: "100%", maxHeight: "80vh",
+                overflowY: "auto", fontFamily: "system-ui, sans-serif",
+              }}
+              onClick={e => e.stopPropagation()}
+            >
+              <div style={{
+                padding: "16px 20px", borderBottom: "1px solid #111",
+                display: "flex", justifyContent: "space-between", alignItems: "center",
+                position: "sticky", top: 0, background: "#080808",
+              }}>
+                <div>
+                  <p style={{ color: concept.catColor, fontWeight: 800, fontSize: 12, margin: 0, letterSpacing: 1, textTransform: "uppercase" }}>
+                    {concept.title}
+                  </p>
+                  <p style={{ color: "#444", fontSize: 9, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", margin: "3px 0 0" }}>
+                    Incorrect — last attempt
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowIncorrect(false)}
+                  style={{ background: "none", border: "none", color: "#555", cursor: "pointer", fontSize: 22, lineHeight: 1, padding: "0 0 0 16px" }}
+                >×</button>
+              </div>
+
+              <div style={{ padding: "16px 20px", display: "flex", flexDirection: "column", gap: 10 }}>
+                {cp.lastIncorrect.map((q: IncorrectQuestion, i: number) => (
+                  <div key={i} style={{ background: "#000", border: "1px solid #151515" }}>
+                    <div style={{ padding: "14px 16px", borderBottom: "1px solid #0d0d0d" }}>
+                      <p style={{ color: "#fff", fontSize: 13, margin: "0 0 12px", lineHeight: 1.5, opacity: 0.8 }}>
+                        {q.prompt}
+                      </p>
+                      <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
+                        <XCircle size={14} style={{ color: "#ef4444", flexShrink: 0, marginTop: 1 }} />
+                        <p style={{ color: "#ef4444", fontSize: 13, margin: 0, lineHeight: 1.45 }}>
+                          {q.yourAnswer !== null ? q.options[q.yourAnswer] : "No answer — time ran out"}
+                        </p>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                        <CheckCircle size={14} style={{ color: "#22c55e", flexShrink: 0, marginTop: 1 }} />
+                        <p style={{ color: "#22c55e", fontSize: 13, margin: 0, lineHeight: 1.45 }}>
+                          {q.options[q.correct]}
+                        </p>
+                      </div>
+                    </div>
+                    <div style={{ padding: "10px 16px" }}>
+                      <p style={{ color: "#fff", fontSize: 12, margin: 0, lineHeight: 1.6, opacity: 0.6 }}>
+                        {q.explanation}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

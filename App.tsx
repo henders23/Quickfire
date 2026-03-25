@@ -3,6 +3,8 @@ import StartScreen from "./StartScreen";
 import GrammarMap from "./grammar-map";
 import IntroScreen from "./IntroScreen";
 import GameSession from "./GameSession";
+import { useConceptProgress } from "./useConceptProgress";
+import type { IncorrectQuestion } from "./useConceptProgress";
 
 type Screen = "start" | "map" | "intro" | "game";
 
@@ -11,12 +13,15 @@ export default function App() {
   const [streak, setStreak] = useState(0);
   const [selectedConceptId, setSelectedConceptId] = useState<string | null>(null);
 
+  const { progress, saveSessionResult, suggestedConceptId } = useConceptProgress();
+
   const handlePractice = (conceptId: string) => {
     setSelectedConceptId(conceptId);
     setScreen("intro");
   };
 
-  const handleSessionComplete = (passed: boolean) => {
+  const handleSessionComplete = (passed: boolean, conceptId: string, score: number, incorrectQs: IncorrectQuestion[]) => {
+    saveSessionResult(conceptId, score, incorrectQs);
     setStreak(prev => (passed ? prev + 1 : 0));
     setScreen("map");
   };
@@ -31,6 +36,8 @@ export default function App() {
           streak={streak}
           onPractice={handlePractice}
           onBack={() => setScreen("start")}
+          progress={progress}
+          suggestedConceptId={suggestedConceptId}
         />
       )}
       {screen === "intro" && selectedConceptId && (
