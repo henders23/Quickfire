@@ -330,11 +330,11 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
         {phase === "feedback" && (
           <>
             <div style={{ marginTop: 18, padding: "13px 16px", background: "#080808", borderLeft: `3px solid ${isCorrect ? "#22c55e" : "#ef4444"}`, width: "100%" }}>
-              <p style={{ color: "#fff", fontSize: 9, margin: 0, lineHeight: 1.6, opacity: 0.75 }}>
+              <p style={{ color: "#fff", fontSize: 11, margin: 0, lineHeight: 1.6, opacity: 0.75 }}>
                 {currentQ.explanation}
               </p>
               {isCorrect && timeBonus > 0 && (
-                <p style={{ color: "#fbbf24", fontSize: 8, margin: "5px 0 0", fontWeight: 700 }}>
+                <p style={{ color: "#fbbf24", fontSize: 10, margin: "5px 0 0", fontWeight: 700 }}>
                   +{timeBonus} speed bonus
                 </p>
               )}
