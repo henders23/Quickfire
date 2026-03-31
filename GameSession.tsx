@@ -66,17 +66,18 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
     setAnswers(prev => [...prev, choiceIndex]);
     setPhase("feedback");
 
-    setTimeout(() => {
-      if (qIndex + 1 >= questions.length) {
-        setPhase("results");
-      } else {
-        setQIndex(i => i + 1);
-        setSelected(null);
-        setTimeLeft(QUESTION_TIME);
-        setPhase("playing");
-      }
-    }, 1800);
   }, [phase, qIndex, questions.length, timeLeft]);
+
+  const handleNext = useCallback(() => {
+    if (qIndex + 1 >= questions.length) {
+      setPhase("results");
+    } else {
+      setQIndex(i => i + 1);
+      setSelected(null);
+      setTimeLeft(QUESTION_TIME);
+      setPhase("playing");
+    }
+  }, [qIndex, questions.length]);
 
   // ── Results / Feedback screen ─────────────────────────────────
   if (phase === "results") {
@@ -275,11 +276,11 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
 
       {/* Question body */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "28px 20px", maxWidth: 580, margin: "0 auto", width: "100%" }}>
-        <div style={{ marginBottom: 22, padding: "4px 14px", borderLeft: `2px solid ${color}`, color, fontSize: 10, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
+        <div style={{ marginBottom: 22, padding: "4px 14px", borderLeft: `2px solid ${color}`, color, fontSize: 7, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
           {concept.title}
         </div>
 
-        <h2 style={{ color: "#fff", fontSize: 38, fontWeight: 700, textAlign: "center", lineHeight: 1.5, margin: "0 0 36px", maxWidth: 500 }}>
+        <h2 style={{ color: "#fff", fontSize: 27, fontWeight: 700, textAlign: "center", lineHeight: 1.5, margin: "0 0 36px", maxWidth: 500 }}>
           {currentQ.prompt}
         </h2>
 
@@ -309,34 +310,49 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
                   opacity: textOpacity,
                   padding: "18px 22px", textAlign: "left" as const,
                   cursor: phase === "feedback" ? "default" : "pointer",
-                  fontSize: 28, fontWeight: 600, lineHeight: 1.45,
+                  fontSize: 20, fontWeight: 600, lineHeight: 1.45,
                   display: "flex", alignItems: "flex-start", gap: 14,
                   transition: "all 0.1s", width: "100%",
                 }}
               >
-                <span style={{ width: 26, height: 26, borderRadius: "50%", border: `1px solid ${border}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 900, flexShrink: 0, color: border }}>
+                <span style={{ width: 22, height: 22, borderRadius: "50%", border: `1px solid ${border}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, fontWeight: 900, flexShrink: 0, color: border }}>
                   {["A", "B"][i]}
                 </span>
                 <span style={{ flex: 1, paddingTop: 3 }}>{option}</span>
-                {phase === "feedback" && isCorrectOpt && <CheckCircle size={16} style={{ color: "#22c55e", flexShrink: 0, marginTop: 4 }} />}
-                {phase === "feedback" && isSelected && !isCorrectOpt && <XCircle size={16} style={{ color: "#ef4444", flexShrink: 0, marginTop: 4 }} />}
+                {phase === "feedback" && isCorrectOpt && <CheckCircle size={14} style={{ color: "#22c55e", flexShrink: 0, marginTop: 3 }} />}
+                {phase === "feedback" && isSelected && !isCorrectOpt && <XCircle size={14} style={{ color: "#ef4444", flexShrink: 0, marginTop: 3 }} />}
               </button>
             );
           })}
         </div>
 
-        {/* Explanation */}
+        {/* Explanation + Next button */}
         {phase === "feedback" && (
-          <div style={{ marginTop: 18, padding: "13px 16px", background: "#080808", borderLeft: `3px solid ${isCorrect ? "#22c55e" : "#ef4444"}`, width: "100%" }}>
-            <p style={{ color: "#fff", fontSize: 13, margin: 0, lineHeight: 1.6, opacity: 0.75 }}>
-              {currentQ.explanation}
-            </p>
-            {isCorrect && timeBonus > 0 && (
-              <p style={{ color: "#fbbf24", fontSize: 11, margin: "5px 0 0", fontWeight: 700 }}>
-                +{timeBonus} speed bonus
+          <>
+            <div style={{ marginTop: 18, padding: "13px 16px", background: "#080808", borderLeft: `3px solid ${isCorrect ? "#22c55e" : "#ef4444"}`, width: "100%" }}>
+              <p style={{ color: "#fff", fontSize: 9, margin: 0, lineHeight: 1.6, opacity: 0.75 }}>
+                {currentQ.explanation}
               </p>
-            )}
-          </div>
+              {isCorrect && timeBonus > 0 && (
+                <p style={{ color: "#fbbf24", fontSize: 8, margin: "5px 0 0", fontWeight: 700 }}>
+                  +{timeBonus} speed bonus
+                </p>
+              )}
+            </div>
+            <button
+              onClick={handleNext}
+              style={{
+                marginTop: 12, width: "100%",
+                background: isCorrect ? "#22c55e" : "#ef4444",
+                border: "none", color: "#000",
+                padding: "14px 0", cursor: "pointer",
+                fontWeight: 900, fontSize: 11, letterSpacing: 1.5,
+                textTransform: "uppercase" as const,
+              }}
+            >
+              {qIndex + 1 >= questions.length ? "See Results →" : "Next Question →"}
+            </button>
+          </>
         )}
       </div>
     </div>
