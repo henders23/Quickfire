@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, Zap, CheckCircle, XCircle, RotateCcw, Map } from "lucide-react";
 import { allConcepts } from "./grammar-map";
+import type { TaggedQuestion } from "./grammar-map";
 import { questionBanks } from "./question-banks";
 import { QUESTIONS_PER_SESSION } from "./IntroScreen";
 import type { IncorrectQuestion } from "./useConceptProgress";
@@ -14,17 +15,22 @@ interface Props {
   streak: number;
   onComplete: (passed: boolean, conceptId: string, score: number, incorrectQs: IncorrectQuestion[]) => void;
   onBack: () => void;
+  challengePool?: TaggedQuestion[];
 }
 
-export default function GameSession({ conceptId, streak, onComplete, onBack }: Props) {
-  const concept = allConcepts.find(c => c.id === conceptId)!;
-  const color = concept.catColor!;
+export default function GameSession({ conceptId, streak, onComplete, onBack, challengePool }: Props) {
+  const isChallengeMode = !!challengePool && challengePool.length > 0;
+  const concept = allConcepts.find(c => c.id === conceptId);
+  const color = concept?.catColor ?? "#22d3ee";
 
   // Pick a fresh random set of questions every session
-  const [questions] = useState(() => {
+  const [questions] = useState<TaggedQuestion[]>(() => {
+    if (challengePool && challengePool.length > 0) {
+      return challengePool;
+    }
     const bank = questionBanks[conceptId] ?? [];
     const shuffled = [...bank].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, QUESTIONS_PER_SESSION);
+    return shuffled.slice(0, QUESTIONS_PER_SESSION).map(q => ({ ...q, conceptId }));
   });
 
   const [qIndex, setQIndex] = useState(0);
@@ -95,7 +101,7 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
         <div style={{ padding: "14px 24px", borderBottom: "1px solid #111", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
           <div>
             <p style={{ color: "#444", fontSize: 9, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase" as const, margin: "0 0 2px" }}>Session complete</p>
-            <h2 style={{ color, margin: 0, fontSize: 15, fontWeight: 900, fontStyle: "italic" }}>{concept.title}</h2>
+            <h2 style={{ color, margin: 0, fontSize: 15, fontWeight: 900, fontStyle: "italic" }}>{isChallengeMode ? "Challenge Session" : concept?.title ?? ""}</h2>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#22d3ee", fontWeight: 900, fontSize: 13 }}>
             <Zap size={14} fill="#22d3ee" /> {passed ? streak + 1 : 0}
@@ -237,6 +243,8 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
   const timePct = timeLeft / QUESTION_TIME;
   const timerColor = timePct > 0.5 ? "#22d3ee" : timePct > 0.25 ? "#fbbf24" : "#ef4444";
   const isCorrect = selected === currentQ?.correct;
+  const currentConcept = allConcepts.find(c => c.id === currentQ?.conceptId);
+  const currentColor = currentConcept?.catColor ?? "#22d3ee";
 
   return (
     <div style={{ background: "#000", minHeight: "100vh", fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column" }}>
@@ -276,8 +284,8 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
 
       {/* Question body */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "28px 20px", maxWidth: 580, margin: "0 auto", width: "100%" }}>
-        <div style={{ marginBottom: 22, padding: "4px 14px", borderLeft: `2px solid ${color}`, color, fontSize: 7, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
-          {concept.title}
+        <div style={{ marginBottom: 22, padding: "4px 14px", borderLeft: `2px solid ${currentColor}`, color: currentColor, fontSize: 7, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" as const }}>
+          {currentConcept?.title ?? "Challenge"}
         </div>
 
         <h2 style={{ color: "#fff", fontSize: 27, fontWeight: 700, textAlign: "center", lineHeight: 1.5, margin: "0 0 36px", maxWidth: 500 }}>

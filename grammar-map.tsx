@@ -13,6 +13,10 @@ export interface Question {
   explanation: string;
 }
 
+export interface TaggedQuestion extends Question {
+  conceptId: string;
+}
+
 export interface Concept {
   id: string;
   label: string[];
@@ -214,12 +218,13 @@ export const allConcepts = layoutData.flatMap(c => c.concepts);
 interface Props {
   streak: number;
   onPractice: (conceptId: string) => void;
+  onChallenge: () => void;
   onBack: () => void;
   progress: AllProgress;
   suggestedConceptId: string | null;
 }
 
-export default function GrammarMap({ streak, onPractice, onBack, progress, suggestedConceptId }: Props) {
+export default function GrammarMap({ streak, onPractice, onChallenge, onBack, progress, suggestedConceptId }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [showIncorrect, setShowIncorrect] = useState(false);
@@ -291,10 +296,13 @@ export default function GrammarMap({ streak, onPractice, onBack, progress, sugge
               <circle key={`h-${cat.id}`} cx={cat.x} cy={cat.y} r={72} fill={`url(#glow-${cat.id})`} />
             ))}
 
-            {/* Center node — rectangular, no branding */}
-            <rect x={CX - 72} y={CY - 26} width={144} height={52} fill="#000" stroke="#fff" strokeWidth={0.8} strokeOpacity={0.22} rx={2} />
-            <text x={CX} y={CY - 5} textAnchor="middle" fill="#fff" fontSize={9} fontWeight={700} letterSpacing={1} opacity={0.4}>choose a node</text>
-            <text x={CX} y={CY + 10} textAnchor="middle" fill="#fff" fontSize={9} fontWeight={700} letterSpacing={1} opacity={0.4}>to practise</text>
+            {/* Center node — Challenge button */}
+            <g style={{ cursor: "pointer" }} onClick={onChallenge}>
+              <circle cx={CX} cy={CY} r={50} fill="none" stroke="#22d3ee" strokeWidth={8} strokeOpacity={0.07} />
+              <circle cx={CX} cy={CY} r={42} fill="#000" stroke="#22d3ee" strokeWidth={1.5} strokeOpacity={0.55} />
+              <text x={CX} y={CY - 5} textAnchor="middle" fill="#22d3ee" fontSize={9} fontWeight={900} letterSpacing={2}>⚡ CHALLENGE</text>
+              <text x={CX} y={CY + 10} textAnchor="middle" fill="#22d3ee" fontSize={7.5} fontWeight={700} letterSpacing={1} opacity={0.45}>ALL TOPICS</text>
+            </g>
 
             {/* Category nodes — larger */}
             {layoutData.map(cat => (
