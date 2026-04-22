@@ -7,6 +7,7 @@ export interface IncorrectQuestion {
   correct: 0 | 1;
   explanation: string;
   yourAnswer: number | null;
+  conceptId?: string;
 }
 
 export interface ConceptProgress {
@@ -83,7 +84,29 @@ export function useConceptProgress() {
     []
   );
 
+  const clearReviewedQuestions = useCallback((correctlyAnswered: IncorrectQuestion[]) => {
+    setProgress(prev => {
+      const updated = { ...prev };
+      for (const q of correctlyAnswered) {
+        if (!q.conceptId) continue;
+        const cp = updated[q.conceptId];
+        if (!cp) continue;
+        updated[q.conceptId] = {
+          ...cp,
+          lastIncorrect: cp.lastIncorrect.filter(iq => iq.prompt !== q.prompt),
+        };
+      }
+      saveProgress(updated);
+      return updated;
+    });
+  }, []);
+
+  const allIncorrectQuestions = useMemo(
+    () => Object.values(progress).flatMap(cp => cp.lastIncorrect).filter(q => q.conceptId),
+    [progress]
+  );
+
   const suggestedConceptId = useMemo(() => computeSuggested(progress), [progress]);
 
-  return { progress, saveSessionResult, suggestedConceptId };
+  return { progress, saveSessionResult, clearReviewedQuestions, allIncorrectQuestions, suggestedConceptId };
 }

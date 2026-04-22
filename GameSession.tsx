@@ -224,6 +224,7 @@ export default function GameSession({ conceptId, streak, onComplete, onBack }: P
             prompt: q.prompt,
             options: q.options,
             correct: q.correct,
+            conceptId,
             explanation: q.explanation,
             yourAnswer: ans,
           }))}

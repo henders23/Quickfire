@@ -215,11 +215,12 @@ interface Props {
   streak: number;
   onPractice: (conceptId: string) => void;
   onBack: () => void;
+  onReview: () => void;
   progress: AllProgress;
   suggestedConceptId: string | null;
 }
 
-export default function GrammarMap({ streak, onPractice, onBack, progress, suggestedConceptId }: Props) {
+export default function GrammarMap({ streak, onPractice, onBack, onReview, progress, suggestedConceptId }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [showIncorrect, setShowIncorrect] = useState(false);
@@ -247,8 +248,21 @@ export default function GrammarMap({ streak, onPractice, onBack, progress, sugge
             </p>
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#22d3ee", fontWeight: 900, fontSize: 13, letterSpacing: 1 }}>
-          <Zap size={14} fill="#22d3ee" /> {streak} STREAK
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          {(() => {
+            const total = Object.values(progress).reduce((sum, cp) => sum + cp.lastIncorrect.filter(q => q.conceptId).length, 0);
+            return total > 0 ? (
+              <button
+                onClick={onReview}
+                style={{ background: "none", border: "1px solid #ef4444", color: "#ef4444", cursor: "pointer", padding: "6px 12px", fontSize: 11, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" as const, display: "flex", alignItems: "center", gap: 6 }}
+              >
+                <XCircle size={13} /> Review {total}
+              </button>
+            ) : null;
+          })()}
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#22d3ee", fontWeight: 900, fontSize: 13, letterSpacing: 1 }}>
+            <Zap size={14} fill="#22d3ee" /> {streak} STREAK
+          </div>
         </div>
       </div>
 
