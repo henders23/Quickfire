@@ -3,17 +3,18 @@ import StartScreen from "./StartScreen";
 import GrammarMap from "./grammar-map";
 import IntroScreen from "./IntroScreen";
 import GameSession from "./GameSession";
+import ReviewSession from "./ReviewSession";
 import { useConceptProgress } from "./useConceptProgress";
 import type { IncorrectQuestion } from "./useConceptProgress";
 
-type Screen = "start" | "map" | "intro" | "game";
+type Screen = "start" | "map" | "intro" | "game" | "review";
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>("start");
   const [streak, setStreak] = useState(0);
   const [selectedConceptId, setSelectedConceptId] = useState<string | null>(null);
 
-  const { progress, saveSessionResult, suggestedConceptId } = useConceptProgress();
+  const { progress, saveSessionResult, clearReviewedQuestions, allIncorrectQuestions, suggestedConceptId } = useConceptProgress();
 
   const handlePractice = (conceptId: string) => {
     setSelectedConceptId(conceptId);
@@ -23,6 +24,11 @@ export default function App() {
   const handleSessionComplete = (passed: boolean, conceptId: string, score: number, incorrectQs: IncorrectQuestion[]) => {
     saveSessionResult(conceptId, score, incorrectQs);
     setStreak(prev => (passed ? prev + 1 : 0));
+    setScreen("map");
+  };
+
+  const handleReviewComplete = (correctlyAnswered: IncorrectQuestion[]) => {
+    clearReviewedQuestions(correctlyAnswered);
     setScreen("map");
   };
 
@@ -36,6 +42,7 @@ export default function App() {
           streak={streak}
           onPractice={handlePractice}
           onBack={() => setScreen("start")}
+          onReview={() => setScreen("review")}
           progress={progress}
           suggestedConceptId={suggestedConceptId}
         />
@@ -53,6 +60,13 @@ export default function App() {
           conceptId={selectedConceptId}
           streak={streak}
           onComplete={handleSessionComplete}
+          onBack={() => setScreen("map")}
+        />
+      )}
+      {screen === "review" && (
+        <ReviewSession
+          questions={allIncorrectQuestions}
+          onComplete={handleReviewComplete}
           onBack={() => setScreen("map")}
         />
       )}
